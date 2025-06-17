@@ -13,7 +13,7 @@ export default function Home() {
       {/* Section 1 */}
       <div className="relative w-full h-[80vh]">
         <Image
-          src="./images/pic5.jpg"
+          src="/images/pic5.jpg"
           alt="Background"
           fill
           className="object-cover object-top"
@@ -121,7 +121,7 @@ export default function Home() {
             {/* Right side: Image (50%) */}
             <div className="w-1/2 flex justify-center items-center">
               <img
-                src="./images/pic4.jpg"
+                src="/images/pic4.jpg"
                 alt="Growth Illustration"
                 className="w-[100%] h-[400px] rounded-md shadow-lg object-cover"
               />
@@ -155,7 +155,7 @@ export default function Home() {
           <div className="w-1/2 flex items-center justify-center">
             <div className="relative">
               <img
-                src="./images/pic3.jpg"
+                src="/images/pic3.jpg"
                 alt="Financial strategy illustration"
                 className="max-w-full h-auto rounded-lg"
               />
@@ -190,7 +190,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Image */}
             <div>
-              <img src="./images/pic1.jpg" alt="Our Process" className="w-full h-full object-cover rounded-lg shadow-md" />
+              <img src="/images/pic1.jpg" alt="Our Process" className="w-full h-full object-cover rounded-lg shadow-md" />
             </div>
 
             {/* Service Steps */}
