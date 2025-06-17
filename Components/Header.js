@@ -12,7 +12,7 @@ const Header = () => {
       <nav className="container mx-auto flex justify-between items-center h-16">
         {/* Logo */}
         <div className="flex items-center ml-16 mb-4 space-x-3">
-          <img src="/images/pic2.jpg" alt="Logo" className="h-24 w-44" />
+          <img src="./images/pic2.jpg" alt="Logo" className="h-24 w-44" />
         </div>
 
         <ul className="flex space-x-8 mr-56 text-xl font-medium">

@@ -10,7 +10,7 @@ const Footer = () => {
             <div className="space-y-4">
               <div className="logo flex items-center">
                 <img
-                  src="/images/pic2.jpg"
+                  src="./images/pic2.jpg"
                   alt="Sprout Partners Logo"
                   className="h-12 w-auto"
                 />
