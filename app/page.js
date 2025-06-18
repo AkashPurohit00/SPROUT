@@ -7,173 +7,279 @@ import Footer from "@/Components/Footer";
 
 export default function Home() {
   return (
+    
     <>
       <Header />
 
       {/* Section 1 */}
       <div className="relative w-full h-[80vh]">
-        <Image
-          src="/images/pic5.jpg"
-          alt="Background"
-          fill
-          className="object-cover object-top"
-        />
+  <Image
+    src="/images/pic5.jpg"
+    alt="Background"
+    fill
+    className="object-cover object-top"
+  />
 
-        <div className="absolute inset-0 flex flex-col justify-center items-center px-20 text-black">
-          <h1 className="text-6xl font-medium mb-8">Sprout Partners Private Limited</h1>
-          <p className="text-lg">
-            Leverage the unparalleled expertise and strategic guidance of Sprout Partners. Our team excels in financial restructuring, developing business
+  <div className="absolute inset-0 flex flex-col justify-center items-center text-black text-center px-4 sm:px-8 lg:px-20">
+    
+    {/* Heading  */}
+    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-6 lg:mb-8 lg:whitespace-nowrap">
+      Sprout Partners Private Limited
+    </h1>
+
+    {/* Paragraphs  */}
+    <p className="text-sm sm:text-base md:text-lg lg:text-lg max-w-5xl lg:whitespace-nowrap">
+      Leverage the unparalleled expertise and strategic guidance of Sprout Partners. Our team excels in financial restructuring, developing business
+    </p>
+    <p className="text-sm sm:text-base md:text-lg lg:text-lg max-w-5xl lg:whitespace-nowrap">
+      strategies and crafting tailored financial models and strategic insights across a wide range of sectors. With 75 years of collective experience
+    </p>
+    <p className="text-sm sm:text-base md:text-lg lg:text-lg max-w-5xl lg:whitespace-nowrap">
+      and deep industry-specific knowledge, we empower organizations to make informed decisions in corporate finance and navigate capital
+    </p>
+    <p className="text-sm sm:text-base md:text-lg lg:text-lg mb-6 lg:mb-10 max-w-5xl lg:whitespace-nowrap">
+      markets with confidence.
+    </p>
+
+    <button className="bg-white text-black px-6 sm:px-8 py-2 font-semibold border border-black rounded-full transition-transform duration-300 hover:-translate-y-2">
+      Enquire Now
+    </button>
+  </div>
+</div>
+
+
+      
+      {/* Section 2 */}
+   <section id="about" className="py-20 bg-gray-50 w-full min-h-screen">
+  <div className="container max-w-7xl mx-auto px-6">
+    {/* Section Title */}
+    <div className="text-center mb-16">
+      <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+        Why Choose Sprout Partners?
+      </h2>
+      <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+        Empower your organization with the exceptional guidance of Sprout Partners. Together, we’ll unlock opportunities and create a clear path for sustained growth and success.
+      </p>
+    </div>
+
+    {/* Features Grid */}
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
+      {/* Feature 1 */}
+      <div className="bg-white rounded-3xl border-2 border-gray-200 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+        <div className="flex justify-center mb-6">
+          <div className="bg-white border-2 border-gray-300 rounded-full w-20 h-20 flex items-center justify-center">
+            <svg className="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="3" />
+              <path d="M12 1v6m0 6v6m11-7h-6m-6 0H1" />
+              <circle cx="12" cy="12" r="10" />
+            </svg>
+          </div>
+        </div>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Unmatched Expertise</h3>
+        <p className="text-gray-600 text-center leading-relaxed">
+          With 75 years of collective experience across diverse sectors in the capital markets, we have a proven track record of driving success
+        </p>
+      </div>
+
+      {/* Feature 2 */}
+     <div className="bg-white rounded-3xl border-2 border-gray-200 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 lg:mt-16 w-full h-full">
+  <div className="flex justify-center mb-6">
+    <div className="bg-white border-2 border-gray-300 rounded-full w-20 h-20 flex items-center justify-center">
+      <svg className="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+          d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+      </svg>
+    </div>
+  </div>
+  <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Strategic Insights</h3>
+  <p className="text-gray-600 text-center leading-relaxed">
+    Our innovative solutions are driven by data analysis and deep industry expertise, delivering actionable insights that drive growth and value
+  </p>
+</div>
+
+
+
+      {/* Feature 3 */}
+      <div className="bg-white rounded-3xl border-2 border-gray-200 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+        <div className="flex justify-center mb-6">
+          <div className="bg-white border-2 border-gray-300 rounded-full w-20 h-20 flex items-center justify-center">
+            <svg className="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+          </div>
+        </div>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Collaborative Approach</h3>
+        <p className="text-gray-600 text-center leading-relaxed">
+          We work hand-in-hand with your team, aligning our expertise with your goals to deliver tailored financial strategies
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+      {/* Section 3 */}
+   
+    <section id="research" className="py-20 bg-gray-100">
+      <div className="max-w-7xl mx-auto px-6">
+        {/* Section Title */}
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+            Our Process: From Seed to Success
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+            Let us guide you through every stage of your journey, from seed to success
           </p>
-          <p className="text-lg">
-            strategies and crafting tailored financial models and strategic insights across a wide range of sectors. With 75 years of collective experience
-          </p>
-          <p className="text-lg">
-            and deep industry-specific knowledge, we empower organizations to make informed decisions in corporate finance and navigate capital
-          </p>
-          <p className="text-lg mb-10">
-            markets with confidence.
-          </p>
-          <button className="bg-white text-black px-8 py-2 font-semibold border border-black rounded-full transition-transform duration-300 hover:-translate-y-2">
-            Enquire Now 
+        </div>
+
+        {/* Grid: Process steps + image */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Process Steps */}
+          <div className="space-y-8">
+            {/* Step 1 */}
+            <div className="transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:bg-blue-100 bg-gray-100 rounded-lg p-4">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"
+                    />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">Planting the Seed</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    We begin by understanding your business needs, challenges and aspirations to lay a strong foundation for success.
+                  </p>
+                </div>
+              </div>
+              <div className="w-0.5 h-8 bg-gray-300 ml-6 mt-4"></div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:bg-blue-100 bg-gray-100 rounded-lg p-4">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+                    />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">In-Depth Analysis</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Through comprehensive research, financial modeling and industry benchmarking, we identify key opportunities and challenges.
+                  </p>
+                </div>
+              </div>
+              <div className="w-0.5 h-8 bg-gray-300 ml-6 mt-4"></div>
+            </div>
+
+            {/* Step 3 */}
+            <div className="transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:bg-blue-100 bg-gray-100 rounded-lg p-4">
+              <div className="flex items-start space-x-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
+                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7"
+                    />
+                  </svg>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">Strategic Roadmap</h3>
+                  <p className="text-gray-600 leading-relaxed">
+                    Unlocking valuable insights, we craft a tailored strategy designed to achieve your goals efficiently and effectively.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Process Image */}
+          <div className="w-full h-full">
+            <Image
+              src="/images/pic4.jpg"
+              alt="Our Process"
+              width={600}
+              height={400}
+              className="w-full h-full object-cover rounded-lg shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+  
+
+
+      {/* Section 4 */}
+     <section id="get-to-know-us" className="py-20 bg-white">
+  <div className="max-w-7xl mx-auto px-6">
+    {/* Section Title */}
+    <h2 className="text-4xl md:text-5xl font-bold text-gray-900 text-center mb-12">
+      Get to Know Us
+    </h2>
+
+    {/* Content Grid */}
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center min-h-[400px]">
+      {/* Text Content */}
+      <div className="space-y-6 flex flex-col justify-center h-full">
+        <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+          In today’s dynamic and challenging financial environment, choosing the
+          right path is essential for long-term business success. At Sprout
+          Partners, we understand the importance of tailored guidance and expert
+          advice to help you stay ahead.
+        </p>
+        <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+          Our team excels in providing strategic advice, financial restructuring,
+          forensic analysis, and developing advanced financial models customized
+          for various industries. With 75 years of collective experience, we
+          provide the knowledge, insight, and strategic acumen needed to
+          confidently navigate complexities and seize opportunities.
+        </p>
+        <div className="flex justify-center lg:justify-start">
+          <button className="border-2 border-gray-300 rounded-full px-6 py-2 text-gray-700 font-semibold hover:bg-gray-100 transition-all duration-300">
+            Read More
           </button>
         </div>
       </div>
 
-      
-      {/* Section 2 */}
-      <div className="w-full h-[110vh] bg-white">
-        <div className="w-full min-h-[100vh] bg-white flex flex-col items-center justify-start py-3.5 pt-14 px-6 space-y-12">
-          <h1 className="text-5xl text-center font-medium">
-            Why Choose Sprout Partners?
-          </h1>
+      {/* Image and Quote */}
+      <div className="relative flex justify-center items-center h-full">
+        {/* Image with Animation */}
+       <div className="rounded-lg w-full max-w-md overflow-hidden">
+  <img
+    src="/images/pic3.jpg"
+    alt="Financial Charts"
+    className="w-full h-auto object-cover "
+  />
+</div>
 
-          <p className="max-w-3xl text-center text-lg leading-relaxed">
-            Empower your organization with the exceptional guidance of Sprout Partners. Together, we’ll unlock opportunities and create a clear path for<br />
-            <span className="block">sustained growth and success.</span>
+        {/* Quote with Dotted Border */}
+        <div className="absolute bottom-2 right-3.5 bg-white p-6 rounded-lg shadow-lg border-l-8 border-dotted border-purple-500 max-w-[400px]">
+          <p className="text-gray-700 italic text-lg">
+            "We don’t have to be smarter than the rest. We have to be more
+            disciplined than the rest"
           </p>
-
-          {/* Three horizontally aligned boxes */}
-          <div className="flex flex-row items-center justify-center space-x-12">
-            <div className="w-[25rem] h-80 border mb-28 border-black rounded-md bg-white flex flex-col items-center justify-center">
-              <h1 className="text-3xl font-bold mb-3.5">Unmatched Expertise</h1>
-              <p>
-                With 75 years of collective experience across diverse
-              </p>
-              <p>sectors in the capital markets, we have a proven</p>
-              <p>track record of driving success</p>
-            </div>
-            <div className="w-[25rem] h-80 mt-36 border border-black rounded-md bg-white flex flex-col items-center justify-center">
-              <h1 className="text-3xl font-bold mb-3.5">Strategic Insights</h1>
-              <p>
-                Our innovative solutions are driven by data analysis
-              </p>
-              <p>and deep industry expertise, delivering actionable</p>
-              <p>insights to help you navigate complexity</p>
-            </div>
-            <div className="w-[25rem] h-80 mb-28 border border-black rounded-md bg-white flex flex-col items-center justify-center">
-              <h1 className="text-3xl font-bold mb-3.5">Collaborative Approach</h1>
-              <p>
-                We work hand-in-hand with your team , aligning our
-              </p>
-              <p>expertise with your goals to deliver tailored financial</p>
-              <p>strategies</p>
-            </div>
-          </div>
-
+          <p className="text-gray-900 font-semibold mt-2 text-right">
+            – Warren Buffett
+          </p>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      {/* Section 3 */}
-      <div className="w-full h-[100vh] bg-gray-100">
-        <div className="w-full h-full flex flex-col items-center justify-start pt-14 px-6 space-y-8">
-          <h1 className="text-5xl mb-4 font-medium">Our Process: From Seed to Success</h1>
-          <h2 className="text-xl text-gray-600 text-center">
-            Let us guide you through every stage of your journey, from seed to success
-          </h2>
-
-          {/* Flex row for steps + image */}
-          <div className="flex flex-row w-full max-w-[1200px] mt-10">
-            {/* Left side: Steps (50%) */}
-            <div className="flex flex-col space-y-2 w-1/2 pr-6">
-              <div className="p-6 bg-gray-100 transition-transform transition-colors duration-300 hover:-translate-y-2 hover:bg-blue-100 rounded-lg">
-                <h1 className="text-xl font-semibold mb-2">Planting the Seed</h1>
-                <p>
-                  We begin by understanding your business needs, challenges and <br />
-                  aspirations to lay a strong foundation for success.
-                </p>
-              </div>
-
-              <div className="p-6 bg-gray-100 transition-transform transition-colors duration-300 hover:-translate-y-2 hover:bg-blue-100 rounded-lg">
-                <h1 className="text-xl font-semibold mb-2">Nurturing the Growth</h1>
-                <p>
-                  We work closely with you to develop tailored strategies, optimize operations, and ensure steady progress.
-                </p>
-              </div>
-
-              <div className="p-6 bg-gray-100 transition-transform transition-colors duration-300 hover:-translate-y-2 hover:bg-blue-100 rounded-lg">
-                <h1 className="text-xl font-semibold mb-2">Harvesting Success</h1>
-                <p>
-                  Finally, we help you scale and sustain your growth with expert insights and execution support.
-                </p>
-              </div>
-            </div>
-
-            {/* Right side: Image (50%) */}
-            <div className="w-1/2 flex justify-center items-center">
-              <img
-                src="/images/pic4.jpg"
-                alt="Growth Illustration"
-                className="w-[100%] h-[400px] rounded-md shadow-lg object-cover"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Section 4 */}
-      <div className="w-full h-[100vh] bg-white ">
-        <h1 className="text-5xl text-center mt-12 font-medium">Get to Know Us</h1>
-        <div className="w-full h-full flex flex-row">
-          {/* Left: Text Content */}
-          <div className="w-1/2 pr-6 ml-14 flex flex-col justify-center">
-            <p className="text-lg leading-relaxed">
-              In today’s dynamic and challenging financial environment, choosing the right path <br />
-              is essential for long-term business success. At Sprout Partners, we understand <br />
-              the importance of tailored guidance and expert advice to help you stay ahead.
-            </p>
-            <p className="mt-4 text-lg leading-relaxed">
-              Our team excels in providing strategic advice, financial restructuring, forensic <br />
-              analysis, and developing advanced financial models customized for various <br />
-              industries. With 75 years of collective experience, we provide the knowledge, <br />
-              insight, and strategic acumen needed to confidently navigate complexities and <br />
-              seize opportunities.
-            </p>
-            <button className="bg-white border mt-6 border-black rounded-full px-0 py-2 transition-transform duration-300 hover:-translate-y-2">Read More</button>
-          </div>
-
-          {/* Right: Image */}
-          <div className="w-1/2 flex items-center justify-center">
-            <div className="relative">
-              <img
-                src="/images/pic3.jpg"
-                alt="Financial strategy illustration"
-                className="max-w-full h-auto rounded-lg"
-              />
-
-              {/* Quote */}
-              <div className="absolute bottom-20 right-[-40px] bg-white bg-opacity-70 text-black text-lg font-serif p-3 rounded-md whitespace-nowrap">
-                <p>
-                  “We don’t have to be smarter than the rest. We have
-                </p>
-                <p>
-                  to be more disciplined than the rest”
-                </p>
-                <p className="mt-1 text-right text-xs">– Warren Buffett</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
 
       {/* Section 5 – Our Services */}
       <section id="services" className="w-full bg-gray-100 py-20">

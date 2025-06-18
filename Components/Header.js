@@ -1,11 +1,12 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const Header = () => {
   const pathname = usePathname();
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <header className="bg-white text-white p-4">
@@ -15,8 +16,8 @@ const Header = () => {
           <img src="/images/pic2.jpg" alt="Logo" className="h-24 w-44" />
         </div>
 
-        <ul className="flex space-x-8 mr-56 text-xl font-medium">
-          {/* Home */}
+        {/* Desktop Menu */}
+        <ul className="hidden md:flex space-x-8 mr-56 text-xl font-medium">
           <li>
             <Link
               href="/"
@@ -24,14 +25,11 @@ const Header = () => {
             >
               Home
               <span
-                className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300
-                  ${pathname === '/' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}
-                `}
+                className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
+                ${pathname === '/' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
               />
             </Link>
           </li>
-
-          {/* About */}
           <li>
             <Link
               href="/about"
@@ -39,29 +37,23 @@ const Header = () => {
             >
               About
               <span
-                className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300
-                  ${pathname === '/about' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}
-                `}
+                className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
+                ${pathname === '/about' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
               />
             </Link>
           </li>
-
-          {/* Research */}
           <li>
             <Link
-              href="/research"
-              className={`relative group ${pathname === '/research' ? 'text-black' : 'text-black'}`}
+              href="/Research"
+              className={`relative group ${pathname === '/Research' ? 'text-black' : 'text-black'}`}
             >
               Research
               <span
-                className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300
-                  ${pathname === '/research' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}
-                `}
+                className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
+                ${pathname === '/Research' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
               />
             </Link>
           </li>
-
-          {/* Insights */}
           <li>
             <Link
               href="/insights"
@@ -69,14 +61,11 @@ const Header = () => {
             >
               Insights
               <span
-                className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300
-                  ${pathname === '/insights' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}
-                `}
+                className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
+                ${pathname === '/insights' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
               />
             </Link>
           </li>
-
-          {/* Contact */}
           <li>
             <Link
               href="/contact"
@@ -84,14 +73,89 @@ const Header = () => {
             >
               Contact
               <span
-                className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300
-                  ${pathname === '/contact' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}
-                `}
+                className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
+                ${pathname === '/contact' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
               />
             </Link>
           </li>
         </ul>
+
+        {/* Mobile Menu Toggle Button */}
+        <div className="md:hidden pr-4">
+          <button onClick={() => setMenuOpen(!menuOpen)}>
+            {menuOpen ? (
+              <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            ) : (
+              <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            )}
+          </button>
+        </div>
       </nav>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="md:hidden px-6 pb-6 space-y-4 text-xl font-medium text-black">
+          <div>
+            <Link href="/" onClick={() => setMenuOpen(false)}>
+              <div className="relative group">
+                Home
+                <span
+                  className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
+                  ${pathname === '/' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+                />
+              </div>
+            </Link>
+          </div>
+          <div>
+            <Link href="/about" onClick={() => setMenuOpen(false)}>
+              <div className="relative group">
+                About
+                <span
+                  className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
+                  ${pathname === '/about' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+                />
+              </div>
+            </Link>
+          </div>
+          <div>
+            <Link href="/Research" onClick={() => setMenuOpen(false)}>
+              <div className="relative group">
+                Research
+                <span
+                  className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
+                  ${pathname === '/Research' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+                />
+              </div>
+            </Link>
+          </div>
+          <div>
+            <Link href="/insights" onClick={() => setMenuOpen(false)}>
+              <div className="relative group">
+                Insights
+                <span
+                  className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
+                  ${pathname === '/insights' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+                />
+              </div>
+            </Link>
+          </div>
+          <div>
+            <Link href="/contact" onClick={() => setMenuOpen(false)}>
+              <div className="relative group">
+                Contact
+                <span
+                  className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
+                  ${pathname === '/contact' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+                />
+              </div>
+            </Link>
+          </div>
+        </div>
+      )}
     </header>
   );
 };
