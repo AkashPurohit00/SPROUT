@@ -1,12 +1,31 @@
 'use client'
 
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const Header = () => {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+  const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
+  const dropdownRef = useRef(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+        setAboutDropdownOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, []);
+
+  const isAboutActive = pathname.startsWith('/about');
 
   return (
     <header className="bg-white text-white p-4">
@@ -30,19 +49,53 @@ const Header = () => {
               />
             </Link>
           </li>
-          <li>
-            <Link
-              href="/about"
-              className={`relative group ${pathname === '/about' ? 'text-black' : 'text-black'}`}
+
+          {/* About Dropdown */}
+          <li className="relative" ref={dropdownRef}>
+            <button
+              onClick={() => setAboutDropdownOpen(!aboutDropdownOpen)}
+              className={`relative group flex items-center ${isAboutActive ? 'text-black' : 'text-black'}`}
             >
               About
+              <svg
+                className={`ml-1 w-4 h-4 transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
               <span
                 className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
-                ${pathname === '/about' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+                ${isAboutActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
               />
-            </Link>
+            </button>
+
+            {/* Desktop Dropdown Menu  our team and our services */}
+            {aboutDropdownOpen && (
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                <div className="py-2">
+                  <Link
+                    href="/about/our-team"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200"
+                    onClick={() => setAboutDropdownOpen(false)}
+                  >
+                    Our Team
+                  </Link>
+                  <Link
+                    href="/about/our-services"
+                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200"
+                    onClick={() => setAboutDropdownOpen(false)}
+                  >
+                    Our Services
+                  </Link>
+                </div>
+              </div>
+            )}
           </li>
+
           <li>
+            {/* Research Link */}
             <Link
               href="/Research"
               className={`relative group ${pathname === '/Research' ? 'text-black' : 'text-black'}`}
@@ -54,6 +107,7 @@ const Header = () => {
               />
             </Link>
           </li>
+           {/* Insights Link */}
           <li>
             <Link
               href="/Insights"
@@ -62,10 +116,11 @@ const Header = () => {
               Insights
               <span
                 className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
-                ${pathname === '/insights' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+                ${pathname === '/Insights' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
               />
             </Link>
           </li>
+          {/* Contact Link */}
           <li>
             <Link
               href="/Contact"
@@ -99,6 +154,7 @@ const Header = () => {
       {/* Mobile Menu */}
       {menuOpen && (
         <div className="md:hidden px-6 pb-6 space-y-4 text-xl font-medium text-black">
+          {/* Mobile Home Link */}
           <div>
             <Link href="/" onClick={() => setMenuOpen(false)}>
               <div className="relative group">
@@ -110,17 +166,46 @@ const Header = () => {
               </div>
             </Link>
           </div>
+
+          {/* Mobile About Dropdown */}
           <div>
-            <Link href="/about" onClick={() => setMenuOpen(false)}>
-              <div className="relative group">
-                About
-                <span
-                  className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
-                  ${pathname === '/about' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
-                />
+            <button
+              onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+              className="flex items-center w-full text-left relative group"
+            >
+              About
+              <svg
+                className={`ml-1 w-4 h-4 transition-transform duration-200 ${mobileAboutOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+              <span
+                className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
+                ${isAboutActive ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+              />
+            </button>
+
+            {/* Mobile About Submenu */}
+            {mobileAboutOpen && (
+              <div className="ml-4 mt-2 space-y-2">
+                <Link href="/about/our-team" onClick={() => { setMenuOpen(false); setMobileAboutOpen(false); }}>
+                  <div className="text-gray-600 hover:text-black transition-colors">
+                    Our Team
+                  </div>
+                </Link>
+                <Link href="/about/our-services" onClick={() => { setMenuOpen(false); setMobileAboutOpen(false); }}>
+                  <div className="text-gray-600 hover:text-black transition-colors">
+                    Our Services
+                  </div>
+                </Link>
               </div>
-            </Link>
+            )}
           </div>
+
+          {/* Research, s */}
           <div>
             <Link href="/Research" onClick={() => setMenuOpen(false)}>
               <div className="relative group">
@@ -132,24 +217,26 @@ const Header = () => {
               </div>
             </Link>
           </div>
+          {/* Insights Link */}
           <div>
-            <Link href="/insights" onClick={() => setMenuOpen(false)}>
+            <Link href="/Insights" onClick={() => setMenuOpen(false)}>
               <div className="relative group">
                 Insights
                 <span
                   className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
-                  ${pathname === '/insights' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+                  ${pathname === '/Insights' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
                 />
               </div>
             </Link>
           </div>
+          {/* Contact Link */}
           <div>
-            <Link href="/contact" onClick={() => setMenuOpen(false)}>
+            <Link href="/Contact" onClick={() => setMenuOpen(false)}>
               <div className="relative group">
                 Contact
                 <span
                   className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
-                  ${pathname === '/contact' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+                  ${pathname === '/Contact' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
                 />
               </div>
             </Link>
