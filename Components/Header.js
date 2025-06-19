@@ -68,13 +68,13 @@ const Header = () => {
           </li>
           <li>
             <Link
-              href="/contact"
-              className={`relative group ${pathname === '/contact' ? 'text-black' : 'text-black'}`}
+              href="/Contact"
+              className={`relative group ${pathname === '/Contact' ? 'text-black' : 'text-black'}`}
             >
               Contact
               <span
                 className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
-                ${pathname === '/contact' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+                ${pathname === '/Contact' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
               />
             </Link>
           </li>

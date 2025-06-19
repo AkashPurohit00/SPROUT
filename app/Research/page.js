@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'next/link'
 import Header from '@/Components/Header'
 import Footer from '@/Components/Footer'
 import Image from 'next/image';
@@ -254,6 +255,7 @@ const page = () => {
     </div>
   </div>
 </div>
+{/* Section 5 with Research Reports */}
 <div className="bg-white w-full min-h-screen py-16 px-6 sm:px-12 lg:px-24">
   <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-12">
     Sprout Research Reports
@@ -261,110 +263,181 @@ const page = () => {
 
   <div className="flex flex-col ">
     {/* Report 1 */}
-    <div className="bg-gray-100 p-6 rounded-lg border-b border-b-black shadow hover:shadow-lg transition flex items-start space-x-6">
-      <img src="/logos/logo1.png" alt="Logo 1" className="h-12" />
+    <div className="bg-white p-6 rounded-lg border border-black shadow transition flex-col flex items-start space-x-6 min-h-[400px] ">
+      <img src="/images/pic2.jpg" alt="Logo 1" className="h-28" />
       <div>
-        <h2 className="text-xl font-semibold mb-2">Equity Market Outlook</h2>
-        <p className="text-gray-600 text-sm">An overview of expected equity trends for Q3 2025, highlighting sector rotations and valuations.</p>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">KEY MARITIME ANCILLARY PLAYER </h2>
+        <p className="text-gray-600 text-sm">Unearthing the Depths…</p>
+            <div className=" sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+            <p>Executive Summary</p>
+            <p>The company, commanding over 80% of its market, enjoys robust revenue visibility backed by a healthy pipeline of contracts. With a massive market opportunity <br/>
+                projected over the next decade, and strategic support from Maritime India Vision 2030, the company is poised for sustained growth.</p>
+                <p>To support this growth…</p>
+                 <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
       </div>
     </div>
 
     {/* Report 2 */}
-    <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition flex items-start space-x-6">
-      <img src="/logos/logo2.png" alt="Logo 2" className="h-12" />
+    <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px]  ">
+      <img src="/images/pic2.jpg" alt="Logo 2" className="h-28" />
       <div>
-        <h2 className="text-xl font-semibold mb-2">Debt Market Analysis</h2>
-        <p className="text-gray-600 text-sm">Interest rate movements, RBI policy impacts, and corporate bond dynamics covered here.</p>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">A MICROFINANCE PLAYER</h2>
+        <p className="text-gray-600 text-sm">Emerging Stronger from a Period of Stress…</p>
+            <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+            <p>Executive Summary</p>
+            <p>The microfinance (MFI) sector is witnessing early signs of recovery, underpinned by improved collections and reduced borrower stress. Recent rate cuts and <br/>
+                enhanced liquidity measures by the RBI have played a pivotal role in fostering a more resilient lending environment. These macroeconomic tailwinds have<br/>
+                 alleviated pressure on borrowers, driving stabilization in the sector and setting the stage for a potential rebound in asset quality and profitability…</p>
+                  <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
       </div>
     </div>
 
     {/* Report 3 */}
-    <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition flex items-start space-x-6">
-      <img src="/logos/logo3.png" alt="Logo 3" className="h-12" />
+    <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
+      <img src="/images/pic2.jpg" alt="Logo 3" className="h-28" />
       <div>
-        <h2 className="text-xl font-semibold mb-2">Commodities Insight</h2>
-        <p className="text-gray-600 text-sm">In-depth view on gold, crude oil, and agri-commodities performance and projections.</p>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">ELECTRIFYING INDIA</h2>
+        <p className="text-gray-600 text-sm">Capitalizing on Transmission & Distribution Growth</p>
+            <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+        <p>Executive Summary</p>
+        <p>Expanding transmission networks and grid interconnectivity is key to stabilizing renewable energy. While electrification is the future, progress is hindered by <br/>
+            technological, economic, and political challenges. Governments and MNCs are investing heavily in greener grids and advanced transmission technologies,<br/>
+             making electricity transmission the biggest beneficiary of the global energy shift.</p>
+             <p>India’s transmission sector has…</p>
+              <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
       </div>
     </div>
 
     {/* Report 4 */}
-    <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition flex items-start space-x-6">
-      <img src="/logos/logo4.png" alt="Logo 4" className="h-12" />
+    <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
+      <img src="/images/pic2.jpg" alt="Logo 4" className="h-28" />
       <div>
-        <h2 className="text-xl font-semibold mb-2">Tech Sector Trends</h2>
-        <p className="text-gray-600 text-sm">Analysis of emerging technologies, earnings, and innovation across tech companies.</p>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">CASH FLOWS AT THE CORE</h2>
+        <p className="text-gray-600 text-sm">Comfortable valuations for stable cashflows</p>
+            <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+            <p>Executive Summary</p>
+            <p>As uncertainty clouds the market, attempts to predict its bottom have left most observers as uncertain as anyone else. Expectations for the Union Budget 2025<br/>
+                 remain subdued, with little clarity on critical issues such as Trump tariffs on India, potential rate cuts, currency stabilization, or the trajectory of foreign money<br/>
+                  flows.</p>
+            <p>Amid this uncertainty, it’s…</p>
+             <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
       </div>
     </div>
 
     {/* Report 5 */}
-    <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition flex items-start space-x-6">
-      <img src="/logos/logo5.png" alt="Logo 5" className="h-12" />
+    <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
+      <img src="/images/pic2.jpg" alt="Logo 5" className="h-28" />
       <div>
-        <h2 className="text-xl font-semibold mb-2">Banking Sector Pulse</h2>
-        <p className="text-gray-600 text-sm">Credit growth, NPAs, and fintech disruptions reshaping traditional banking models.</p>
+        <h2 className="ttext-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">FINANCIAL SERVICES PLAYER</h2>
+        <p className="text-gray-600 text-sm">Re-rating candidate post amalgamation</p>
+            <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+            <p>Executive Summary</p>
+            <p>The company is a comprehensive financial services platform offering loans, investments, insurance, and payments through its subsidiaries and joint ventures.<br/>
+                 The company’s NBFC arm ranks among the top private sector NBFCs, while its other key businesses include housing finance, life insurance (JV), and asset<br/>
+                  management.</p>
+                   <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
       </div>
     </div>
 
     {/* Report 6 */}
-    <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition flex items-start space-x-6">
-      <img src="/logos/logo6.png" alt="Logo 6" className="h-12" />
+    <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
+      <img src="/images/pic2.jpg" alt="Logo 6" className="h-28" />
       <div>
-        <h2 className="text-xl font-semibold mb-2">Startups & VC Watch</h2>
-        <p className="text-gray-600 text-sm">Tracking high-potential startups, funding rounds, and investor sentiment.</p>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">A QUALITY CEMENT COMPANY</h2>
+        <p className="text-gray-600 text-sm">Green in the grey…</p>
+            <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+            <p>Executive Summary</p>
+            <p>The quality cement company, backed by a strong group, has a capacity of 4.40 MTPA. Though constituting less than 1% of India’s total cement capacity, it stands<br/>
+            out as a compelling investment opportunity for the following three key reasons…</p>
+             <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
       </div>
     </div>
 
     {/* Report 7 */}
-    <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition flex items-start space-x-6">
-      <img src="/logos/logo7.png" alt="Logo 7" className="h-12" />
+    <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
+      <img src="/images/pic2.jpg" alt="Logo 7" className="h-28" />
       <div>
-        <h2 className="text-xl font-semibold mb-2">Global Economy Digest</h2>
-        <p className="text-gray-600 text-sm">Macroeconomic updates, geopolitical risks, and their implications on global trade.</p>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">PREMIUM LUBRICANT PLAYER</h2>
+        <p className="text-gray-600 text-sm">Strong and Stable Cash flows …</p>
+            <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+            <p>Executive Summary</p>
+            <p>The company stands as a premier investment opportunity in the lubricants sector, fortified by its strong parentage and an enduring legacy of market leadership.<br/>
+            Over the decade from 2013 to 2023, the company showcased consistent growth, achieving a revenue CAGR of 4.7% and profit CAGR of 5.4%…</p>
+             <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
       </div>
     </div>
 
     {/* Report 8 */}
-    <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition flex items-start space-x-6">
-      <img src="/logos/logo8.png" alt="Logo 8" className="h-12" />
+    <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black  min-h-[400px] ">
+      <img src="/images/pic2.jpg" alt="Logo 8" className="h-28" />
       <div>
-        <h2 className="text-xl font-semibold mb-2">IPO Watch</h2>
-        <p className="text-gray-600 text-sm">All you need to know about recent and upcoming IPOs — valuation, sentiment, and performance.</p>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">THEMATIC IDEA</h2>
+        <p className="text-gray-600 text-sm">Atomization of Clean Energy…</p>
+            <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+            <p>Executive Summary</p>
+            <p>rillions of dollars are being funnelled into greening global supply chains, marking the most transformative shift since the coal revolution of the 19th century.<br/>
+             While this transition will be complex and gradual, significant progress is underway in renewable energy, electric batteries, and advanced nuclear technologies.<br/>
+             Key milestones include the planned 2028 revival of the Three Mile Island nuclear plant….
+            </p>
+             <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
       </div>
     </div>
 
     {/* Report 9 */}
-    <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition flex items-start space-x-6">
-      <img src="/logos/logo9.png" alt="Logo 9" className="h-12" />
+    <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
+      <img src="/images/pic2.jpg" alt="Logo 9" className="h-28" />
       <div>
-        <h2 className="text-xl font-semibold mb-2">ESG & Impact Investing</h2>
-        <p className="text-gray-600 text-sm">Reports on sustainable and responsible investing, with a focus on ESG metrics.</p>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">LEADING BITUMEN AND LOGISTICS PLAYER</h2>
+        <p className="text-gray-600 text-sm">Embarking on a Long Voyage…</p>
+            <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+            <p>Executive Summary</p>
+            <p>The company is a leading supplier of bitumen products and provides logistics services for Liquefied Petroleum Gas (LPG) and bituminous products. Through its<br/>
+                UAE-based 100% subsidiary, the company has also expanded into the ship operating….
+            </p>
+             <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
       </div>
     </div>
 
     {/* Report 10 */}
-    <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition flex items-start space-x-6">
-      <img src="/logos/logo10.png" alt="Logo 10" className="h-12" />
+    <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
+      <img src="/images/pic2.jpg" alt="Logo 10" className="h-28" />
       <div>
-        <h2 className="text-xl font-semibold mb-2">Currency Markets</h2>
-        <p className="text-gray-600 text-sm">USD/INR, Euro, Yen — exchange rate trends and how they impact international trade.</p>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">A REGIONAL HOSPITAL PLAYER</h2>
+        <p className="text-gray-600 text-sm">Compelling Valuations amidst Expansion …</p>
+            <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+        <p>Executive Summary</p>
+        <p>The company, a Coimbatore-based hospital chain, is embarking on significant expansion, combining brownfield and greenfield projects. This expansion will boost <br/>
+            its total bed capacity from….</p>
+             <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
       </div>
     </div>
 
     {/* Report 11 */}
-    <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition flex items-start space-x-6">
-      <img src="/logos/logo11.png" alt="Logo 11" className="h-12" />
+    <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
+      <img src="/images/pic2.jpg" alt="Logo 11" className="h-28" />
       <div>
-        <h2 className="text-xl font-semibold mb-2">Insurance Sector Outlook</h2>
-        <p className="text-gray-600 text-sm">Growth prospects, policy innovations, and changes in consumer behavior post-pandemic.</p>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">LIKELY TURNAROUND IN REAL ESTATE AND HOSPITALITY</h2>
+        <p className="text-gray-600 text-sm">Land aggregator coming out of woods…</p>
+        <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+        <p>Executive Summary</p>
+        <p>The company faced significant challenges during the last decade but has since made considerable progress in overcoming this difficult phase. For the last 2<br/>
+             years, the company has been actively cleansing its balance sheet and improving corporate governance and disclosure practices.  Further, successful one-time….</p>
+              <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
+
       </div>
     </div>
 
     {/* Report 12 */}
-    <div className="bg-gray-100 p-6 rounded-lg shadow hover:shadow-lg transition flex items-start space-x-6">
-      <img src="/logos/logo12.png" alt="Logo 12" className="h-12" />
+    <div className="bg-white p-6 rounded-lg shadow transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
+      <img src="/images/pic2.jpg" alt="Logo 12" className="h-28" />
       <div>
-        <h2 className="text-xl font-semibold mb-2">Real Estate Report</h2>
-        <p className="text-gray-600 text-sm">Residential and commercial property trends, REITs, and infrastructure investments.</p>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">CHEMICAL PLAYER WITH VISIBILITY AND TURNAROUND</h2>
+        <p className="text-gray-600 text-lg">Turns around with visibility in greenshoots…</p>
+            <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+        <p>Executive Summary</p>
+        <p>The company has faced significant challenges in the past, including difficulties recovering from the NSEL commodity financing crisis, high leverage, and issues
+             with capital misallocation. However, we believe these challenges are now largely behind them…</p>
+             <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
       </div>
     </div>
   </div>
