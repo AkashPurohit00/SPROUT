@@ -62,7 +62,7 @@ const Header = () => {
               Insights
               <span
                 className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
-                ${pathname === '/insights' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+                ${pathname === '/Insights' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
               />
             </Link>
           </li>
@@ -111,7 +111,7 @@ const Header = () => {
             </Link>
           </div>
           <div>
-            <Link href="/about" onClick={() => setMenuOpen(false)}>
+            <Link href="/About" onClick={() => setMenuOpen(false)}>
               <div className="relative group">
                 About
                 <span
@@ -133,23 +133,23 @@ const Header = () => {
             </Link>
           </div>
           <div>
-            <Link href="/insights" onClick={() => setMenuOpen(false)}>
+            <Link href="/Insights" onClick={() => setMenuOpen(false)}>
               <div className="relative group">
                 Insights
                 <span
                   className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
-                  ${pathname === '/insights' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+                  ${pathname === '/Insights' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
                 />
               </div>
             </Link>
           </div>
           <div>
-            <Link href="/contact" onClick={() => setMenuOpen(false)}>
+            <Link href="/Contact" onClick={() => setMenuOpen(false)}>
               <div className="relative group">
                 Contact
                 <span
                   className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
-                  ${pathname === '/contact' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+                  ${pathname === '/Contact' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
                 />
               </div>
             </Link>
