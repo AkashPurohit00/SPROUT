@@ -60,35 +60,35 @@ const page = () => {
    </div>
  </div>
 {/* Section 2 with Image and Text */}
- <div className="min-h-screen w-full bg-white py-16 px-6 sm:px-12 lg:px-24 text-center">
- 
+ <div className="min-h-screen w-full bg-white py-8 sm:py-16 px-4 sm:px-6 lg:px-12 xl:px-24 text-center">
   <div className="relative max-w-[1920px] mx-auto mb-8">
-  <Image
-    src="/images/rmage7.png"
-    alt="Section 2 Image"
-    width={1920}
-    height={600}
-    className="w-full h-auto rounded-lg object-cover"
-    priority
-  />
+    <Image
+      src="/images/rmage7.png"
+      alt="Section 2 Image"
+      width={1920}
+      height={600}
+      className="w-full h-auto rounded-lg object-cover"
+      priority
+    />
 
-  {/* Bottom-right overlay content */}
-  <div className="absolute inset-0 flex flex-col justify-end items-end p-4 sm:p-6 lg:p-10 z-10">
-    <div className=" p-4 rounded-md max-w-3xl">
-      {/* Heading aligned to right */}
-      <h2 className="text-black text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold mb-6 text-left">
-        Sprout Research: Cultivating Superior<br/> Investment Opportunities
-      </h2>
+    {/* Overlay content with improved mobile responsiveness */}
+    <div className="absolute inset-0 flex flex-col justify-end items-end z-10">
+      <div className="w-full sm:w-auto max-w-full sm:max-w-lg md:max-w-2xl lg:max-w-3xl xl:max-w-4xl p-3 sm:p-4 md:p-6 lg:p-8 xl:p-10 sm:mr-4 md:mr-6 lg:mr-[-20px]  xl:mr-[-20px] ">
+        {/* Responsive heading */}
+        <h2 className="text-black text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 text-left leading-tight">
+          Sprout Research: Cultivating Superior<br className="hidden sm:block" />
+          <span className="sm:hidden"> </span>Investment Opportunities
+        </h2>
 
-      {/* Paragraph wraps from left */}
-      <p className="text-sm sm:text-base md:text-lg text-gray-600 text-left">
-        Sprout Research, an associate of Sprout Partners Pvt Ltd, collaborates with Trudence Capital Advisory Pvt Ltd,
-        a SEBI-registered Corporate Research Advisor. This collaboration offers stock recommendations founded on
-        comprehensive fundamental analysis and forensic financial examination.
-      </p>
+        {/* Responsive paragraph */}
+        <p className="text-xs sm:text-sm md:text-base lg:text-lg text-gray-600 text-left leading-relaxed">
+          Sprout Research, an associate of Sprout Partners Pvt Ltd, collaborates with Trudence Capital Advisory Pvt Ltd,
+          a SEBI-registered Corporate Research Advisor. This collaboration offers stock recommendations founded on
+          comprehensive fundamental analysis and forensic financial examination.
+        </p>
+      </div>
     </div>
   </div>
-</div>
 </div>
 {/*section 3  */}
 <section id="about" className=" bg-white w-full min-h-screen mt-[-40px]">
