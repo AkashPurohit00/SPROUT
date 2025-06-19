@@ -56,8 +56,8 @@ const Header = () => {
           </li>
           <li>
             <Link
-              href="/insights"
-              className={`relative group ${pathname === '/insights' ? 'text-black' : 'text-black'}`}
+              href="/Insights"
+              className={`relative group ${pathname === '/Insights' ? 'text-black' : 'text-black'}`}
             >
               Insights
               <span

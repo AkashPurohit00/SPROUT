@@ -86,7 +86,7 @@ const Footer = () => {
                 </li>
                 <li>
                   <a
-                    href="#insights"
+                    href="#Insights"
                     className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
                   >
                     Insights
