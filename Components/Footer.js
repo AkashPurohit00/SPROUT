@@ -144,7 +144,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="#adminPanel"
+                  href="/admin/Insights"
                   className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
                 >
                   Admin Panel

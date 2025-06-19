@@ -117,7 +117,6 @@ const Header = () => {
               <span
                 className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
                 ${pathname === '/Insights' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
-                ${pathname === '/Insights' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
               />
             </Link>
           </li>
@@ -178,7 +177,7 @@ const Header = () => {
                   ${pathname === '/about' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
                 />
               </div>
-            )}
+            </Link>
           </div>
 
           {/* Research, s */}
