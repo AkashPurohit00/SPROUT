@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { addInsight } from '@/app/admin/Insights/insightsService'; // Adjust the import path as needed
+import { addInsight } from '@/lib/insightsService'; // Adjust the import path as needed
 
 export default function AdminInsights() {
   const [formData, setFormData] = useState({

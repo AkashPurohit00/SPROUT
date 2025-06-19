@@ -90,10 +90,11 @@ export default function Page() {
           </div>
         </div>
       </div>
+      
       {/*location of the comapny*/}
-    <div className='min-h-screen flex flex-col items-center mb-[-10px] sm:mb-[-20px] lg:mb-[-80px]'>
-  <h1 className='text-3xl sm:text-3xl md:text-4xl lg:text-5xl text-center font-bold'>Our Location</h1>
-  <div className="pt-16 w-full max-w-[1400px] px-4 sm:px-6 lg:px-0">
+    <div className='pt-16 min-h-screen flex flex-col items-center mb-[-10px] sm:mb-[-20px] lg:mb-[-80px]'>
+  <h1 className='text-3xl pt-40px sm:text-3xl md:text-4xl lg:text-5xl text-center font-bold'>Our Location</h1>
+  <div className="pt-10 w-full h-[700px] max-w-[1000px] px-4 sm:px-6 lg:px-0">
     <iframe
       src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.927846691444!2d77.2378744751996!3d28.541888388191754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3d53fffffff%3A0xda321c128846ffae!2sIndure%20House%20(savex%20technologies%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1750328431513!5m2!1sen!2sin"
       className="w-full h-[700px] sm:h-[700px] lg:h-[500px]"

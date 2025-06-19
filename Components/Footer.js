@@ -1,4 +1,5 @@
 import React from 'react';
+import Link from 'next/link';
 
 const Footer = () => {
   return (
@@ -107,12 +108,10 @@ const Footer = () => {
                 </li> 
                 {/* Admin Panel Link (if applicable) */}
                  <li>
-                  <a
-                    href="#adminPanel"
-                    className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
-                  >
+                  <Link className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
+                    href="/admin/Insights" passHref>
                     Admin Panel
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </div>
