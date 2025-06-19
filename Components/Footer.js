@@ -60,14 +60,16 @@ const Footer = () => {
                 Navigation
               </h3>
               <ul className="space-y-2">
+                {/* Home Link */}
                 <li>
                   <a
-                    href="#home"
+                    href="/"
                     className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
                   >
                     Home
                   </a>
                 </li>
+                {/* About Link */}
                 <li>
                   <a
                     href="#about"
@@ -76,14 +78,16 @@ const Footer = () => {
                     About
                   </a>
                 </li>
+                {/* Research Link */}
                 <li>
                   <a
-                    href="#research"
+                    href="/Research"
                     className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
                   >
                     Research
                   </a>
                 </li>
+                {/* Insights Link */}
                 <li>
                   <a
                     href="#Insights"
@@ -92,12 +96,22 @@ const Footer = () => {
                     Insights
                   </a>
                 </li>
+                {/* Contact Link */}
                 <li>
                   <a
-                    href="#contact"
+                    href="/Contact"
                     className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
                   >
                     Contact
+                  </a>
+                </li> 
+                {/* Admin Panel Link (if applicable) */}
+                 <li>
+                  <a
+                    href="#adminPanel"
+                    className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
+                  >
+                    Admin Panel
                   </a>
                 </li>
               </ul>
