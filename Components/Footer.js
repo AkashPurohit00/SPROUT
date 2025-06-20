@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const Footer = () => {
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
@@ -27,10 +28,13 @@ const Footer = () => {
           {/* Logo and Description */}
           <div className="space-y-4">
             <div className="logo flex items-center">
-              <img
+              <Image
                 src="/images/pic2.jpg"
                 alt="Sprout Partners Logo"
+                width={192}
+                height={48}
                 className="h-12 w-auto"
+                priority
               />
             </div>
             <p className="text-gray-600 text-sm leading-relaxed">

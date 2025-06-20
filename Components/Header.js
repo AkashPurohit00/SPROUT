@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
@@ -32,7 +33,8 @@ const Header = () => {
       <nav className="container mx-auto flex justify-between items-center h-16">
         {/* Logo */}
         <div className="flex items-center ml-16 mb-4 space-x-3">
-          <img src="/images/pic2.jpg" alt="Logo" className="h-24 w-44" />
+          <Image src="/images/pic2.jpg" alt="Logo" width={176}  // equivalent to w-44 (44 * 4)
+  height={96} className="h-24 w-44" />
         </div>
 
         {/* Desktop Menu */}

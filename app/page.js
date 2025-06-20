@@ -256,26 +256,32 @@ export default function Home() {
 
       {/* Image and Quote */}
       <div className="relative flex justify-center items-center h-full">
-        {/* Image with Animation */}
-       <div className="rounded-lg w-full max-w-md overflow-hidden">
-  <img
-    src="/images/pic3.jpg"
-    alt="Financial Charts"
-    className="w-full h-auto object-cover "
-  />
-</div>
+  {/* Image with Animation */}
+  <div className="rounded-lg w-full max-w-md overflow-hidden">
+    <Image
+      src="/images/pic3.jpg"
+      alt="Financial Charts"
+      width={500}
+      height={300}
+      className="w-full h-auto object-cover"
+      style={{
+        width: '100%',
+        height: 'auto',
+      }}
+    />
+  </div>
 
-        {/* Quote with Dotted Border */}
-        <div className="absolute bottom-2 right-3.5 bg-white p-6 rounded-lg shadow-lg border-l-8 border-dotted border-purple-500 max-w-[400px]">
-          <p className="text-gray-700 italic text-lg">
-            "We don’t have to be smarter than the rest. We have to be more
-            disciplined than the rest"
-          </p>
-          <p className="text-gray-900 font-semibold mt-2 text-right">
-            – Warren Buffett
-          </p>
-        </div>
-      </div>
+  {/* Quote with Dotted Border */}
+  <div className="absolute bottom-2 right-3.5 bg-white p-6 rounded-lg shadow-lg border-l-8 border-dotted border-purple-500 max-w-[400px]">
+    <p className="text-gray-700 italic text-lg">
+      "We don't have to be smarter than the rest. We have to be more
+      disciplined than the rest"
+    </p>
+    <p className="text-gray-900 font-semibold mt-2 text-right">
+      – Warren Buffett
+    </p>
+  </div>
+</div>
     </div>
   </div>
 </section>
@@ -293,60 +299,72 @@ export default function Home() {
           </div>
 
           {/* Content Grid */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-            {/* Image */}
-            <div>
-              <img src="/images/pic1.jpg" alt="Our Process" className="w-full h-full object-cover rounded-lg shadow-md" />
-            </div>
 
-            {/* Service Steps */}
-            <div className="space-y-10">
-              {/* Step 1 */}
-              <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 transform hover:-translate-y-2 hover:bg-blue-100 hover:shadow-md">
-                <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center transition duration-300 hover:scale-110">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Research</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Comprehensive research on listed and unlisted companies, equipping businesses with actionable insights to make informed decisions.
-                  </p>
-                </div>
-              </div>
 
-              {/* Step 2 */}
-              <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 transform hover:-translate-y-2 hover:bg-blue-100 hover:shadow-md">
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center transition duration-300 hover:scale-110">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Fundraising Solutions</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Specialization in advising and facilitating strategic capital-raising solutions in both primary funding and secondary transaction opportunities.
-                  </p>
-                </div>
-              </div>
+<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+  {/* Image */}
+  <div>
+    <Image 
+      src="/images/pic1.jpg" 
+      alt="Our Process" 
+      width={600}
+      height={400}
+      className="w-full h-full object-cover rounded-lg shadow-md"
+      style={{
+        width: '100%',
+        height: '100%',
+      }}
+    />
+  </div>
 
-              {/* Step 3 */}
-              <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 transform hover:-translate-y-2 hover:bg-blue-100 hover:shadow-md">
-                <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center transition duration-300 hover:scale-110">
-                  <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-                  </svg>
-                </div>
-                <div>
-                  <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Advisory Services</h3>
-                  <p className="text-gray-600 leading-relaxed">
-                    Advisory services to help corporates optimize their financial and capital structures, and align their business models towards success.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+  {/* Service Steps */}
+  <div className="space-y-10">
+    {/* Step 1 */}
+    <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 transform hover:-translate-y-2 hover:bg-blue-100 hover:shadow-md">
+      <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center transition duration-300 hover:scale-110">
+        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+        </svg>
+      </div>
+      <div>
+        <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Research</h3>
+        <p className="text-gray-600 leading-relaxed">
+          Comprehensive research on listed and unlisted companies, equipping businesses with actionable insights to make informed decisions.
+        </p>
+      </div>
+    </div>
+
+    {/* Step 2 */}
+    <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 transform hover:-translate-y-2 hover:bg-blue-100 hover:shadow-md">
+      <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center transition duration-300 hover:scale-110">
+        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+        </svg>
+      </div>
+      <div>
+        <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Fundraising Solutions</h3>
+        <p className="text-gray-600 leading-relaxed">
+          Specialization in advising and facilitating strategic capital-raising solutions in both primary funding and secondary transaction opportunities.
+        </p>
+      </div>
+    </div>
+
+    {/* Step 3 */}
+    <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 transform hover:-translate-y-2 hover:bg-blue-100 hover:shadow-md">
+      <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center transition duration-300 hover:scale-110">
+        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
+        </svg>
+      </div>
+      <div>
+        <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Advisory Services</h3>
+        <p className="text-gray-600 leading-relaxed">
+          Advisory services to help corporates optimize their financial and capital structures, and align their business models towards success.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
       </section>
 

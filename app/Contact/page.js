@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 import Header from '@/Components/Header';
 import Footer from '@/Components/Footer';
 
@@ -9,9 +10,10 @@ export default function Page() {
       {/* Contact Page Content */}
       <div className="relative min-h-screen bg-amber-950">
         {/* Background Image */}
-        <img
+        <Image
           src="/images/pic1.jpg"
-          alt="Contact Us"
+          alt="Contact Us"  
+          fill
           className="w-full h-full object-cover absolute inset-0 z-0"
         />
 

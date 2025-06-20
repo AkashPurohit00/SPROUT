@@ -1,4 +1,3 @@
-
 import React from 'react'
 import Image from "next/image";
 import Header from '@/Components/Header'
@@ -41,10 +40,16 @@ const page = () => {
         {/* Right image area */}
         <div className="flex-1 max-w-md lg:max-w-lg">
           <div className="relative">
-            <img
+            <Image
               src="/images/tage.jpg"
               alt="Featured content"
+              width={500}
+              height={600}
               className="w-full h-auto rounded-2xl shadow-xl border-4 border-white/80"
+              style={{
+                width: '100%',
+                height: 'auto',
+              }}
             />
             {/* Optional overlay for the image */}
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -68,7 +73,7 @@ const page = () => {
       {/* Text Content */}
       <div className="space-y-6 flex flex-col justify-center h-full">
         <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-          In today’s dynamic and challenging financial environment, choosing the
+          In today's dynamic and challenging financial environment, choosing the
           right path is essential for long-term business success. At <span className='font-bold'>Sprout
           Partners</span>, we understand the importance of tailored guidance and expert
           advice to help you stay ahead.
@@ -87,17 +92,23 @@ const page = () => {
       <div className="relative flex justify-center items-center h-full">
         {/* Image with Animation */}
        <div className="rounded-lg w-full max-w-md overflow-hidden">
-  <img
+  <Image
     src="/images/pic3.jpg"
     alt="Financial Charts"
-    className="w-full h-auto object-cover "
+    width={500}
+    height={300}
+    className="w-full h-auto object-cover"
+    style={{
+      width: '100%',
+      height: 'auto',
+    }}
   />
 </div>
 
         {/* Quote with Dotted Border */}
         <div className="absolute bottom-2 right-3.5 bg-white p-6 rounded-lg shadow-lg border-l-8 border-dotted border-purple-500 max-w-[400px]">
           <p className="text-gray-700 italic text-lg">
-            "We don’t have to be smarter than the rest. We have to be more
+            "We don't have to be smarter than the rest. We have to be more
             disciplined than the rest"
           </p>
           <p className="text-gray-900 font-semibold mt-2 text-right">
@@ -117,10 +128,16 @@ const page = () => {
       {/* Image Section - 40% width */}
       <div className="w-full lg:w-[40%] relative flex justify-center lg:justify-start items-center h-full order-1 lg:-translate-x-12 lg:-translate-y-4 transition">
         <div className="rounded-lg w-full max-w-md overflow-hidden">
-          <img
+          <Image
             src="/images/tage2.png"
             alt="Financial Charts"
+            width={500}
+            height={400}
             className="w-full h-auto object-cover"
+            style={{
+              width: '100%',
+              height: 'auto',
+            }}
           />
         </div>
       </div>
@@ -159,10 +176,16 @@ const page = () => {
 
   {/* Member 1 */}
   <div className="bg-white px-8 py-10 shadow-xl hover:drop-shadow-[0_10px_15px_rgba(59,130,246,0.5)]  transition-all  duration-300 rounded-2xl flex flex-col items-center text-center min-h-[480px]">
-    <img
+    <Image
       src="/images/Shikha.png"
       alt="Shikha Kapur"
+      width={160}
+      height={160}
       className="w-40 h-40 object-cover rounded-xl border-[3px] border-gray-200 mb-4"
+      style={{
+        width: '160px',
+        height: '160px',
+      }}
     />
     <h3 className="text-2xl font-semibold mb-4">SHIKHA KAPUR</h3>
     <div className="flex gap-5 mb-4">
@@ -189,10 +212,16 @@ const page = () => {
 
   {/* Member 2 */}
   <div className="bg-white px-8 py-10 shadow-xl hover:drop-shadow-[0_10px_15px_rgba(59,130,246,0.5)]  transition-all  duration-300 rounded-2xl flex flex-col items-center text-center min-h-[480px]">
-    <img
+    <Image
       src="/images/Sanjay.png"
       alt="Sanjay Dutt"
+      width={160}
+      height={160}
       className="w-40 h-40 object-cover rounded-xl border-[3px] border-gray-200 mb-4"
+      style={{
+        width: '160px',
+        height: '160px',
+      }}
     />
     <h3 className="text-2xl font-semibold mb-4 uppercase">SANJAY DUTT</h3>
     <div className="flex gap-5 mb-4">
@@ -221,10 +250,16 @@ const page = () => {
 
   {/* Member 3 */}
   <div className="bg-white px-8 py-10 shadow-xl hover:shadow-2xl hover:drop-shadow-[0_10px_15px_rgba(59,130,246,0.5)]  transition-all  duration-300 rounded-2xl flex flex-col items-center text-center min-h-[480px]">
-    <img
+    <Image
       src="/images/Nitin.png"
       alt="Nitin Mangal"
+      width={160}
+      height={160}
       className="w-40 h-40 object-cover rounded-xl border-[3px] border-gray-200 mb-4"
+      style={{
+        width: '160px',
+        height: '160px',
+      }}
     />
     <h3 className="text-2xl font-semibold mb-2 uppercase">NITIN MANGAL</h3>
     <p className="text-blue-600 font-semibold text-sm mb-4 uppercase">CONSULTANT</p>
@@ -253,10 +288,16 @@ const page = () => {
 
   {/* Member 4 */}
   <div className="bg-white px-8 py-10 shadow-xl hover:drop-shadow-[0_10px_15px_rgba(59,130,246,0.5)]  transition-all duration-300 rounded-2xl flex flex-col items-center text-center min-h-[480px]">
-    <img
+    <Image
       src="/images/Manav.png"
       alt="Manav Khanna"
+      width={160}
+      height={160}
       className="w-40 h-40 object-cover rounded-xl border-[3px] border-gray-200 mb-4"
+      style={{
+        width: '160px',
+        height: '160px',
+      }}
     />
     <h3 className="text-2xl font-semibold mb-4">MANAV KHANNA </h3>
     <div className="flex gap-5 mb-4">
