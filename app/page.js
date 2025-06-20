@@ -370,7 +370,7 @@ export default function Home() {
     className="inline-flex items-center bg-white text-gray-700 px-6 py-3 rounded-full border border-gray-300 font-semibold text-lg hover:bg-gray-100 transition-all duration-300 hover:-translate-y-2 transition-transform"
   >
     Get Started
-    <svg
+    <svg 
       className="w-5 h-5 ml-2"
       fill="none"
       stroke="currentColor"
