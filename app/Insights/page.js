@@ -1,7 +1,6 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import Image from 'next/image';
 import Header from '@/Components/Header';
 import Footer from '@/Components/Footer';
 import { getInsights, incrementViewCount } from '@/lib/insightsService';
@@ -217,12 +216,12 @@ export default function InsightsPage() {
                 <div className="order-1 lg:order-2">
                   <div className="relative">
                     <div className="bg-white/20 backdrop-blur-sm rounded-2xl p-4 shadow-2xl">
-                      <Image
+                      <img
                         src={insights[0].heroImageUrl || insights[0].thumbnail}
                         alt={insights[0].title}
                         className="w-full h-64 sm:h-80 lg:h-96 object-cover rounded-xl shadow-lg"
                         onError={(e) => {
-                          e.target.src = "https://via.placeholder.com/800x500/0066cc/ffffff?text=Featured+Insight";
+                          e.target.src = "https://via.placeholder.com/400x250/0066cc/ffffff?text=Insight+Image";
                         }}
                       />
                     </div>

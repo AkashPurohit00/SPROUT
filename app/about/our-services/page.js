@@ -52,6 +52,7 @@ const Page = () => {
           alt="Background"
           fill
           className="object-cover object-top"
+          priority
         />
       
          <div className="absolute inset-0 flex items-center justify-center px-4 sm:px-8 lg:px-20 font-inter">
@@ -78,11 +79,11 @@ const Page = () => {
 
             <div className="w-full md:w-2xl h-60 flex justify-center md:justify-end pr-0 md:pr-8 mb-6 md:mb-0">
               <Image
-                src="/images/aboutserv1.jpg" // Placeholder image URL for the foreground
+                src="/images/aboutserv1.jpg"
                 alt="Optimizing Financial Structures"
+                width={320}
+                height={240}
                 className="w-full max-w-xs md:max-w-none h-auto object-cover rounded-xl shadow-lg"
-                onError={(e) => { e.target.onerror = null; e.target.src="/images/aboutserv1.jpg"; }}
-                // Fallback for image loading errors
               />
             </div>
 
@@ -127,10 +128,6 @@ const Page = () => {
                   alt="Research and Analytics"
                   fill
                   className="object-cover"
-                  onError={(e) => { 
-                    e.target.onerror = null; 
-                    e.target.src = "/images/aboutserv1.jpg"; 
-                  }}
                 />
                 {/* Overlay with glowing effect */}
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
@@ -222,13 +219,9 @@ const Page = () => {
               <div className="relative w-full h-60 sm:h-60 rounded-lg overflow-hidden shadow-lg">
                 <Image
                   src="/images/aboutserv3.png"
-                  alt="Research and Analytics"
+                  alt="Fundraising Solutions"
                   fill
                   className="object-cover"
-                  onError={(e) => { 
-                    e.target.onerror = null; 
-                    e.target.src = "/images/aboutserv3.png"; 
-                  }}
                 />
                 {/* Overlay with glowing effect */}
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
@@ -323,13 +316,9 @@ const Page = () => {
               <div className="relative w-full h-60 sm:h-60 rounded-lg overflow-hidden shadow-lg">
                 <Image
                   src="/images/aboutserv4.png"
-                  alt="Research and Analytics"
+                  alt="Advisory Services"
                   fill
                   className="object-cover"
-                  onError={(e) => { 
-                    e.target.onerror = null; 
-                    e.target.src = "/images/aboutserv4.png"; 
-                  }}
                 />
                 {/* Overlay with glowing effect */}
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
