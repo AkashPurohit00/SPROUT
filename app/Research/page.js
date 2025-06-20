@@ -273,7 +273,7 @@ const page = () => {
             <p>The company, commanding over 80% of its market, enjoys robust revenue visibility backed by a healthy pipeline of contracts. With a massive market opportunity <br/>
                 projected over the next decade, and strategic support from Maritime India Vision 2030, the company is poised for sustained growth.</p>
                 <p>To support this growth…</p>
-                 <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
+                 <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
       </div>
     </div>
 
@@ -288,7 +288,7 @@ const page = () => {
             <p>The microfinance (MFI) sector is witnessing early signs of recovery, underpinned by improved collections and reduced borrower stress. Recent rate cuts and <br/>
                 enhanced liquidity measures by the RBI have played a pivotal role in fostering a more resilient lending environment. These macroeconomic tailwinds have<br/>
                  alleviated pressure on borrowers, driving stabilization in the sector and setting the stage for a potential rebound in asset quality and profitability…</p>
-                  <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
+                  <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
       </div>
     </div>
 
@@ -304,7 +304,7 @@ const page = () => {
             technological, economic, and political challenges. Governments and MNCs are investing heavily in greener grids and advanced transmission technologies,<br/>
              making electricity transmission the biggest beneficiary of the global energy shift.</p>
              <p>India’s transmission sector has…</p>
-              <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
+              <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
       </div>
     </div>
 
@@ -320,7 +320,7 @@ const page = () => {
                  remain subdued, with little clarity on critical issues such as Trump tariffs on India, potential rate cuts, currency stabilization, or the trajectory of foreign money<br/>
                   flows.</p>
             <p>Amid this uncertainty, it’s…</p>
-             <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
+             <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
       </div>
     </div>
 
@@ -335,7 +335,7 @@ const page = () => {
             <p>The company is a comprehensive financial services platform offering loans, investments, insurance, and payments through its subsidiaries and joint ventures.<br/>
                  The company’s NBFC arm ranks among the top private sector NBFCs, while its other key businesses include housing finance, life insurance (JV), and asset<br/>
                   management.</p>
-                   <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
+                   <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
       </div>
     </div>
 
@@ -349,7 +349,7 @@ const page = () => {
             <p>Executive Summary</p>
             <p>The quality cement company, backed by a strong group, has a capacity of 4.40 MTPA. Though constituting less than 1% of India’s total cement capacity, it stands<br/>
             out as a compelling investment opportunity for the following three key reasons…</p>
-             <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
+             <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
       </div>
     </div>
 
@@ -363,7 +363,7 @@ const page = () => {
             <p>Executive Summary</p>
             <p>The company stands as a premier investment opportunity in the lubricants sector, fortified by its strong parentage and an enduring legacy of market leadership.<br/>
             Over the decade from 2013 to 2023, the company showcased consistent growth, achieving a revenue CAGR of 4.7% and profit CAGR of 5.4%…</p>
-             <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
+             <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
       </div>
     </div>
 
@@ -379,7 +379,7 @@ const page = () => {
              While this transition will be complex and gradual, significant progress is underway in renewable energy, electric batteries, and advanced nuclear technologies.<br/>
              Key milestones include the planned 2028 revival of the Three Mile Island nuclear plant….
             </p>
-             <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
+             <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
       </div>
     </div>
 
@@ -394,7 +394,7 @@ const page = () => {
             <p>The company is a leading supplier of bitumen products and provides logistics services for Liquefied Petroleum Gas (LPG) and bituminous products. Through its<br/>
                 UAE-based 100% subsidiary, the company has also expanded into the ship operating….
             </p>
-             <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
+             <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
       </div>
     </div>
 
@@ -408,7 +408,7 @@ const page = () => {
         <p>Executive Summary</p>
         <p>The company, a Coimbatore-based hospital chain, is embarking on significant expansion, combining brownfield and greenfield projects. This expansion will boost <br/>
             its total bed capacity from….</p>
-             <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
+             <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
       </div>
     </div>
 
@@ -422,7 +422,7 @@ const page = () => {
         <p>Executive Summary</p>
         <p>The company faced significant challenges during the last decade but has since made considerable progress in overcoming this difficult phase. For the last 2<br/>
              years, the company has been actively cleansing its balance sheet and improving corporate governance and disclosure practices.  Further, successful one-time….</p>
-              <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
+              <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
 
       </div>
     </div>
@@ -437,7 +437,7 @@ const page = () => {
         <p>Executive Summary</p>
         <p>The company has faced significant challenges in the past, including difficulties recovering from the NSEL commodity financing crisis, high leverage, and issues
              with capital misallocation. However, we believe these challenges are now largely behind them…</p>
-             <a href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</a>
+             <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
       </div>
     </div>
   </div>

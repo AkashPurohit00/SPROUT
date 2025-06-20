@@ -6,7 +6,7 @@ import Footer from '@/Components/Footer'
 import Image from "next/image";
 import { ChevronLeft, ChevronRight } from 'lucide-react'
 
-const page = () => {
+const Page = () => {
   // Carousel data - you can easily modify this to add more services
   const carouselData = [
     {
