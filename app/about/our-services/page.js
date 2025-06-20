@@ -77,7 +77,7 @@ const Page = () => {
             </div>
 
             <div className="w-full md:w-2xl h-60 flex justify-center md:justify-end pr-0 md:pr-8 mb-6 md:mb-0">
-              <img
+              <Image
                 src="/images/aboutserv1.jpg" // Placeholder image URL for the foreground
                 alt="Optimizing Financial Structures"
                 className="w-full max-w-xs md:max-w-none h-auto object-cover rounded-xl shadow-lg"
@@ -101,7 +101,7 @@ const Page = () => {
               OUR SERVICES
             </h2>
             <p className="text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto">
-              All-encompassing solutions for your business's financial journey
+              All-encompassing solutions for your business financial journey
             </p>
           </div>
 
@@ -399,4 +399,4 @@ const Page = () => {
   )
 }
 
-export default page
+export default Page
