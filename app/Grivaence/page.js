@@ -1,12 +1,12 @@
 'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
-//import PhoneInput from 'react-phone-input-2'
-//import 'react-phone-input-2/lib/style.css'
+import PhoneInput from 'react-phone-input-2'
+import 'react-phone-input-2/lib/style.css'
 import Header from '@/Components/Header'
 import Footer from '@/Components/Footer'
 
-const page = () => {
+const Page = () => {
     const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -351,7 +351,7 @@ const page = () => {
     <div>
       <label className="block text-sm font-medium mb-2">Phone</label>
       <PhoneInput
-        country={'in'}
+        country={'91'}
         value={formData.phone}
         onChange={handlePhoneChange}
         placeholder="Enter your phone number"
@@ -393,4 +393,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

@@ -3,7 +3,7 @@ import Header from '@/Components/Header'
 import Image from 'next/image'
 import Footer from '@/Components/Footer'
 
-const page = () => {
+const Page = () => {
   const months = [
     'May 2025', 'April 2025', 'March 2025', 'February 2025', 'January 2025',
     'December 2024', 'November 2024', 'October 2024', 'September 2024',
@@ -705,4 +705,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page
