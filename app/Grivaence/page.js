@@ -1,8 +1,8 @@
 'use client'
 import React, { useState } from 'react'
 import Image from 'next/image'
-import PhoneInput from 'react-phone-input-2'
-import 'react-phone-input-2/lib/style.css'
+//import PhoneInput from 'react-phone-input-2'
+//import 'react-phone-input-2/lib/style.css'
 import Header from '@/Components/Header'
 import Footer from '@/Components/Footer'
 
