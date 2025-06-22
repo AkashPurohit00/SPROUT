@@ -154,6 +154,38 @@ const Footer = () => {
                   Admin Panel
                 </a>
               </li>
+                <li>
+                <a
+                  href="/Charter"
+                  className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
+                >
+                 Investor Charter
+                </a>
+              </li>
+                <li>
+                <a
+                  href="/Grivaence"
+                  className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
+                >
+                Investor Grievaence
+                </a>
+              </li>
+                <li>
+                <a
+                  href="/Disclaimer"
+                  className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
+                >
+                Disclaimer
+                </a>
+              </li>
+                <li>
+                <a
+                  href="/Report"
+                  className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
+                >
+                Investor Grievaence Report 
+                </a>
+              </li>
             </ul>
           </div>
 
