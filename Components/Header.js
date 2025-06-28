@@ -9,6 +9,7 @@ const Header = () => {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
   const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -17,6 +18,7 @@ const Header = () => {
     const handleClickOutside = (event) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setAboutDropdownOpen(false);
+        setServicesDropdownOpen(false);
       }
     };
 
@@ -33,8 +35,7 @@ const Header = () => {
       <nav className="container mx-auto flex justify-between items-center h-16">
         {/* Logo */}
         <div className="flex items-center ml-16 mb-4 space-x-3">
-          <Image src="/images/pic2.jpg" alt="Logo" width={176}  // equivalent to w-44 (44 * 4)
-  height={96} className="h-24 w-44" />
+          <Image src="/images/pic2.jpg" alt="Logo" width={176} height={96} className="h-24 w-44" />
         </div>
 
         {/* Desktop Menu */}
@@ -52,13 +53,13 @@ const Header = () => {
             </Link>
           </li>
 
-          {/* About Dropdown */}
+          {/* Research Service Dropdown */}
           <li className="relative" ref={dropdownRef}>
             <button
               onClick={() => setAboutDropdownOpen(!aboutDropdownOpen)}
               className={`relative group flex items-center ${isAboutActive ? 'text-black' : 'text-black'}`}
             >
-              About
+              Research Services
               <svg
                 className={`ml-1 w-4 h-4 transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180' : ''}`}
                 fill="none"
@@ -73,42 +74,48 @@ const Header = () => {
               />
             </button>
 
-            {/* Desktop Dropdown Menu  our team and our services */}
+            {/* Desktop Dropdown Menu - Our Services with nested dropdown */}
             {aboutDropdownOpen && (
               <div className="absolute top-full left-0 mt-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50">
                 <div className="py-2">
-                  <Link
-                    href="/about/our-team"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200"
-                    onClick={() => setAboutDropdownOpen(false)}
-                  >
-                    Our Team
-                  </Link>
-                  <Link
-                    href="/about/our-services"
-                    className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200"
-                    onClick={() => setAboutDropdownOpen(false)}
-                  >
-                    Our Services
-                  </Link>
+                  <div className="relative">
+                    <Link
+                      href="/Rservice/Psg"
+                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200 flex items-center justify-between"
+                      onMouseEnter={() => setServicesDropdownOpen(true)}
+                      onMouseLeave={() => setServicesDropdownOpen(false)}
+                      onClick={() => {
+                        setAboutDropdownOpen(false);
+                        setServicesDropdownOpen(false);
+                      }}
+                    >
+                     Psg
+                      
+                    </Link>
+                     </div>
+                </div>
+                 <div className="py-2">
+                  <div className="relative">
+                    <Link
+                      href="/Rservice/Retail"
+                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200 flex items-center justify-between"
+                      onMouseEnter={() => setServicesDropdownOpen(true)}
+                      onMouseLeave={() => setServicesDropdownOpen(false)}
+                      onClick={() => {
+                        setAboutDropdownOpen(false);
+                        setServicesDropdownOpen(false);
+                      }}
+                    >
+                      Retail
+                      
+                    </Link>
+                     </div>
                 </div>
               </div>
             )}
           </li>
-
-          <li>
-            {/* Research Link */}
-            <Link
-              href="/Research"
-              className={`relative group ${pathname === '/Research' ? 'text-black' : 'text-black'}`}
-            >
-              Research
-              <span
-                className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
-                ${pathname === '/Research' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
-              />
-            </Link>
-          </li>
+ {/* Research Link */}
+          
            {/* Insights Link */}
           <li>
             <Link
@@ -171,29 +178,57 @@ const Header = () => {
 
           {/* Mobile About Dropdown */}
           <div>
-            <Link href="/about" onClick={() => setMenuOpen(false)}>
-              <div className="relative group">
-                About
+            <button
+              onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+              className="w-full text-left flex items-center  gap-2"
+            >
+              <div className="relative group ">
+                Research Services
                 <span
-                  className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
-                  ${pathname === '/about' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+                  className={`absolute bottom-0 left-0  w-full h-[2px] bg-black origin-right transition-transform duration-300 
+                  ${pathname.startsWith('/about') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
                 />
               </div>
-            </Link>
+              <svg
+                className={`w-4 h-4 transition-transform duration-200 ${mobileAboutOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+            
+            {/* Mobile Services Submenu */}
+            {mobileAboutOpen && (
+              <div className="mt-2 pl-4 space-y-2">
+                <Link 
+                  href="/Rservice/Psg" 
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setMobileAboutOpen(false);
+                  }}
+                  className="block text-lg font-medium text-gray-700 hover:text-black transition-colors duration-200"
+                >
+                 Psg
+                </Link>
+                <Link 
+                  href="/Rservice/Retail" 
+                  onClick={() => {
+                    setMenuOpen(false);
+                    setMobileAboutOpen(false);
+                  }}
+                  className="block text-lg font-medium text-gray-700 hover:text-black transition-colors duration-200"
+                >
+                 Retail
+                </Link>
+                
+              </div>
+            )}
           </div>
 
-          {/* Research, s */}
-          <div>
-            <Link href="/Research" onClick={() => setMenuOpen(false)}>
-              <div className="relative group">
-                Research
-                <span
-                  className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
-                  ${pathname === '/Research' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
-                />
-              </div>
-            </Link>
-          </div>
+          {/* Research */}
+        
           {/* Insights Link */}
           <div>
             <Link href="/Insights" onClick={() => setMenuOpen(false)}>

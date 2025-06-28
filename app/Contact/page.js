@@ -94,7 +94,7 @@ export default function Page() {
       </div>
       
       {/*location of the comapny*/}
-    <div className='pt-16 min-h-screen flex flex-col items-center mb-[-10px] sm:mb-[-20px] lg:mb-[-80px]'>
+    <div className='pt-16 min-h-screen flex flex-col items-center mb-10  sm:mb-10 lg:mb-[-80px]'>
   <h1 className='text-3xl pt-40px sm:text-3xl md:text-4xl lg:text-5xl text-center font-bold'>Our Location</h1>
   <div className="pt-10 w-full h-[700px] max-w-[1000px] px-4 sm:px-6 lg:px-0">
     <iframe

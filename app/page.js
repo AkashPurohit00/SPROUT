@@ -1,11 +1,21 @@
 'use client'
 
 import Image from "next/image";
+import { useState } from "react";
+import Link from "next/link";
 import React from 'react';
 import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
 
 export default function Home() {
+   const [activeSection, setActiveSection] = useState('retail');
+
+  // Function to handle the toggle button click
+  const handleToggle = () => {
+    setActiveSection((prevSection) =>
+      prevSection === 'retail' ? 'institutional' : 'retail'
+    );
+  };
   return (
     
     <>
@@ -24,22 +34,20 @@ export default function Home() {
     
     {/* Heading  */}
     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-6 lg:mb-8 lg:whitespace-nowrap">
-      Sprout Partners Private Limited
+      Independent Stock Research You Can Trust
     </h1>
 
     {/* Paragraphs  */}
     <p className="text-sm sm:text-base md:text-lg lg:text-lg max-w-5xl lg:whitespace-nowrap">
-      Leverage the unparalleled expertise and strategic guidance of Sprout Partners. Our team excels in financial restructuring, developing business
+    Sprout Research provides meticulously curated stock ideas through in-depth fundamental 
     </p>
     <p className="text-sm sm:text-base md:text-lg lg:text-lg max-w-5xl lg:whitespace-nowrap">
-      strategies and crafting tailored financial models and strategic insights across a wide range of sectors. With 75 years of collective experience
+     analysis, forensic scrutiny, and on-ground primary research. Our focus is on delivering high-
     </p>
-    <p className="text-sm sm:text-base md:text-lg lg:text-lg max-w-5xl lg:whitespace-nowrap">
-      and deep industry-specific knowledge, we empower organizations to make informed decisions in corporate finance and navigate capital
+    <p className="text-sm sm:text-base md:text-lg lg:text-lg  mb-6 lg:mb-10 max-w-5xl lg:whitespace-nowrap">
+     quality investments while prioritizing risk management for your confidence and peace of mind.
     </p>
-    <p className="text-sm sm:text-base md:text-lg lg:text-lg mb-6 lg:mb-10 max-w-5xl lg:whitespace-nowrap">
-      markets with confidence.
-    </p>
+    
 
     <button className="bg-white text-black px-6 sm:px-8 py-2 font-semibold border border-black rounded-full transition-transform duration-300 hover:-translate-y-2">
       Enquire Now
@@ -48,21 +56,98 @@ export default function Home() {
 </div>
 
 
+
+{/* Mission & Philosophy Section - Insert between Section 1 and 2 */}
+<section className="py-20 bg-white relative overflow-hidden">
+  {/* Animated Background Elements */}
+  <div className="absolute inset-0">
+    <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
+    <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-500/5 rounded-full blur-3xl animate-bounce"></div>
+  </div>
+
+  <div className="container  mx-auto px-6 relative z-10 bg-white py-16 max-w-full">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
       
-      {/* Section 2 */}
+      {/* Mission - Left Side */}
+      <div className="group"> 
+        <div className="bg-[#D4E6F0]  rounded-3xl p-8 lg:p-12 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 h-full flex flex-col">
+          {/* Mission Icon */}
+          <div className="mb-8">
+            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+          </div>
+          
+          {/* Mission Content */}
+          <h3 className="text-3xl lg:text-4xl font-bold text-black mb-6  transition-colors duration-300">
+            Our Mission
+          </h3>
+          <p className="text-black text-lg leading-relaxed  transition-colors duration-300 flex-grow">
+            We emphasize <span className="text-black font-semibold">quality over quantity</span>, offering stock ideas grounded in rigorous analysis to strengthen your investment thesis and minimize market risks.
+          </p>
+          
+          
+        </div>
+      </div>
+
+      {/* Philosophy - Right Side */}
+      <div className="group">
+        <div className="bg-[#D4E6F0]   rounded-3xl p-8 lg:p-12 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 h-full flex flex-col">
+          {/* Philosophy Icon */}
+          <div className="mb-8">
+            <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center  transition-transform duration-500">
+              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+          </div>
+          
+          {/* Philosophy Content */}
+          <h3 className="text-3xl lg:text-4xl font-bold text-black mb-6  transition-colors duration-300">
+            Our Philosophy
+          </h3>
+          
+          {/* Quote */}
+          <div className="mb-6">
+            <blockquote className="text-2xl font-bold text-transparent bg-clip-text bg-black italic">
+              "Risk Management before Return Management"
+            </blockquote>
+          </div>
+          
+          <p className="text-black text-lg leading-relaxed  transition-colors duration-300 flex-grow">
+            We conduct <span className="text-black font-semibold">governance-level scrutiny</span> to help you build a portfolio of high-quality stocks with conviction.
+          </p>
+          
+        
+         
+        </div>
+      </div>
+    </div>
+
+ 
+    
+  </div>
+
+  
+</section>
+      
+     {/* Section 2 */}
    <section id="about" className="py-20 bg-gray-50 w-full min-h-screen">
   <div className="container max-w-7xl mx-auto px-6">
     {/* Section Title */}
     <div className="text-center mb-16">
       <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-        Why Choose Sprout Partners?
+       Why Choose Sprout Research ?
       </h2>
       <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-        Empower your organization with the exceptional guidance of Sprout Partners. Together, we’ll unlock opportunities and create a clear path for sustained growth and success.
+      Empower your portfolio with well – researched stock ideas. We prioritize companies with strong fundamentals and sustainable growth, steering clear of short-term market fads.
       </p>
     </div>
 
-    {/* Features Grid */}
+      {/* Features Grid */}
     <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-6">
       {/* Feature 1 */}
       <div className="bg-white rounded-3xl border-2 border-gray-200 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
@@ -75,14 +160,13 @@ export default function Home() {
             </svg>
           </div>
         </div>
-        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Unmatched Expertise</h3>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">EXPERIENCE</h3>
         <p className="text-gray-600 text-center leading-relaxed">
-          With 75 years of collective experience across diverse sectors in the capital markets, we have a proven track record of driving success
+          With over two decades of experience navigating the stock market’s highs and lows, we bring unparalleled expertise and dedication to every stock idea
         </p>
       </div>
-
-      {/* Feature 2 */}
-     <div className="bg-white rounded-3xl border-2 border-gray-200 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2 lg:mt-16 w-full h-full">
+ {/* Feature 2 */}
+     <div className="bg-white rounded-3xl border-2 border-gray-200 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2  w-full h-full">
   <div className="flex justify-center mb-6">
     <div className="bg-white border-2 border-gray-300 rounded-full w-20 h-20 flex items-center justify-center">
       <svg className="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -91,14 +175,11 @@ export default function Home() {
       </svg>
     </div>
   </div>
-  <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Strategic Insights</h3>
+  <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">IN-DEPTH FUNDAMENTAL ANALYSIS</h3>
   <p className="text-gray-600 text-center leading-relaxed">
-    Our innovative solutions are driven by data analysis and deep industry expertise, delivering actionable insights that drive growth and value
+   We conduct thorough fundamental analysis to evaluate a company’s intrinsic value, ensuring our clients make informed investment decisions based on solid financial data.
   </p>
 </div>
-
-
-
       {/* Feature 3 */}
       <div className="bg-white rounded-3xl border-2 border-gray-200 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
         <div className="flex justify-center mb-6">
@@ -109,14 +190,61 @@ export default function Home() {
             </svg>
           </div>
         </div>
-        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Collaborative Approach</h3>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">FORENSIC AUDIT EXPERTISE</h3>
         <p className="text-gray-600 text-center leading-relaxed">
-          We work hand-in-hand with your team, aligning our expertise with your goals to deliver tailored financial strategies
+          Our forensic analysis uncovers hidden risks and irregularities, helping you avoid costly mistakes by providing a clear picture of a company’s true financial health.
+        </p>
+      </div>
+ {/* Feature 4 */}
+      <div className="bg-white rounded-3xl border-2 border-gray-200 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+        <div className="flex justify-center mb-6">
+          <div className="bg-white border-2 border-gray-300 rounded-full w-20 h-20 flex items-center justify-center">
+            <svg className="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+             d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 005.656 5.656l1.172-1.172M10.172 13.828a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656L13 4.828" />
+            </svg>
+          </div>
+        </div>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">DIRECT CLIENT ENGAGEMENT</h3>
+        <p className="text-gray-600 text-center leading-relaxed">
+          We work directly with you, bypassing intermediaries, to deliver personalized insights and recommendations tailored to your investment goals.
+        </p>
+      </div>
+{/* Feature 5 */}
+      <div className="bg-white rounded-3xl border-2 border-gray-200 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+        <div className="flex justify-center mb-6">
+          <div className="bg-white border-2 border-gray-300 rounded-full w-20 h-20 flex items-center justify-center">
+            <svg className="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+            d="M12 3v2m0 0l6 6m-6-6L6 11m6-6v14m9 0H3" />
+            </svg>
+          </div>
+        </div>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">UNBIASED RESEARCH</h3>
+        <p className="text-gray-600 text-center leading-relaxed">
+          Our reports are free from market hype or external pressures, focusing solely on data-driven insights to guide your portfolio decisions.
+        </p>
+      </div>
+  {/* Feature 6 */}
+      <div className="bg-white rounded-3xl border-2 border-gray-200 p-8 hover:shadow-xl transition-all duration-300 hover:-translate-y-2">
+        <div className="flex justify-center mb-6">
+          <div className="bg-white border-2 border-gray-300 rounded-full w-20 h-20 flex items-center justify-center">
+            <svg className="w-10 h-10 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2"
+                    d="M12 2a10 10 0 100 20 10 10 0 000-20zm3 8l-2 6-6 2 2-6 6-2z" />
+            </svg>
+          </div>
+        </div>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">TRANSPARENT METHODOLOGY</h3>
+        <p className="text-gray-600 text-center leading-relaxed">
+          We provide clear, detailed explanations of our analysis process, ensuring you understand the reasoning behind every recommendation.
         </p>
       </div>
     </div>
   </div>
+
 </section>
+
 
 
       {/* Section 3 */}
@@ -235,23 +363,18 @@ export default function Home() {
       {/* Text Content */}
       <div className="space-y-6 flex flex-col justify-center h-full">
         <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-          In today’s dynamic and challenging financial environment, choosing the
-          right path is essential for long-term business success. At Sprout
-          Partners, we understand the importance of tailored guidance and expert
-          advice to help you stay ahead.
+          Founded by Shikha Kapur, a capital markets expert with nearly 20 years of experience, 
+          Sprout Research combines deep expertise in equities with fundamental and quantitative analysis. 
+          Shikha’s commitment to governance and clarity empowers investors to navigate complex markets confidently.
         </p>
-        <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-          Our team excels in providing strategic advice, financial restructuring,
-          forensic analysis, and developing advanced financial models customized
-          for various industries. With 75 years of collective experience, we
-          provide the knowledge, insight, and strategic acumen needed to
-          confidently navigate complexities and seize opportunities.
-        </p>
+        
+      <Link href="">
         <div className="flex justify-center lg:justify-start">
           <button className="border-2 border-gray-300 rounded-full px-6 py-2 text-gray-700 font-semibold hover:bg-gray-100 transition-all duration-300">
             Read More
           </button>
         </div>
+      </Link>
       </div>
 
       {/* Image and Quote */}
@@ -301,70 +424,106 @@ export default function Home() {
           {/* Content Grid */}
 
 
-<div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-  {/* Image */}
-  <div>
-    <Image 
-      src="/images/pic1.jpg" 
-      alt="Our Process" 
-      width={600}
-      height={400}
-      className="w-full h-full object-cover rounded-lg shadow-md"
-      style={{
-        width: '100%',
-        height: '100%',
-      }}
-    />
-  </div>
+ <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 font-sans">
+      <div className="bg-white p-8 rounded-xl shadow-2xl w-full max-w-4xl border border-gray-200">
+        <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8">
+          Investment Information
+        </h1>
 
-  {/* Service Steps */}
-  <div className="space-y-10">
-    {/* Step 1 */}
-    <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 transform hover:-translate-y-2 hover:bg-blue-100 hover:shadow-md">
-      <div className="w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center transition duration-300 hover:scale-110">
-        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-        </svg>
-      </div>
-      <div>
-        <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Research</h3>
-        <p className="text-gray-600 leading-relaxed">
-          Comprehensive research on listed and unlisted companies, equipping businesses with actionable insights to make informed decisions.
-        </p>
+        {/* Toggle Button Container */}
+        <div className="flex justify-center mb-8">
+          <button
+            onClick={handleToggle}
+            className="relative flex items-center bg-blue-100 rounded-full p-1 shadow-inner cursor-pointer transition-all duration-300 ease-in-out w-64 h-12"
+          >
+            {/* Background for the active toggle */}
+            <div
+              className={`absolute w-1/2 h-10 bg-blue-600 rounded-full shadow-md transform transition-all duration-300 ease-in-out
+                ${activeSection === 'retail' ? 'translate-x-0' : 'translate-x-full'}`}
+            ></div>
+
+            {/* Retail Option */}
+            <span
+              className={`relative flex-1 text-center text-lg font-semibold py-2 px-4 rounded-full transition-colors duration-300 ease-in-out
+                ${activeSection === 'retail' ? 'text-white' : 'text-blue-700'}`}
+            >
+              Retail
+            </span>
+
+            {/* Institutional Option */}
+            <span
+              className={`relative flex-1 text-center text-lg font-semibold py-2 px-4 rounded-full transition-colors duration-300 ease-in-out
+                ${activeSection === 'institutional' ? 'text-white' : 'text-blue-700'}`}
+            >
+              Institutional
+            </span>
+          </button>
+        </div>
+
+        {/* Content Section */}
+        <div className="p-6 bg-gray-50 rounded-lg border border-gray-100 shadow-inner">
+          {activeSection === 'retail' ? (
+            // Retail Content
+            <div className="animate-fade-in">
+              <h2 className="text-2xl font-semibold text-gray-700 mb-4">
+                For Individual Investors (Retail)
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                Welcome, individual investors! Here you'll find information tailored to your personal investment needs. Our retail offerings focus on ease of use, diversified portfolios suitable for various risk appetites, and direct access to financial guidance.
+              </p>
+              <ul className="list-disc list-inside text-gray-600 space-y-2">
+                <li>Access to mutual funds and ETFs.</li>
+                <li>Personalized financial planning tools.</li>
+                <li>User-friendly online trading platform.</li>
+                <li>Educational resources for new and experienced investors.</li>
+                <li>Low-cost investment options.</li>
+              </ul>
+              <p className="text-gray-600 leading-relaxed mt-4">
+                Whether you're saving for retirement, a down payment, or simply growing your wealth, our retail solutions are designed to help you achieve your financial goals.
+              </p>
+              {/* Button for Retail Section */}
+              <div className="mt-6 text-center">
+                <a
+                  href="#retail-page" // Placeholder link
+                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out shadow-md hover:shadow-lg"
+                >
+                  Learn More for Retail Investors
+                </a>
+              </div>
+            </div>
+          ) : (
+            // Institutional Content
+            <div className="animate-fade-in">
+              <h2 className="text-2xl font-semibold text-gray-700 mb-4">
+                For Organizations and Large Entities (Institutional)
+              </h2>
+              <p className="text-gray-600 leading-relaxed mb-4">
+                This section provides comprehensive details for institutional clients, including corporations, pension funds, endowments, and sovereign wealth funds. Our institutional services are designed for complex financial structures and large-scale investment strategies.
+              </p>
+              <ul className="list-disc list-inside text-gray-600 space-y-2">
+                <li>Customized portfolio management and advisory services.</li>
+                <li>Access to alternative investments (private equity, hedge funds).</li>
+                <li>Advanced analytics and reporting.</li>
+                <li>Dedicated relationship managers.</li>
+                <li>Solutions for risk management and regulatory compliance.</li>
+              </ul>
+              <p className="text-gray-600 leading-relaxed mt-4">
+                We partner with institutional clients to optimize their investment performance and meet their unique strategic objectives through robust, scalable solutions.
+              </p>
+              {/* Button for Institutional Section */}
+              <div className="mt-6 text-center">
+                <a
+                  href="#institutional-page" // Placeholder link
+                  className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out shadow-md hover:shadow-lg"
+                >
+                  Explore Institutional Solutions
+                </a>
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </div>
-
-    {/* Step 2 */}
-    <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 transform hover:-translate-y-2 hover:bg-blue-100 hover:shadow-md">
-      <div className="w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center transition duration-300 hover:scale-110">
-        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
-        </svg>
-      </div>
-      <div>
-        <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Fundraising Solutions</h3>
-        <p className="text-gray-600 leading-relaxed">
-          Specialization in advising and facilitating strategic capital-raising solutions in both primary funding and secondary transaction opportunities.
-        </p>
-      </div>
-    </div>
-
-    {/* Step 3 */}
-    <div className="flex items-start space-x-4 p-4 rounded-lg transition duration-300 transform hover:-translate-y-2 hover:bg-blue-100 hover:shadow-md">
-      <div className="w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center transition duration-300 hover:scale-110">
-        <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 20l-5.447-2.724A1 1 0 013 16.382V5.618a1 1 0 011.447-.894L9 7m0 13l6-3m-6 3V7m6 10l4.553 2.276A1 1 0 0021 18.382V7.618a1 1 0 00-.553-.894L15 4m0 13V4m0 0L9 7" />
-        </svg>
-      </div>
-      <div>
-        <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2">Advisory Services</h3>
-        <p className="text-gray-600 leading-relaxed">
-          Advisory services to help corporates optimize their financial and capital structures, and align their business models towards success.
-        </p>
-      </div>
-    </div>
-  </div>
-</div>
         </div>
       </section>
 
@@ -403,6 +562,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+      {/* Section 7 - Subscribe */}
+      
       <Footer />
     </>
   );

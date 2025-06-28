@@ -5,13 +5,24 @@ import Image from 'next/image';
 
 const Footer = () => {
   const [aboutDropdownOpen, setAboutDropdownOpen] = useState(false);
+  const [servicesDropdownOpen, setServicesDropdownOpen] = useState(false);
+  const [mobileAboutOpen, setMobileAboutOpen] = useState(false);
+  
+  // New state for mobile dropdowns
+  const [mobileUsefulLinksOpen, setMobileUsefulLinksOpen] = useState(false);
+  const [mobileRegulatoryOpen, setMobileRegulatoryOpen] = useState(false);
+  const [mobileContactOpen, setMobileContactOpen] = useState(false);
+  
   const dropdownRef = useRef(null);
 
-  // Close dropdown when clicking outside
+  // Close desktop dropdown when clicking outside (only for desktop dropdowns)
   useEffect(() => {
     const handleClickOutside = (event) => {
+      // Only close desktop dropdowns, not mobile ones
       if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
         setAboutDropdownOpen(false);
+        setServicesDropdownOpen(false);
+        setMobileAboutOpen(false);
       }
     };
 
@@ -68,12 +79,34 @@ const Footer = () => {
             </div>
           </div>
 
-          {/* Navigation Links */}
+          {/* Useful Links */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">
-              Navigation
+            {/* Desktop Header */}
+            <h3 className="hidden md:block text-lg font-semibold text-gray-900 mb-4">
+              Useful Links
             </h3>
-            <ul className="space-y-2">
+            
+            {/* Mobile Dropdown Header */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setMobileUsefulLinksOpen(!mobileUsefulLinksOpen);
+              }}
+              className="md:hidden flex items-center justify-between w-full text-lg font-semibold text-gray-900 mb-4 py-2 px-1 hover:bg-gray-100 rounded transition-colors duration-200"
+            >
+              Useful Links
+              <svg
+                className={`w-5 h-5 transition-transform duration-200 ${mobileUsefulLinksOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {/* Links - Always visible on desktop, conditional on mobile */}
+            <ul className={`space-y-2 ${mobileUsefulLinksOpen ? 'block' : 'hidden'} md:block`}>
               <li>
                 <Link
                   href="/"
@@ -85,11 +118,12 @@ const Footer = () => {
 
               {/* About Dropdown */}
               <li className="relative" ref={dropdownRef}>
+                {/* Desktop About Button */}
                 <button
                   onClick={() => setAboutDropdownOpen(!aboutDropdownOpen)}
-                  className="flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-300"
+                  className="hidden md:flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-300"
                 >
-                  About
+                  Research Services
                   <svg
                     className={`ml-1 w-4 h-4 transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180' : ''}`}
                     fill="none"
@@ -100,42 +134,85 @@ const Footer = () => {
                   </svg>
                 </button>
 
+                {/* Mobile About Button */}
+                <button
+                  onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
+                  className="md:hidden flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-300 w-full text-left"
+                >
+                  Research Services
+                  <svg
+                    className={`ml-1 w-4 h-4 transition-transform duration-200 ${mobileAboutOpen ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                {/* Desktop Dropdown */}
                 {aboutDropdownOpen && (
-                  <div className="absolute bottom-full left-0 mb-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                  <div className="absolute bottom-full left-0 mb-2 w-48 bg-white border border-gray-200 rounded-md shadow-lg z-50 hidden md:block">
                     <div className="py-2">
-                      <Link
-                        href="/about/our-team"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200"
-                        onClick={() => setAboutDropdownOpen(false)}
+                      <div 
+                        className="relative group"
+                        onMouseEnter={() => setServicesDropdownOpen(true)}
+                        onMouseLeave={() => setServicesDropdownOpen(false)}
                       >
-                        Our Team
-                      </Link>
-                      <Link
-                        href="/about/our-services"
-                        className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200"
-                        onClick={() => setAboutDropdownOpen(false)}
-                      >
-                        Our Services
-                      </Link>
+                        <Link
+                          href="/Rservice/Psg"
+                          className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200"
+                        >
+                          Psg
+                         
+                        </Link>
+                         <Link
+                          href="/Rservice/Retail"
+                          className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200"
+                        >
+                          Retail
+                         
+                        </Link>
+                      </div>
                     </div>
+                  </div>
+                )}
+
+                {/* Mobile Expanded Menu */}
+                {mobileAboutOpen && (
+                  <div className="md:hidden mt-2 pl-4 space-y-2">
+                    <Link 
+                      href="/Rservice/Psg" 
+                      onClick={() => setMobileAboutOpen(false)}
+                      className="block text-gray-600 hover:text-gray-900 transition-colors duration-300 font-medium"
+                    >
+                      Psg
+                    </Link>
+                    <Link 
+                      href="/Rservice/Retail" 
+                      onClick={() => setMobileAboutOpen(false)}
+                      className="block text-gray-600 hover:text-gray-900 transition-colors duration-300 font-medium"
+                    >
+                     Retail
+                    </Link>
                   </div>
                 )}
               </li>
 
               <li>
                 <Link
-                  href="/Research"
-                  className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
-                >
-                  Research
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/Insights"
                   className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
                 >
                   Insights
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/Research"
+                  className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
+                >
+                  Research
                 </Link>
               </li>
               <li>
@@ -154,7 +231,38 @@ const Footer = () => {
                   Admin Panel
                 </a>
               </li>
-                <li>
+            </ul>
+          </div>
+
+          {/* Regulatory Disclosures */}
+          <div>
+            {/* Desktop Header */}
+            <h3 className="hidden md:block text-lg font-semibold text-gray-900 mb-4">
+              Regulatory Disclosures
+            </h3>
+            
+            {/* Mobile Dropdown Header */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setMobileRegulatoryOpen(!mobileRegulatoryOpen);
+              }}
+              className="md:hidden flex items-center justify-between w-full text-lg font-semibold text-gray-900 mb-4 py-2 px-1 hover:bg-gray-100 rounded transition-colors duration-200"
+            >
+              Regulatory Disclosures
+              <svg
+                className={`w-5 h-5 transition-transform duration-200 ${mobileRegulatoryOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {/* Links - Always visible on desktop, conditional on mobile */}
+            <ul className={`space-y-2 ${mobileRegulatoryOpen ? 'block' : 'hidden'} md:block`}>
+              <li>
                 <a
                   href="/Charter"
                   className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
@@ -162,7 +270,7 @@ const Footer = () => {
                  Investor Charter
                 </a>
               </li>
-                <li>
+              <li>
                 <a
                   href="/Grivaence"
                   className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
@@ -170,7 +278,7 @@ const Footer = () => {
                 Investor Grievaence
                 </a>
               </li>
-                <li>
+              <li>
                 <a
                   href="/Disclaimer"
                   className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
@@ -178,7 +286,7 @@ const Footer = () => {
                 Disclaimer
                 </a>
               </li>
-                <li>
+              <li>
                 <a
                   href="/Report"
                   className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
@@ -191,8 +299,32 @@ const Footer = () => {
 
           {/* Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 mb-4">Contact</h3>
-            <ul className="space-y-2">
+            {/* Desktop Header */}
+            <h3 className="hidden md:block text-lg font-semibold text-gray-900 mb-4">
+              Contact
+            </h3>
+            
+            {/* Mobile Dropdown Header */}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setMobileContactOpen(!mobileContactOpen);
+              }}
+              className="md:hidden flex items-center justify-between w-full text-lg font-semibold text-gray-900 mb-4 py-2 px-1 hover:bg-gray-100 rounded transition-colors duration-200"
+            >
+              Contact
+              <svg
+                className={`w-5 h-5 transition-transform duration-200 ${mobileContactOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {/* Contact Info - Always visible on desktop, conditional on mobile */}
+            <ul className={`space-y-2 ${mobileContactOpen ? 'block' : 'hidden'} md:block`}>
               <li className="flex items-center">
                 <svg className="w-5 h-5 mr-2 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path
