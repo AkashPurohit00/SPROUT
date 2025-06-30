@@ -33,7 +33,7 @@ export default function Home() {
   <div className="absolute inset-0 flex flex-col justify-center items-center text-black text-center px-4 sm:px-8 lg:px-20">
     
     {/* Heading  */}
-    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-6 lg:mb-8 lg:whitespace-nowrap">
+    <h1 className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl font-sans mb-6 lg:mb-8 lg:whitespace-nowrap">
       Independent Stock Research You Can Trust
     </h1>
 
@@ -58,80 +58,99 @@ export default function Home() {
 
 
 {/* Mission & Philosophy Section - Insert between Section 1 and 2 */}
-<section className="py-20 bg-white relative overflow-hidden">
-  {/* Animated Background Elements */}
-  <div className="absolute inset-0">
-    <div className="absolute top-20 left-10 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl animate-pulse"></div>
-    <div className="absolute bottom-20 right-10 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
-    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-indigo-500/5 rounded-full blur-3xl animate-bounce"></div>
-  </div>
-
-  <div className="container  mx-auto px-6 relative z-10 bg-white py-16 max-w-full">
-    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-stretch">
-      
-      {/* Mission - Left Side */}
-      <div className="group"> 
-        <div className="bg-[#D4E6F0]  rounded-3xl p-8 lg:p-12 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-blue-500/20 h-full flex flex-col">
-          {/* Mission Icon */}
-          <div className="mb-8">
-            <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-500">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-              </svg>
-            </div>
-          </div>
-          
-          {/* Mission Content */}
-          <h3 className="text-3xl lg:text-4xl font-bold text-black mb-6  transition-colors duration-300">
-            Our Mission
-          </h3>
-          <p className="text-black text-lg leading-relaxed  transition-colors duration-300 flex-grow">
-            We emphasize <span className="text-black font-semibold">quality over quantity</span>, offering stock ideas grounded in rigorous analysis to strengthen your investment thesis and minimize market risks.
-          </p>
-          
-          
-        </div>
-      </div>
-
-      {/* Philosophy - Right Side */}
-      <div className="group">
-        <div className="bg-[#D4E6F0]   rounded-3xl p-8 lg:p-12 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-purple-500/20 h-full flex flex-col">
-          {/* Philosophy Icon */}
-          <div className="mb-8">
-            <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center  transition-transform duration-500">
-              <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-              </svg>
-            </div>
-          </div>
-          
-          {/* Philosophy Content */}
-          <h3 className="text-3xl lg:text-4xl font-bold text-black mb-6  transition-colors duration-300">
-            Our Philosophy
-          </h3>
-          
-          {/* Quote */}
-          <div className="mb-6">
-            <blockquote className="text-2xl font-bold text-transparent bg-clip-text bg-black italic">
-              "Risk Management before Return Management"
-            </blockquote>
-          </div>
-          
-          <p className="text-black text-lg leading-relaxed  transition-colors duration-300 flex-grow">
-            We conduct <span className="text-black font-semibold">governance-level scrutiny</span> to help you build a portfolio of high-quality stocks with conviction.
-          </p>
-          
-        
-         
-        </div>
-      </div>
-    </div>
-
- 
-    
-  </div>
-
+<section className=" bg-gray-300 relative overflow-hidden">
   
+  
+
+  <div className="container mx-auto px-6 relative z-10 bg-white py-16 max-w-full">
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center min-h-screen">
+      
+      {/* Left Side - Mission and Philosophy Cards */}
+      <div className="space-y-8 flex flex-col justify-center">
+        
+        {/* Mission Card */}
+        <div className="group"> 
+          <div className="bg-[#D4E6F0] rounded-3xl p-8 lg:p-12 ">
+            {/* Mission Icon */}
+            <div className="mb-6">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center ">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+                </svg>
+              </div>
+            </div>
+            
+            {/* Mission Content */}
+            <h3 className="text-2xl lg:text-3xl font-bold text-black mb-4 transition-colors duration-300">
+              Our Mission
+            </h3>
+            <p className="text-black text-base lg:text-lg leading-relaxed transition-colors duration-300">
+              We emphasize <span className="text-black font-semibold">quality over quantity</span>, offering stock ideas grounded in rigorous analysis to strengthen your investment thesis and minimize market risks.
+            </p>
+          </div>
+        </div>
+
+        {/* Philosophy Card */}
+        <div className="group">
+          <div className="bg-[#D4E6F0] rounded-3xl p-8 lg:p-12 ">
+            {/* Philosophy Icon */}
+            <div className="mb-6">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center transition-transform duration-500">
+                <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+                </svg>
+              </div>
+            </div>
+            
+            {/* Philosophy Content */}
+            <h3 className="text-2xl lg:text-3xl font-bold text-black mb-4 transition-colors duration-300">
+              Our Philosophy
+            </h3>
+            
+            {/* Quote */}
+            <div className="mb-4">
+              <blockquote className="text-xl font-bold text-black italic">
+                "Risk Management before Return Management"
+              </blockquote>
+            </div>
+            
+            <p className="text-black text-base lg:text-lg leading-relaxed transition-colors duration-300">
+              We conduct <span className="text-black font-semibold">governance-level scrutiny</span> to help you build a portfolio of high-quality stocks with conviction.
+            </p>
+          </div>
+        </div>
+        
+      </div>
+
+      {/* Right Side - Image */}
+      <div className="flex justify-center lg:justify-center">
+        <div className="relative ">
+          {/* Add your image here */}
+          <div className="w-full max-w-lvh h-96 lg:h-[500px] bg-gradient-to-br from-blue-100 to-purple-100 rounded-3xl overflow-hidden ">
+            {/* Placeholder for image - replace with your actual image */}
+            <img 
+              src="/images/pic1.jpg" 
+              alt="Investment Strategy" 
+              className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+            />
+            
+            {/* If no image available, use this placeholder */}
+            <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-blue-500 to-purple-600">
+              <div className="text-center text-white">
+                <svg className="w-24 h-24 mx-auto mb-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                </svg>
+                <p className="text-lg font-medium opacity-75">Your Image Here</p>
+              </div>
+            </div>
+          </div>
+          
+      
+        </div>
+      </div>
+      
+    </div>
+  </div>
 </section>
       
      {/* Section 2 */}
@@ -266,7 +285,7 @@ export default function Home() {
           {/* Process Steps */}
           <div className="space-y-8">
             {/* Step 1 */}
-            <div className="transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:bg-blue-100 bg-gray-100 rounded-lg p-4">
+            <div className="transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:bg-blue-100 bg-gray-100 rounded-lg px-4">
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-green-400 to-blue-500 rounded-full flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -289,7 +308,7 @@ export default function Home() {
             </div>
 
             {/* Step 2 */}
-            <div className="transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:bg-blue-100 bg-gray-100 rounded-lg p-4">
+            <div className="transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:bg-blue-100 bg-gray-100 rounded-lg px-4">
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-blue-400 to-purple-500 rounded-full flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -312,7 +331,7 @@ export default function Home() {
             </div>
 
             {/* Step 3 */}
-            <div className="transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:bg-blue-100 bg-gray-100 rounded-lg p-4">
+            <div className="transition-transform duration-300 ease-in-out hover:-translate-y-2 hover:bg-blue-100 bg-gray-100 rounded-lg px-4">
               <div className="flex items-start space-x-4">
                 <div className="flex-shrink-0 w-12 h-12 bg-gradient-to-br from-purple-400 to-pink-500 rounded-full flex items-center justify-center">
                   <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -424,11 +443,14 @@ export default function Home() {
           {/* Content Grid */}
 
 
- <div className="min-h-screen bg-gray-100 flex items-center justify-center p-4 font-sans">
-      <div className="bg-white p-8 rounded-xl shadow-2xl w-full max-w-4xl border border-gray-200">
+ <div className="min-h- min-w-auto bg-gray-100 flex items-center justify-center p-4 font-sans">
+      
+      <div className="bg-gray-100 p-8 rounded-xl w-full max-w-4xl lg:mt-[-120px] ">
+        {          /* Title 
         <h1 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8">
           Investment Information
         </h1>
+        */}
 
         {/* Toggle Button Container */}
         <div className="flex justify-center mb-8">
@@ -461,7 +483,7 @@ export default function Home() {
         </div>
 
         {/* Content Section */}
-        <div className="p-6 bg-gray-50 rounded-lg border border-gray-100 shadow-inner">
+        <div className="p-6 bg-gray-100 rounded-lg  ">
           {activeSection === 'retail' ? (
             // Retail Content
             <div className="animate-fade-in">
@@ -524,6 +546,7 @@ export default function Home() {
         </div>
       </div>
     </div>
+       
         </div>
       </section>
 

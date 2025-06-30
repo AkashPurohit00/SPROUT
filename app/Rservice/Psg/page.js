@@ -52,7 +52,7 @@ const page = () => {
     <>
 <Header/>
 {/* Background Image and Content */}
-<div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
+<div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[100vh] overflow-hidden">
   <Image
     src="/images/pic5.jpg" // make sure this path is correct
     alt="Background"
@@ -61,17 +61,18 @@ const page = () => {
     priority
   />
   <div className="absolute inset-0 flex flex-col justify-center items-center text-black text-center px-4 sm:px-8 lg:px-20 z-10">
-    <div className='grid grid-cols-1 sm:grid-cols-3 gap-0 max-w-4xl mx-auto px-4 mb-2 sm:mb-4 relative z-20'>
+    <div className='grid grid-cols-1 sm:grid-cols-3 gap-0 max-w-4xl mx-auto px-4 mb-14 mt-6 relative z-20'>
+     {/*Sprout*/}
       <div className="h-20 sm:h-24 md:h-32 lg:h-36 xl:h-44 rounded-lg overflow-hidden flex items-center justify-center -mx-1 relative z-20">
         <Image
-          src="/images/pic2.jpg"
+          src="/images/HD.png"
           alt="Logo"
           className="object-contain w-full h-full"
           width={400}
           height={200}
         />
       </div>
-
+       {/* Cross3 */}
       <div className="h-20 sm:h-24 md:h-32 lg:h-36 xl:h-44 rounded-lg overflow-hidden flex items-center justify-center -mx-1 relative z-20">
         <Image
           src="/images/cross3.png"
@@ -81,7 +82,7 @@ const page = () => {
           height={200}
         />
       </div>
-
+      {/* Trudence */}
       <div className="h-20 sm:h-24 md:h-32 lg:h-36 xl:h-44 rounded-lg overflow-hidden flex items-center justify-center -mx-1 relative z-20">
         <Image
           src="/images/Trudence.png"
@@ -93,55 +94,28 @@ const page = () => {
       </div>
     </div>
 
-    {/* Heading with animated underline */}
-    <style jsx>{`
-      @keyframes slideInUnderline {
-        0% {
-          width: 0%;
-          opacity: 0;
-        }
-        100% {
-          width: 100%;
-          opacity: 1;
-        }
-      }
-      
-      .animate-underline {
-        animation: slideInUnderline 1.5s ease-out 0.8s both;
-      }
-    `}</style>
     
-    <h1 className="text-base sm:text-lg md:text-xl text-gray-700 lg:text-2xl xl:text-3xl 2xl:text-4xl font-medium mb-1 sm:mb-2 text-center leading-tight">
-     Cultivating Superior Investment Opportunities
-    </h1>
-    <h1 className="text-base text-gray-700 sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-medium mb-2 sm:mb-3 lg:mb-4 text-center leading-tight">
-     Unearthing High-Potential Investments for{' '}
-     <span className="relative inline-block">
-       Discerning investors
-       <span className="absolute bottom-0 left-0 h-0.5 sm:h-1 bg-gray-700 animate-underline"></span>
-     </span>{' '}
-     
-    </h1>
+    
+   
 
     {/* Paragraphs  */}
-    {/*
- <div className="text-xs sm:text-sm md:text-base lg:text-lg max-w-5xl text-center space-y-0.5 sm:space-y-1 px-2">
+   
+ <div className="text-xs sm:text-sm md:text-base lg:text-2xl font-normal max-w-5xl text-center space-y-0.5 sm:space-y-1 px-2  ">
       <p className="leading-tight">
-        Sprout Research delivers comprehensive research services rooted in detailed fundamental and forensic analysis. Its
+      Sprout Research PCG, collaborates with Trudence Capital Advisory Pvt Ltd, a SEBI-registered Corporate 
+      Research Advisor. At Sprout Research, we deliver comprehensive research services rooted in detailed fundamental
+       and forensic analysis. Our mission is to safeguard your investments by employing strategic risk management and 
+       vigilant monitoring, enabling timely adjustments in response to evolving market conditions.
       </p>
+     
+    </div>
+    <div className="text-xs sm:text-sm md:text-base lg:text-2xl font-normal max-w-5xl text-center space-y-0.5 sm:space-y-1 px-2 py-8 ">
       <p className="leading-tight">
-        mission is to safeguard your investments by employing strategic risk management and vigilant monitoring, enabling timely
+     We excel in uncovering high-growth investment opportunities ahead of the curve. Through rigorous analysis and a selective approach,
+      we aim to provide you with a decisive edge in the ever-changing landscape of equity investing.
       </p>
-      <p className="leading-tight">
-        adjustments in response to evolving market conditions. Sprout Research excels in uncovering high-growth investment
-      </p>
-      <p className="leading-tight">
-        opportunities ahead of the curve. Through rigorous analysis and a selective approach, it aims to provide you with a decisive
-      </p>
-      <p className="leading-tight">
-        edge in the ever-changing landscape of equity investing.
-      </p>
-    </div>*/}
+     
+    </div>
   </div>
 </div>
 
@@ -162,9 +136,9 @@ const page = () => {
             </svg>
           </div>
         </div>
-        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Unmatched Expertise</h3>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Early Identification</h3>
         <p className="text-gray-600 text-center leading-relaxed flex-grow">
-          With 75 years of collective experience across diverse sectors in the capital markets, we have a proven track record of driving success
+          Leverage advanced screening tools, market trends, and strategic foresight to pinpoint opportunities before they gain widespread attention.
         </p>
       </div>
 
@@ -178,9 +152,9 @@ const page = () => {
             </svg>
           </div>
         </div>
-        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Strategic Insights</h3>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Rigorous Analysis</h3>
         <p className="text-gray-600 text-center leading-relaxed flex-grow">
-          Our innovative solutions are driven by data analysis and deep industry expertise, delivering actionable insights that drive growth and value
+            Conduct exhaustive due diligence to validate the investment thesis.
         </p>
       </div>
 
@@ -194,9 +168,9 @@ const page = () => {
             </svg>
           </div>
         </div>
-        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Collaborative Approach</h3>
+        <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">Thematic Overlay</h3>
         <p className="text-gray-600 text-center leading-relaxed flex-grow">
-          We work hand-in-hand with your team, aligning our expertise with your goals to deliver tailored financial strategies
+          Identify transformative macro trends and align investments with these growth drivers.
         </p>
       </div>
     </div>

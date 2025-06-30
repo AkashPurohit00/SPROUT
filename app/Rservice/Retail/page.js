@@ -33,18 +33,7 @@ const page = () => {
       title: "Comprehensive Insights",
       description: "Benefit from in-depth analysis that backs each recommendation, providing you with a clear understanding of the investment's potential"
     },
-    {
-      id: 5,
-      image: "/images/rmage5.png",
-      title: "Strategic Guidance",
-      description: "Gain access to precise entry and exit strategies for every investment, tailored to maximize your returns"
-    },
-    {
-      id: 6,
-      image: "/images/rmage6.png",
-      title: "Continuous Monitoring",
-      description: "Stay updated with regular reviews and updates on all existing recommendations, ensuring you're always informed on the latest developments"
-    }
+    
   ];
   
 
@@ -54,24 +43,24 @@ const page = () => {
 {/* Background Image and Content */}
 <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
   <Image
-    src="/images/pic5.jpg" // make sure this path is correct
+    src="/images/pic5.jpg" 
     alt="Background"
     fill
     className="object-cover object-top z-0"
     priority
   />
   <div className="absolute inset-0 flex flex-col justify-center items-center text-black text-center px-4 sm:px-8 lg:px-20 z-10">
-    <div className="w-72 h-44 sm:w-96 sm:h-44 rounded-lg overflow-hidden border-4 border-white mb-4 lg:mb-6">
+    <div className="w-72 h-44 sm:w-96 sm:h-44 rounded-lg overflow-hidden  mb-4 lg:mb-6">
      <Image
-       src="/images/pic2.jpg"
+       src="/images/HD.png" 
        alt="Logo"
        width={400}
        height={200}
-       className="object-cover w-full h-full"
+       className="object-contain w-full h-full"
      />
    </div>
 
-    {/* Heading with animated underline */}
+    {/* Heading with animated underline 
     <style jsx>{`
       @keyframes slideInUnderline {
         0% {
@@ -100,26 +89,21 @@ const page = () => {
      </span>
      
     </h1>
+    */}
 
     {/* Paragraphs  */}
-    {/*
- <div className="text-xs sm:text-sm md:text-base lg:text-lg max-w-5xl text-center space-y-0.5 sm:space-y-1 px-2">
+   
+ <div className="text-xs sm:text-sm md:text-base lg:text-2xl font-normal max-w-5xl text-center space-y-0.5 sm:space-y-1 px-2">
       <p className="leading-tight">
-        Sprout Research delivers comprehensive research services rooted in detailed fundamental and forensic analysis. Its
+        Sprout Research delivers comprehensive research services rooted in detailed fundamental and
+         forensic analysis. Its mission is to safeguard your investments by employing strategic risk
+          management and vigilant monitoring, enabling timely adjustments in response to evolving market conditions. 
       </p>
-      <p className="leading-tight">
-        mission is to safeguard your investments by employing strategic risk management and vigilant monitoring, enabling timely
-      </p>
-      <p className="leading-tight">
-        adjustments in response to evolving market conditions. Sprout Research excels in uncovering high-growth investment
-      </p>
-      <p className="leading-tight">
-        opportunities ahead of the curve. Through rigorous analysis and a selective approach, it aims to provide you with a decisive
-      </p>
-      <p className="leading-tight">
-        edge in the ever-changing landscape of equity investing.
-      </p>
-    </div>*/}
+      
+      
+      
+      
+    </div>*
   </div>
 </div>
 
@@ -186,7 +170,7 @@ const page = () => {
         Sprout Research Advantage
       </h1>
       
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8">
         {advantages.map((advantage) => (
           <div
             key={advantage.id}
@@ -224,7 +208,7 @@ const page = () => {
 {/* Section 5 with Research Reports */}
 <div className="bg-white w-full min-h-screen py-16 px-6 sm:px-12 lg:px-24">
   <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-4">
-    Why SPROUT Research?
+   Advantages of Stock Research for Retail Investors
   </h1>
   <p className='text-center text-xs sm:text-sm md:text-base lg:text-lg text-gray-500 mb-12    '>We prioritize protecting your investments with a strategic approach to risk management, ensuring your<br/>
    capital remains safeguarded while pursuing growth.</p>
@@ -233,13 +217,16 @@ const page = () => {
     {/* Report 1 */}
     <div className="bg-white p-6 rounded-lg border border-black shadow transition flex-col flex items-start space-x-6 min-h-[200px]  ">
       
-      <div>
+        <div>
         <ol className="list-decimal list-inside text-gray-800 space-y-4 text-base md:text-2xl ">
-    <li> <span className='font-bold'>Pioneering Insights:</span> Our recommendations often center on companies poised for exponential growth, frequently overlooked by larger institutional investors.</li>
-    <li><span className='font-bold'>Fundamental Excellence:</span> Each recommendation is underpinned by thorough analysis of business models, market opportunities, and competitive landscapes.</li>
-    <li><span className='font-bold'>Proactive Oversight:</span> Our vigilant monitoring ensures timely adjustments to our recommendations as market conditions evolve.</li>
-    <li><span className='font-bold'>Risk Mitigation:</span> We provide clear exit strategies to protect your investments, demonstrating our commitment to preserving and growing your capital.</li>
-    <li><span className='font-bold'>Optimized Returns:</span> Our timely alerts are designed to help you maximize returns at the opportune moment.</li>
+    <li> <span className='font-bold'>Robust Fundamental and Forensic Analysis:</span> We employ a rigorous approach combining fundamental analysis with forensic scrutiny, prioritizing risk assessment. This ensures retail investors receive reliable insights into a company’s financial health, growth potential, and underlying risks, enabling informed decision-making.</li>
+    <li><span className='font-bold'>Independent and Unbiased Research: </span>Our research is free from the conflicts of interest often found in sell-side reports. By maintaining independence, we provide objective, trustworthy analysis that retail investors can rely on to make confident investment choices.</li>
+    <li><span className='font-bold'>Affordable Plans:</span> Designed with young and emerging investors in mind, our affordable subscription plans make professional-grade research accessible. We empower beginners to learn about and invest in the stock market without breaking the bank.</li>
+    <li><span className='font-bold'>Short- to Medium-Term Investment Focus:</span> Our analysis aligns with a 9-12 month investment horizon, offering projections that help retail investors plan for short- to medium-term gains. This approach balances growth potential with manageable risk for optimal results.</li>
+    <li><span className='font-bold'>Accessible and Actionable Insights:</span>We prioritize intuitive, user-friendly interfaces that deliver simplified insights, practical stock ideas, and educational content. Complex financial data is transformed into clear, easy-to-understand information, empowering retail investors to confidently navigate the market.
+    </li>
+    <li><span className='font-bold'>Pursuit of High-Growth Opportunities:</span>Our research targets high-growth potential across various market capitalizations, from small-cap gems to established large-caps. This focus ensures a diversified portfolio of top-tier opportunities, maximizing returns for retail investors..
+    </li>
   </ol>
       
         
@@ -251,9 +238,9 @@ const page = () => {
     </div>
 </div>
 {/* Section 6 with Research Reports */}
-<div className="bg-white w-full min-h-screen py-16 px-6 sm:px-12 lg:px-24 ">
+<div className="bg-white w-full min-h-screen mb-[-500px] sm:mb-[-300px] lg:mb-[-400px] px-6 sm:px-12 lg:px-24 ">
   <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-12">
-    Our Methodology: From Identification to Realization
+    Why It Fits Retail Investors
   </h1>
   
 
@@ -262,12 +249,12 @@ const page = () => {
     <div className="bg-white p-6 rounded-lg border border-black shadow transition flex-col flex items-start space-x-6 min-h-[200px]  ">
       
       <div>
-        <ol className="list-decimal list-inside text-gray-800 space-y-4 text-base md:text-2xl ">
-    <li> <span className='font-bold'>Systematic Screening:</span> We employ advanced algorithms and expert insight to identify companies with exceptional growth potential.</li>
-    <li><span className='font-bold'>Comprehensive Due Diligence: </span> Our team conducts exhaustive research, including financial analysis, management assessments, and competitive positioning evaluations.</li>
-    <li><span className='font-bold'>Sophisticated Modeling:</span> We develop detailed financial models to stress-test our hypotheses and project future performance under various scenarios.</li>
-    <li><span className='font-bold'>Strategic Recommendations:</span> Each investment idea is presented with a comprehensive report, including nuanced risk assessment.</li>
-    <li><span className='font-bold'>Ongoing Evaluation:</span>We maintain constant vigilance over our recommendations, providing timely updates and adjusting our stance as market dynamics shift.</li>
+        <ol className=" list-inside text-gray-800 space-y-4 text-base md:text-2xl ">
+    
+    
+    <li>Our service is built to bridge the gap between complex financial research and the needs of retail investors.
+       By combining affordability, independence, and a focus on education with high-quality analysis, we empower new and young investors
+        to build wealth confidently in the stock market</li>
   </ol>
       
         
