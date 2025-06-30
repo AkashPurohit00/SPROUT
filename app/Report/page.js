@@ -40,7 +40,7 @@ const Page = () => {
       
       {/* Heading */}
       <h2 className="text-xl md:text-5xl font-bold text-left text-gray-800 mb-8">
-        Data for the month ending May<br/> 2025
+        Data for the month ending <br/>June 2025
       </h2>
       
       {/* Desktop View */}
@@ -56,6 +56,7 @@ const Page = () => {
                 <div className="text-center py-3 text-gray-700 font-medium px-4 h-16 flex items-center justify-center">1</div>
                 <div className="text-center py-3 text-gray-700 font-medium px-4 h-16 flex items-center justify-center">2</div>
                 <div className="text-center py-3 text-gray-700 font-medium px-4 h-16 flex items-center justify-center">3</div>
+                <div className="text-center py-3 text-gray-700 font-medium px-4 h-16 flex items-center justify-center">4</div>
               </div>
             </div>
             
@@ -74,6 +75,9 @@ const Page = () => {
                 <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
                   Other Sources (if any)
                 </div>
+                <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
+                  Grand Total
+                </div>
               </div>
             </div>
             
@@ -83,6 +87,9 @@ const Page = () => {
                 Pending at the end of last month
               </div>
               <div className="flex-1 pt-4">
+                <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center break-words">
+                  0
+                </div>
                 <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center break-words">
                   0
                 </div>
@@ -110,6 +117,9 @@ const Page = () => {
                 <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
                   0
                 </div>
+                <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
+                  0
+                </div>
               </div>
             </div>
             
@@ -119,6 +129,9 @@ const Page = () => {
                 Resolved
               </div>
               <div className="flex-1 pt-4">
+                <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center break-all">
+                  0
+                </div>
                 <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center break-all">
                   0
                 </div>
@@ -146,6 +159,9 @@ const Page = () => {
                 <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
                   0
                 </div>
+                <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
+                  0
+                </div>
               </div>
             </div>
             
@@ -164,6 +180,9 @@ const Page = () => {
                 <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
                   0
                 </div>
+                <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
+                  0
+                </div>
               </div>
             </div>
             
@@ -173,6 +192,9 @@ const Page = () => {
                 Average Resolution time^ (in days)
               </div>
               <div className="flex-1 pt-4">
+                <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
+                  0
+                </div>
                 <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
                   0
                 </div>
@@ -201,6 +223,7 @@ const Page = () => {
                 <div className="text-center py-3 text-gray-700 font-medium px-3 text-sm h-16 flex items-center justify-center">1</div>
                 <div className="text-center py-3 text-gray-700 font-medium px-3 text-sm h-16 flex items-center justify-center">2</div>
                 <div className="text-center py-3 text-gray-700 font-medium px-3 text-sm h-16 flex items-center justify-center">3</div>
+                <div className="text-center py-3 text-gray-700 font-medium px-3 text-sm h-16 flex items-center justify-center">4</div>
               </div>
             </div>
             
@@ -219,6 +242,9 @@ const Page = () => {
                 <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center">
                   Other Sources (if any)
                 </div>
+                <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center">
+                  Grand Total
+                </div>
               </div>
             </div>
             
@@ -228,6 +254,9 @@ const Page = () => {
                 <span className="text-sm">Pending at the end of last month</span>
               </div>
               <div className="flex-1 pt-4">
+                <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center break-words">
+                  0
+                </div>
                 <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center break-words">
                   0
                 </div>
@@ -255,6 +284,9 @@ const Page = () => {
                 <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center">
                   0
                 </div>
+                <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center">
+                  0
+                </div>
               </div>
             </div>
             
@@ -264,6 +296,9 @@ const Page = () => {
                 <span className="text-sm">Resolved</span>
               </div>
               <div className="flex-1 pt-4">
+                <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center break-all">
+                  0
+                </div>
                 <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center break-all">
                   0
                 </div>
@@ -291,6 +326,9 @@ const Page = () => {
                 <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center">
                   0
                 </div>
+                <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center">
+                  0
+                </div>
               </div>
             </div>
             
@@ -309,6 +347,9 @@ const Page = () => {
                 <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center">
                   0
                 </div>
+                <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center">
+                  0
+                </div>
               </div>
             </div>
             
@@ -318,6 +359,9 @@ const Page = () => {
                 <span className="text-sm">Average Resolution time^ (in days)</span>
               </div>
               <div className="flex-1 pt-4">
+                <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center">
+                  0
+                </div>
                 <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center">
                   0
                 </div>

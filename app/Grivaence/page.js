@@ -74,6 +74,7 @@ const Page = () => {
                 <div className="text-center py-3 text-gray-700 font-medium px-4 h-16 flex items-center justify-center">Proprietor</div>
                 <div className="text-center py-3 text-gray-700 font-medium px-4 h-16 flex items-center justify-center">Compliance Officer</div>
                 <div className="text-center py-3 text-gray-700 font-medium px-4 h-16 flex items-center justify-center">Grievance Officer</div>
+                <div className="text-center py-3 text-gray-700 font-medium px-4 h-16 flex items-center justify-center">Customer Care</div>
               </div>
             </div>
             
@@ -85,6 +86,9 @@ const Page = () => {
               <div className="flex-1 pt-4">
                 <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
                   Shikha Kapur
+                </div>
+                <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
+                 Shikha Kapur
                 </div>
                 <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
                  Shikha Kapur
@@ -110,6 +114,9 @@ const Page = () => {
                 <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center break-words">
                  A 35 FIRST FLOOR, Chittaranjan Park, NEW
                 </div>
+                <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center break-words">
+                 A 35 FIRST FLOOR, Chittaranjan Park, NEW
+                </div>
               </div>
             </div>
             
@@ -123,6 +130,9 @@ const Page = () => {
                   9811744587
                 </div>
                 <div className="text-center py-3 text-gray-700 text-bae leading-relaxed px-4 h-16 flex items-center justify-center">
+                  9811744587
+                </div>
+                <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
                   9811744587
                 </div>
                 <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
@@ -146,6 +156,9 @@ const Page = () => {
                 <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center break-all">
                  shikhaa.kapur@gmail.com
                 </div>
+                <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center break-all">
+                 shikhaa.kapur@gmail.com
+                </div>
               </div>
             </div>
             
@@ -160,6 +173,9 @@ const Page = () => {
                 </div>
                 <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
                  Monday to Friday, 11
+                </div>
+                <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
+                  Monday to Friday, 11
                 </div>
                 <div className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
                   Monday to Friday, 11
@@ -183,6 +199,7 @@ const Page = () => {
                 <div className="text-center py-3 text-gray-700 font-medium px-3 text-sm h-16 flex items-center justify-center">Proprietor</div>
                 <div className="text-center py-3 text-gray-700 font-medium px-3 text-sm h-16 flex items-center justify-center">Compliance Officer</div>
                 <div className="text-center py-3 text-gray-700 font-medium px-3 text-sm h-16 flex items-center justify-center">Grievance Officer</div>
+                <div className="text-center py-3 text-gray-700 font-medium px-3 text-sm h-16 flex items-center justify-center">Customer care</div>
               </div>
             </div>
             
@@ -192,6 +209,9 @@ const Page = () => {
                 <span className="text-sm">Contact Person Name</span>
               </div>
               <div className="flex-1 pt-4">
+                <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center">
+                  Shikha Kapur
+                </div>
                 <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center">
                   Shikha Kapur
                 </div>
@@ -219,6 +239,9 @@ const Page = () => {
                 <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center break-words">
                   A 35 FIRST FLOOR, Chittaranjan Park, NEW
                 </div>
+                <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center break-words">
+                  A 35 FIRST FLOOR, Chittaranjan Park, NEW
+                </div>
               </div>
             </div>
             
@@ -228,6 +251,9 @@ const Page = () => {
                 <span className="text-sm">Contact No</span>
               </div>
               <div className="flex-1 pt-4">
+                <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center">
+                  9811744587
+                </div>
                 <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center">
                   9811744587
                 </div>
@@ -255,6 +281,9 @@ const Page = () => {
                 <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center break-all">
                   shikhaa.kapur@gmail.com
                 </div>
+                <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center break-all">
+                  shikhaa.kapur@gmail.com
+                </div>
               </div>
             </div>
             
@@ -273,12 +302,17 @@ const Page = () => {
                 <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center">
                   Monday to Friday, 11
                 </div>
+                <div className="text-center py-3 text-gray-700 text-xs leading-relaxed px-3 h-16 flex items-center justify-center">
+                  Monday to Friday, 11
+                </div>
               </div>
             </div>
+
           </div>
         </div>
       </div>
     </div>
+
  {/*Info*/}
       <div className="space-y-4 px-4 sm:px-8 lg:px-12 mt-28 mb-20">
        
@@ -293,10 +327,7 @@ const Page = () => {
             Clients can write to the research analyst at <span className="font-medium">shikhaa.kapur@gmail.com</span> if a response is not received within 10 business days of contacting the Client Servicing Team. A reply can be expected within 10 business days of approaching the research analyst.
           </li>
           <li>
-            If unsatisfied with the response, clients can lodge their grievance with SEBI at <a href="https://scores.sebi.gov.in/" className=" underline" target="_blank" rel="noopener noreferrer">https://scores.sebi.gov.in/</a> or write to any SEBI office. SCORES is also available as a mobile app here: <a href="https://play.google.com/store/apps/details?id=com.ionicframework.sebi236330" className=" underline" target="_blank" rel="noopener noreferrer">Download SCORES App</a>.
-          </li>
-          <li>
-            If still dissatisfied, clients may access the SEBI-mandated <span className="font-medium">Online Dispute Resolution (ODR) Portal</span> which provides conciliation and online arbitration. Read SEBI Circular No. SEBI/HO/OIAE/OIAE_IAD-1/P/CIR/2023/131 dated July 31, 2023. Access the ODR portal here: <a href="https://smartodr.in/" className=" underline" target="_blank" rel="noopener noreferrer">https://smartodr.in/</a>.
+            In case you are not satisfied with our response you can lodge your grievance with SEBI at https://scores.sebi.gov.in/ or you may also write to any of the offices of SEBI. SCORES may be accessed thorough SCORES mobile application as well, same can be downloaded from below link: <a href=''>https://play.google.com/store/apps/details?id=com.ionicframework.sebi236330</a>  ODR Portal could be accessed, if unsatisfied with the response. Your attention is drawn to the SEBI circular no. SEBI/HO/OIAE/OIAE_IAD-1/P/CIR/2023/131 dated July 31, 2023, on “Online Resolution of Disputes in the Indian Securities Market”. A common Online Dispute Resolution Portal (“ODR Portal”) which harnesses conciliation and online arbitration for resolution of disputes arising in the Indian Securities Market has been established. ODR Portal can be accessed via the following link <a className='text-bold' href='https://smartodr.in/'>https://smartodr.in/</a>
           </li>
         </ol>
       </div>
