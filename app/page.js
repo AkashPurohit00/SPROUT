@@ -434,7 +434,7 @@ export default function Home() {
         <div className="flex justify-center mb-8">
           <button
             onClick={handleToggle}
-            className="relative flex items-center bg-blue-100 rounded-full p-1 shadow-inner cursor-pointer transition-all duration-300 ease-in-out w-64 h-12"
+            className="relative flex items-center bg-blue-100 rounded-full p-1 shadow-inner cursor-pointer transition-all duration-300 ease-in-out w-70 h-12"
           >
             {/* Background for the active toggle */}
             <div
@@ -484,7 +484,7 @@ export default function Home() {
               {/* Button for Retail Section */}
               <div className="mt-6 text-center">
                 <a
-                  href="#retail-page" // Placeholder link
+                  href="/Rservice/Retail" // Placeholder link
                   className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out shadow-md hover:shadow-lg"
                 >
                   Learn More for Retail Investors
@@ -513,7 +513,7 @@ export default function Home() {
               {/* Button for Institutional Section */}
               <div className="mt-6 text-center">
                 <a
-                  href="#institutional-page" // Placeholder link
+                  href="/Rservice/Psg" // Placeholder link
                   className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out shadow-md hover:shadow-lg"
                 >
                   Explore Institutional Solutions

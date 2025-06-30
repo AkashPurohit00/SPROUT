@@ -114,9 +114,8 @@ const Header = () => {
               </div>
             )}
           </li>
- {/* Research Link */}
-          
-           {/* Insights Link */}
+
+          {/* Insights Link */}
           <li>
             <Link
               href="/Insights"
@@ -139,6 +138,20 @@ const Header = () => {
               <span
                 className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
                 ${pathname === '/Contact' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+              />
+            </Link>
+          </li>
+
+          {/* Login Link */}
+          <li>
+            <Link
+              href="/login"
+              className={`relative group ${pathname === '/login' ? 'text-black' : 'text-black'}`}
+            >
+              Log In
+              <span
+                className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
+                ${pathname === '/login' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
               />
             </Link>
           </li>
@@ -249,6 +262,18 @@ const Header = () => {
                 <span
                   className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
                   ${pathname === '/Contact' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+                />
+              </div>
+            </Link>
+          </div>
+          {/* Login Link */}
+          <div>
+            <Link href="/login" onClick={() => setMenuOpen(false)}>
+              <div className="relative group">
+                Log In
+                <span
+                  className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
+                  ${pathname === '/login' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
                 />
               </div>
             </Link>

@@ -6,6 +6,7 @@ import { useAuth } from '@/contexts/AuthContext';
 import { addInsight } from '@/lib/insightsService';
 import Login from '@/app/admin/Insights/LoginForm'; // Adjust the import path as needed
 
+
 export default function AdminInsights() {
   const { isAuthenticated, loading: authLoading, user, logout } = useAuth();
   
@@ -16,28 +17,21 @@ export default function AdminInsights() {
     cloudinaryId: '',
     pdfLink: ''
   });
+  // State for Add User Form
+  const [fullName, setFullName] = useState('');
+  const [phone, setPhone] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [subscriptionStart, setSubscriptionStart] = useState('');
+  const [subscriptionEnd, setSubscriptionEnd] = useState('');
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
+  const [userAddSuccess, setUserAddSuccess] = useState('');
 
-  // Show loading while checking authentication
-  if (authLoading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="flex items-center space-x-2">
-          <svg className="animate-spin h-8 w-8 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-          </svg>
-          <span className="text-gray-600">Loading...</span>
-        </div>
-      </div>
-    );
-  }
-
-  // Show login if not authenticated
-  if (!isAuthenticated) {
-    return <Login />;
-  }
+  const handleLogout = () => {
+    logout();
+  };
+  
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -82,172 +76,218 @@ export default function AdminInsights() {
     }
   };
 
-  const handleLogout = () => {
-    logout();
+
+  const handleAddUser = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    setUserAddSuccess('');
+
+    try {
+      const response = await fetch('/admin/api/adduser', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName,
+          phone,
+          email,
+          password,
+          subscriptionStart,
+          subscriptionEnd
+        })
+      });
+
+      if (response.ok) {
+        setFullName('');
+        setPhone('');
+        setEmail('');
+        setPassword('');
+        setSubscriptionStart('');
+        setSubscriptionEnd('');
+        setUserAddSuccess('User added successfully!');
+      } else {
+        setUserAddSuccess('Error adding user.');
+      }
+    } catch (error) {
+      console.error(error);
+      setUserAddSuccess('Error adding user.');
+    }
+
+    setLoading(false);
   };
+
+  // Show loading while checking authentication
+  if (authLoading) {
+    return (
+      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
+        <div className="flex items-center space-x-2">
+          <svg className="animate-spin h-8 w-8 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+          </svg>
+          <span className="text-gray-600">Loading...</span>
+        </div>
+      </div>
+    );
+  }
+
+  // Show login if not authenticated
+  if (!isAuthenticated) {
+    return <Login />;
+  }
+
+
 
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="max-w-2xl mx-auto px-4">
-        {/* Header with user info and logout */}
-        <div className="bg-white rounded-lg shadow-sm p-4 mb-6 flex justify-between items-center">
+        {/* Header */}
+        <div className="bg-white shadow rounded-lg p-4 mb-6 flex justify-between items-center">
           <div>
-            <h1 className="text-xl font-semibold text-gray-900">Admin Panel</h1>
-            <p className="text-sm text-gray-600">Welcome back, {user?.username}</p>
+            <h1 className="text-xl font-semibold">Admin Panel</h1>
+            <p className="text-sm text-gray-600">Welcome, {user?.username}</p>
           </div>
           <button
             onClick={handleLogout}
-            className="flex items-center px-4 py-2 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-md transition-colors duration-200"
+            className="px-4 py-2 text-sm bg-red-100 hover:bg-red-200 rounded"
           >
-            <svg className="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" />
-            </svg>
             Logout
           </button>
         </div>
 
-        <div className="bg-white rounded-lg shadow-md p-6">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6">
-            Add New Insight
-          </h2>
+        {/* Insights Form */}
+        <div className="bg-white p-6 rounded-lg shadow space-y-4">
+          <h2 className="text-xl font-bold mb-4">Add New Insight</h2>
 
           {message && (
-            <div className={`p-4 rounded-md mb-6 ${
-              message.includes('Error') 
-                ? 'bg-red-100 text-red-700 border border-red-300' 
-                : 'bg-green-100 text-green-700 border border-green-300'
-            }`}>
-              <div className="flex items-center">
-                {message.includes('Error') ? (
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
-                  </svg>
-                ) : (
-                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                )}
-                {message}
-              </div>
+            <div className={`p-3 rounded ${message.includes('Error') ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
+              {message}
             </div>
           )}
 
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Title *
-              </label>
-              <input
-                type="text"
-                name="title"
-                value={formData.title}
-                onChange={handleInputChange}
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                placeholder="Enter insight title"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Subtitle *
-              </label>
-              <textarea
-                name="subtitle"
-                value={formData.subtitle}
-                onChange={handleInputChange}
-                required
-                rows={3}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                placeholder="Enter insight subtitle/description"
-              />
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Cloudinary Image ID (Recommended)
-              </label>
-              <input
-                type="text"
-                name="cloudinaryId"
-                value={formData.cloudinaryId}
-                onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                placeholder="Enter Cloudinary public ID"
-              />
-              <p className="text-sm text-gray-500 mt-1">
-                Upload your image to Cloudinary and enter the public ID here for optimized loading
-              </p>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                Fallback Image URL
-              </label>
-              <input
-                type="url"
-                name="thumbnail"
-                value={formData.thumbnail}
-                onChange={handleInputChange}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                placeholder="Enter fallback image URL"
-              />
-              <p className="text-sm text-gray-500 mt-1">
-                This will be used if Cloudinary ID is not provided
-              </p>
-            </div>
-
-            <div>
-              <label className="block text-sm font-medium text-gray-700 mb-2">
-                PDF Link (Google Drive) *
-              </label>
-              <input
-                type="url"
-                name="pdfLink"
-                value={formData.pdfLink}
-                onChange={handleInputChange}
-                required
-                className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent"
-                placeholder="https://drive.google.com/file/d/..."
-              />
-              <p className="text-sm text-gray-500 mt-1">
-                Make sure the Google Drive link is publicly accessible
-              </p>
-            </div>
+          <form onSubmit={handleSubmit} className="space-y-4">
+            <input
+              type="text"
+              name="title"
+              value={formData.title}
+              onChange={handleInputChange}
+              required
+              placeholder="Title *"
+              className="w-full p-2 border rounded"
+            />
+            <textarea
+              name="subtitle"
+              value={formData.subtitle}
+              onChange={handleInputChange}
+              required
+              rows="3"
+              placeholder="Subtitle/Description *"
+              className="w-full p-2 border rounded"
+            />
+            <input
+              type="text"
+              name="cloudinaryId"
+              value={formData.cloudinaryId}
+              onChange={handleInputChange}
+              placeholder="Cloudinary Public ID"
+              className="w-full p-2 border rounded"
+            />
+            <input
+              type="url"
+              name="thumbnail"
+              value={formData.thumbnail}
+              onChange={handleInputChange}
+              placeholder="Fallback Image URL"
+              className="w-full p-2 border rounded"
+            />
+            <input
+              type="url"
+              name="pdfLink"
+              value={formData.pdfLink}
+              onChange={handleInputChange}
+              required
+              placeholder="Google Drive PDF Link *"
+              className="w-full p-2 border rounded"
+            />
 
             <button
               type="submit"
               disabled={loading}
-              className={`w-full py-2 px-4 rounded-md font-medium ${
-                loading
-                  ? 'bg-gray-400 cursor-not-allowed'
-                  : 'bg-indigo-600 hover:bg-indigo-700'
-              } text-white transition-colors duration-200`}
+              className={`w-full py-2 rounded text-white ${loading ? 'bg-gray-400' : 'bg-indigo-600 hover:bg-indigo-700'}`}
             >
-              {loading ? (
-                <div className="flex items-center justify-center">
-                  <svg className="animate-spin -ml-1 mr-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
-                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                  </svg>
-                  Adding Insight...
-                </div>
-              ) : (
-                'Add Insight'
-              )}
+              {loading ? 'Adding...' : 'Add Insight'}
             </button>
           </form>
-
-          <div className="mt-8 p-4 bg-gray-100 rounded-md">
-            <h3 className="font-medium text-gray-900 mb-2">Instructions:</h3>
-            <ul className="text-sm text-gray-600 space-y-1">
-              <li>• Upload images to Cloudinary and use the public ID for best performance</li>
-              <li>• Make sure Google Drive PDFs are set to "Anyone with the link can view"</li>
-              <li>• All insights will appear in chronological order (newest first)</li>
-              <li>• View counts will automatically update when users click "Read More"</li>
-            </ul>
-          </div>
         </div>
+      </div>
+
+      {/* Add User Section */}
+      <div className="mt-10 max-w-4xl mx-auto p-6 bg-white shadow-xl rounded-lg">
+        <h2 className="text-2xl font-bold mb-4">Add New User</h2>
+
+        <form onSubmit={handleAddUser} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <input
+            type="text"
+            placeholder="Full Name"
+            value={fullName}
+            onChange={(e) => setFullName(e.target.value)}
+            required
+            className="border rounded-xl p-3 w-full"
+          />
+          <input
+            type="text"
+            placeholder="Phone Number"
+            value={phone}
+            onChange={(e) => setPhone(e.target.value)}
+            required
+            className="border rounded-xl p-3 w-full"
+          />
+          <input
+            type="email"
+            placeholder="Email ID"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            required
+            className="border rounded-xl p-3 w-full"
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            required
+            className="border rounded-xl p-3 w-full"
+          />
+          <input
+            type="date"
+            placeholder="Subscription Start"
+            value={subscriptionStart}
+            onChange={(e) => setSubscriptionStart(e.target.value)}
+            required
+            className="border rounded-xl p-3 w-full"
+          />
+          <input
+            type="date"
+            placeholder="Subscription End"
+            value={subscriptionEnd}
+            onChange={(e) => setSubscriptionEnd(e.target.value)}
+            required
+            className="border rounded-xl p-3 w-full"
+          />
+
+          <div className="md:col-span-2">
+            <button
+              type="submit"
+              disabled={loading}
+              className="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 w-full transition"
+            >
+              {loading ? 'Adding...' : 'Add User'}
+            </button>
+
+            {userAddSuccess && (
+              <p className="mt-4 text-green-600 font-semibold">{userAddSuccess}</p>
+            )}
+          </div>
+        </form>
       </div>
     </div>
   );
