@@ -490,20 +490,24 @@ export default function Home() {
                       // Retail Content
                       <div className="animate-fade-in">
                         <h2 className="text-2xl font-semibold text-gray-700 mb-4">
-                          For Individual Investors (Retail)
+                          Retail
                         </h2>
                         <p className="text-gray-600 leading-relaxed mb-4">
-                          Welcome, individual investors! Here you'll find information tailored to your personal investment needs. Our retail offerings focus on ease of use, diversified portfolios suitable for various risk appetites, and direct access to financial guidance.
+                          Built to bridge the gap between complex financial research and the needs of retail investors, our research targets high-growth potential across various market capitalizations, from small-cap gems to established large-cap stocks.
                         </p>
                         <ul className="list-disc list-inside text-gray-600 space-y-2">
-                          <li>Access to mutual funds and ETFs.</li>
-                          <li>Personalized financial planning tools.</li>
-                          <li>User-friendly online trading platform.</li>
-                          <li>Educational resources for new and experienced investors.</li>
-                          <li>Low-cost investment options.</li>
+                          <li><a className="font-bold">Robust Fundamental and Forensic Analysis</a> enabling informed decision-making</li>
+                          <li><a className="font-bold">Independent and Unbiased Research</a> for objective and trustworthy analysis</li>
+                          <li><a className="font-bold">Practical stock ideas for Active investors</a> with Short to Medium-Term Investment Focus</li>
+                          <li>Easy-to-understand Actionable Insights</li>
+                          <li>Affordable subscription pricing-</li>
+                          <ul className="list-decimal pl-12 list-inside text-gray-600 space-y-2">
+                              <li>Half-yearly subscription: INR 15,000/-</li>
+                              <li>Annual subscription: INR 25,000/-</li>
+                            </ul>
                         </ul>
-                        <p className="text-gray-600 leading-relaxed mt-4">
-                          Whether you're saving for retirement, a down payment, or simply growing your wealth, our retail solutions are designed to help you achieve your financial goals.
+                        <p className="text-gray-600 leading-relaxed italic mt-4">
+                          Designed with young and emerging investors in mind, our affordable subscription plans make professional-grade research accessible. This empowers beginners to invest in the stock market without breaking the bank.
                         </p>
                         {/* Button for Retail Section */}
                         <div className="mt-6 text-center">
