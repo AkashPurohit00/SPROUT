@@ -49,9 +49,11 @@ export default function Home() {
     </p>
     
 
+    <Link href='/Contact'>
     <button className="bg-white text-black px-6 sm:px-8 py-2 font-semibold border border-black rounded-full transition-transform duration-300 hover:-translate-y-2">
       Enquire Now
     </button>
+    </Link>
   </div>
 </div>
 
@@ -184,7 +186,7 @@ export default function Home() {
                 </svg>
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">EXPERIENCE</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">EXTENSIVE MARKET EXPERIENCE</h3>
             <p className="text-gray-600 text-center leading-relaxed">
               With over two decades of experience navigating the stock market’s highs and lows, we bring unparalleled expertise and dedication to every stock idea
             </p>
@@ -244,7 +246,7 @@ export default function Home() {
                 </svg>
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">UNBIASED RESEARCH</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">UNBIASED <br/>RESEARCH</h3>
             <p className="text-gray-600 text-center leading-relaxed">
               Our reports are free from market hype or external pressures, focusing solely on data-driven insights to guide your portfolio decisions.
             </p>
@@ -571,8 +573,8 @@ export default function Home() {
             </div>
             {/* Button */}
            <div>
-  <a
-    href="#contact"
+  <Link
+    href="/Rservice/Retail"
     className="inline-flex items-center bg-white text-gray-700 px-6 py-3 rounded-full border border-gray-300 font-semibold text-lg hover:bg-gray-100 transition-all duration-300 hover:-translate-y-2 transition-transform"
   >
     Get Started
@@ -585,7 +587,7 @@ export default function Home() {
     >
       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
     </svg>
-  </a>
+  </Link>
 </div>
 
           </div>

@@ -37,7 +37,8 @@ const Footer = () => {
       <div className="container max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Logo and Description */}
-          <div className="space-y-4">
+          <div className="space-y-4 ">
+            <Link href="/">
             <div className="logo flex items-center">
               <Image
                 src="/images/pic2.jpg"
@@ -48,7 +49,8 @@ const Footer = () => {
                 priority
               />
             </div>
-            <p className="text-gray-600 text-sm leading-relaxed">
+            </Link>
+            <p className="text-gray-600 text-sm leading-relaxed mt-4">
               Leverage the unparalleled expertise and strategic guidance of
               Sprout Partners. Our team excels in financial restructuring,
               developing business strategies and crafting tailored financial
@@ -285,7 +287,7 @@ const Footer = () => {
                   href="/Grivaence"
                   className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
                 >
-                Investor Grievaence
+                Investor Grievance
                 </a>
               </li>
               <li>
@@ -301,7 +303,7 @@ const Footer = () => {
                   href="/Report"
                   className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
                 >
-                Investor Grievaence Report 
+                Investor Grievance Report 
                 </a>
               </li>
             </ul>
