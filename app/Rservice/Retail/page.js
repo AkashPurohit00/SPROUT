@@ -281,7 +281,7 @@ const page = () => {
            <div>
   <Link
     href="/Soon"
-    className="inline-flex items-center bg-white text-gray-700 px-6 py-3 rounded-full border border-gray-300 font-semibold text-lg hover:bg-gray-100 transition-all duration-300 hover:-translate-y-2 transition-transform"
+    className="inline-flex items-center bg-white text-gray-700 px-6 py-3 rounded-full border border-gray-300 font-semibold text-lg hover:bg-gray-100 transition-all duration-300 hover:-translate-y-2 "
   >
     Subscribe 
    
