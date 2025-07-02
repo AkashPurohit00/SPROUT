@@ -76,10 +76,10 @@ const InsightCard = ({ insight, onReadMore }) => {
       {/* Desktop/Tablet Layout - Side by side */}
       <div className="hidden md:flex">
         {/* Image Container with proper 16:9 aspect ratio */}
-        <div className="w-2/5 lg:w-1/3 xl:w-2/5 flex-shrink-0 bg-gray-100">
-          <div className="relative w-full h-full">
+        <div className="w-2/5 lg:w-1/3 xl:w-2/5 flex-shrink-0  bg-blue-50">
+          <div className="relative flex flex-col items-center justify-center w-full h-full ">
             {/* 16:9 Aspect Ratio Container */}
-            <div className="aspect-video w-full bg-gray-100 overflow-hidden">
+            <div className="aspect-video w-full border-8 border-gray-300  rounded-b-md   bg-white overflow-hidden">
               <img
                 src={insight.thumbnailUrl || insight.thumbnail}
                 alt={insight.title}
@@ -170,7 +170,7 @@ const LoadingCard = () => (
 
     {/* Desktop Loading */}
     <div className="hidden md:flex">
-      <div className="w-2/5 lg:w-1/3 xl:w-2/5 flex-shrink-0 bg-gray-100">
+      <div className="w-2/5 lg:w-1/3 xl:w-2/5 flex-shrink-0 bg-white">
         <div className="aspect-video w-full bg-gray-300"></div>
       </div>
       <div className="w-3/5 lg:w-2/3 xl:w-3/5 p-6 lg:p-8 flex flex-col justify-between">
@@ -183,7 +183,7 @@ const LoadingCard = () => (
           <div className="h-4 bg-gray-300 rounded mb-2"></div>
           <div className="h-4 bg-gray-300 rounded mb-6 w-3/4"></div>
         </div>
-        <div className="flex justify-between items-center pt-6 border-t border-gray-100">
+        <div className="flex justify-between items-center pt-6 border-t bor der-gray-100">
           <div className="h-10 bg-gray-300 rounded-lg w-32"></div>
           <div className="h-4 bg-gray-300 rounded w-20"></div>
         </div>

@@ -34,9 +34,11 @@ const Header = () => {
     <header className="bg-white text-white p-4">
       <nav className="container mx-auto flex justify-between items-center h-16">
         {/* Logo */}
+        <Link href="/">
         <div className="flex items-center ml-16 mb-4 space-x-3">
           <Image src="/images/pic2.jpg" alt="Logo" width={176} height={96} className="h-24 w-44" />
         </div>
+        </Link>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 mr-56 text-xl font-medium">
