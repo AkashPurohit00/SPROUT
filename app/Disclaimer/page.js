@@ -34,24 +34,40 @@ const Page = () => {
                           information service and any trading done on the basis of this information is at your own, sole risk.
                     </p>
                   </div>
+
+
                          {/* Two-column responsive details */}
         <div className="mt-10 grid grid-cols-1 md:grid-cols-2 gap-8 mb-16 ">
           {/* Left column */}
-          <div className='pl-3 lg:pl-20'>
-          
-            <p className="text-sm lg:text-2xl space-y-2 ">
-                SHIKHA KAPUR PROPRIETOR OF SPROUT RESEARCH<br/>
-              Trade Name: SPROUT RESEARCH<br />
-              Registration No.: INH000019169<br />
-              Registered office Address: A 35 FIRST FLOOR, Chittaranjan Park, NEW DELHI, NATIONAL CAPITAL TERRITORY OF DELHI, 110019<br />
-              Contact No: 9811744587<br />
-              Email Id: shikhaa.kapur@gmail.com<br />
-              Compliance Officer: Shikha Kapur Contact No: 9811744587<br />
-              Email Id: shikhaa.kapur@gmail.com<br />
-              Grievance Officer: Shikha Kapur Contact No: 9811744587<br />
-              Email ID: shikhaa.kapur@gmail.com
-            </p>
-          </div>
+<div className='pl-3 lg:pl-20'>
+  <div className="text-sm lg:text-base space-y-1 text-gray-900 leading-relaxed">
+    <p className="font-semibold text-base lg:text-lg">SHIKHA KAPUR PROPRIETOR OF SPROUT RESEARCH</p>
+    
+    <p><span className="font-semibold">Trade Name:</span> SPROUT RESEARCH</p>
+    
+    <p><span className="font-semibold">Registration No.:</span> INH000019169</p>
+    
+    <p>
+      <span className="font-semibold">Registered office Address:</span> A 35 FIRST FLOOR, Chittaranjan Park, NEW DELHI, NATIONAL CAPITAL TERRITORY OF DELHI, 110019
+    </p>
+    
+    <p>
+      <span className="font-semibold">Contact No:</span> 9811744587 <span className="font-semibold">Email Id:</span> shikhaa.kapur@gmail.com
+    </p>
+    
+    <p>
+      <span className="font-semibold">Compliance Officer:</span> Shikha Kapur <span className="font-semibold">Contact No:</span> 9811744587
+    </p>
+    
+    <p><span className="font-semibold">Email Id:</span> shikhaa.kapur@gmail.com</p>
+    
+    <p>
+      <span className="font-semibold">Grievance Officer:</span> Shikha Kapur <span className="font-semibold">Contact No:</span> 9811744587
+    </p>
+    
+    <p><span className="font-semibold">Email ID:</span> shikhaa.kapur@gmail.com</p>
+  </div>
+</div>
 
           {/* Right column */}
           <div className='pl-6 lg:pl-20'>
