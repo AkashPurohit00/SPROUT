@@ -5,9 +5,7 @@ import Footer from '@/Components/Footer'
 
 const Page = () => {
   const months = [
-    'May 2025', 'April 2025', 'March 2025', 'February 2025', 'January 2025',
-    'December 2024', 'November 2024', 'October 2024', 'September 2024',
-    'August 2024', 'July 2024', 'June 2024', 'May 2024', 'April 2024'
+    'April 2024', 'May 2024', 'June 2024', 'July 2024', 'August 2024', 'September 2024', 'October 2024', 'November 2024', 'December 2024', 'January 2025', 'February 2025', 'March 2025', 'April 2025', 'May 2025'
   ];
 
   return (
@@ -208,6 +206,14 @@ const Page = () => {
             </div>
           </div>
         </div>
+        <div className="animate-fade-in mt-10">
+                        <ul className="list-disc list-inside text-gray-600 space-y-2">
+                          <li>Number of complaints received during month against the RA due to impersonation by some other entity: 0</li>
+                          <li>* Inclusive of complaints of previous months resolved in the current month.</li>
+                          <li># Inclusive of complaints pending as on the last day of the month.</li>
+                          <li>^ Average Resolution time is the sum total of time taken to resolve each complaint, in days, in the current month divided by total number of complaints resolved in the current month.</li>
+                        </ul>                       
+                      </div>
       </div>
       
       {/* Mobile View - Horizontally Scrollable */}
@@ -379,7 +385,7 @@ const Page = () => {
     </div>
 
     {/* Second Table - Monthly Disposal */}
-    <div className="space-y-8 px-4 sm:px-8 lg:px-12 mt-16 lg:mt-56">
+    <div className="space-y-8 px-4 sm:px-8 lg:px-12 mt-8 lg:mt-10">
       
       {/* Heading */}
       <h2 className="text-xl md:text-5xl font-bold text-left text-gray-800 mb-8">
