@@ -41,7 +41,7 @@ const Footer = () => {
             <Link href="/">
             <div className="logo flex items-center">
               <Image
-                src="/images/pic2.jpg"
+                src="/images/HD.png"
                 alt="Sprout Partners Logo"
                 width={192}
                 height={48}
@@ -400,27 +400,27 @@ const Footer = () => {
         <div className="mt-8 pt-8 border-t border-gray-300 flex flex-col md:flex-row justify-between items-center">
           <div className="flex space-x-4 mb-4 md:mb-0">
             <a
-              href="#privacy-policy"
+              href="/PrivacyPolicy"
               className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
             >
               Privacy Policy
             </a>
             <span className="text-gray-600">|</span>
             <a
-              href="#data-security"
+              href="/Refund_Cancilation"
               className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
             >
-              Data &amp; Security
+              Refund &amp; Cancellation
             </a>
             <span className="text-gray-600">|</span>
             <a
-              href="#terms-of-service"
+              href="/Terms"
               className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
             >
               Terms of Service
             </a>
           </div>
-          <p className="text-gray-600 text-sm">© 2022 Circle. All rights reserved.</p>
+          <p className="text-gray-600 text-sm">Sprout Research © 2025. All rights reserved.</p>
         </div>
       </div>
     </footer>
