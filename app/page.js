@@ -463,31 +463,31 @@ export default function Home() {
                   {/* Toggle Button Container */}
                   <div className="flex justify-center mb-8">
                     <button
-                      onClick={handleToggle}
-                      className="relative flex items-center bg-blue-100 rounded-full p-1 shadow-inner cursor-pointer transition-all duration-300 ease-in-out w-90 h-12"
-                    >
-                      {/* Background for the active toggle */}
-                      <div
-                        className={`absolute w-1/2 h-10 bg-blue-600 rounded-full shadow-md transform transition-all duration-300 ease-in-out
-                          ${activeSection === 'retail' ? 'translate-x-0' : 'translate-x-full'}`}
-                      ></div>
-
-                      {/* Retail Option */}
-                      <span
-                        className={`relative flex-1 text-center text-lg font-semibold py-2 px-4 rounded-full transition-colors duration-300 ease-in-out
-                          ${activeSection === 'retail' ? 'text-white' : 'text-blue-700'}`}
+                        onClick={handleToggle}
+                        className="relative flex items-center bg-blue-100 rounded-full p-1 shadow-inner cursor-pointer transition-all duration-300 ease-in-out w-90 h-12"
                       >
-                        Retail
-                      </span>
+                        {/* Background for the active toggle */}
+                        <div
+                          className={`absolute w-1/2 h-10 bg-blue-600 rounded-full shadow-md transform transition-all duration-300 ease-in-out
+                            ${activeSection === 'retail' ? 'translate-x-0' : 'translate-x-full'}`}
+                        ></div>
 
-                      {/* Institutional Option */}
-                      <span
-                        className={`relative flex-1 text-center text-lg font-semibold py-2 px-4 rounded-full transition-colors duration-300 ease-in-out
-                          ${activeSection === 'institutional' ? 'text-white' : 'text-blue-700'}`}
-                      >
-                        Private Client
-                      </span>
-                    </button>
+                        {/* Retail Option */}
+                        <span
+                          className={`relative flex-1 text-center text-sm sm:text-lg font-semibold py-2 px-2 sm:px-4 rounded-full transition-colors duration-300 ease-in-out
+                            ${activeSection === 'retail' ? 'text-white' : 'text-blue-700'}`}
+                        >
+                          Retail
+                        </span>
+
+                        {/* Institutional Option */}
+                        <span
+                          className={`relative flex-1 text-center text-sm sm:text-lg font-semibold py-2 px-2 sm:px-4 rounded-full transition-colors duration-300 ease-in-out
+                            ${activeSection === 'institutional' ? 'text-white' : 'text-blue-700'}`}
+                        >
+                          Private Client
+                        </span>
+                      </button>
                   </div>
 
                   {/* Content Section */}
@@ -540,7 +540,7 @@ export default function Home() {
                         </p>
                         
                         <p className="text-gray-600 leading-relaxed mt-4">
-                          In collaboration with Trudence Capital, a SEBI-registered Research Analyst (SEBI*******), we partner with institutional clients to deliver robust, scalable solutions that optimize investment performance and align with their strategic objectives.
+                          In collaboration with Trudence Capital, a SEBI-registered Research Analyst (SEBI Registration No. INH000015747), we partner with institutional clients to deliver robust, scalable solutions that optimize investment performance and align with their strategic objectives.
                         </p>
                         {/* Button for Institutional Section */}
                         <div className="mt-10 text-center">
