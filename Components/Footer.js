@@ -235,14 +235,14 @@ const Footer = () => {
                 </Link>
               </li> */}
 
-              <li>
+              {/* <li>
                 <a
                   href="/admin/Insights"
                   className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
                 >
                   Admin Panel
                 </a>
-              </li>
+              </li> */}
             </ul>
           </div>
 
@@ -284,7 +284,7 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="/Grivaence"
+                  href="/Grievance"
                   className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
                 >
                 Investor Grievance
@@ -388,7 +388,7 @@ const Footer = () => {
             </a>
             <span className="text-gray-600">|</span>
             <a
-              href="/Refund_Cancilation"
+              href="/Refund_Cancellation"
               className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
             >
               Refund &amp; Cancellation
@@ -400,6 +400,15 @@ const Footer = () => {
             >
               Terms of Service
             </a>
+            <span className="text-gray-600">|</span>
+            
+                <a
+                  href="/admin/Insights"
+                  className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
+                >
+                  Admin Panel
+                </a>
+
           </div>
           <p className="text-gray-600 text-sm">Sprout Research © 2025. All rights reserved.</p>
         </div>
