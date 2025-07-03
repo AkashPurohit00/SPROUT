@@ -11,7 +11,7 @@ export default function Page() {
       <div className="relative min-h-screen bg-amber-950">
         {/* Background Image */}
         <Image
-          src="/images/pic1.jpg"
+          src="/images/pic5.jpg"
           alt="Contact Us"  
           fill
           className="w-full h-full object-cover absolute inset-0 z-0"
@@ -23,22 +23,17 @@ export default function Page() {
 
             {/* Left Contact Info */}
             <div className="md:w-1/2 w-full pr-0 md:pr-8 mb-6 md:mb-0 text-black">
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6">Contact Information</h2>
+              <h2 className="text-2xl sm:text-4xl md:text-4xl font-bold mb-20 mt-10">Contact Information</h2>
               <ul className="space-y-6 sm:space-y-8 text-base sm:text-lg">
-                <li>📞 +91-7838135315</li>
-                <li>📧 team@sproutpartners.in</li>
-                <li>
-                  🏢 2nd Floor, Indure House,<br />
-                  Savitri Cinema Complex,<br />
-                  Greater Kailash-II,<br />
-                  New Delhi-110048
-                </li>
+                <li>📞 +91-9811744587 / +91-7838135315</li>
+                <li>📧 sproutresearch.equity@gmail.com</li>
+               
               </ul>
             </div>
 
             {/* Right Form with white bg, rounded corners, margin inside blue container */}
             <form className="md:w-1/2 w-full bg-white rounded-xl p-6 sm:p-8 mx-0 sm:mx-4 md:mx-0 shadow-lg space-y-10">
-  <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-6">Say Hello!</h2>
+  <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-gray-800 mb-6">Say Hello!</h2>
 
   <div className="flex flex-col space-y-10 sm:flex-row sm:space-x-4 sm:space-y-0">
     <input
@@ -85,7 +80,7 @@ export default function Page() {
     type="submit"
     className="w-full bg-blue-400 text-white py-3 rounded font-semibold hover:bg-blue-500 transition"
   >
-    Submit Application
+    Submit 
   </button>
 </form>
 
@@ -94,7 +89,7 @@ export default function Page() {
       </div>
       
       {/*location of the comapny*/}
-    <div className='pt-16 min-h-screen flex flex-col items-center mb-10  sm:mb-10 lg:mb-[-80px]'>
+    {/* <div className='pt-16 min-h-screen flex flex-col items-center mb-10  sm:mb-10 lg:mb-[-80px]'>
   <h1 className='text-3xl pt-40px sm:text-3xl md:text-4xl lg:text-5xl text-center font-bold'>Our Location</h1>
   <div className="pt-10 w-full h-[700px] max-w-[1000px] px-4 sm:px-6 lg:px-0">
     <iframe
@@ -106,7 +101,7 @@ export default function Page() {
       referrerPolicy="no-referrer-when-downgrade"
     ></iframe>
   </div>
-</div>
+    </div> */}
         <Footer />
     </>
   );

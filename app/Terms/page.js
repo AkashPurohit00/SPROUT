@@ -22,6 +22,7 @@ export default function Terms() {
                     <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
                      Terms and Conditions
                     </h1>
+                    <p>Last updated: July 3, 2025</p>
                 </div>
         </div>
 

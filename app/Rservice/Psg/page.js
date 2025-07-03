@@ -278,32 +278,22 @@ const page = () => {
         </div>
     </div>
 
-    <section id="ready-to-work" className="bg-blue-50 py-16">
-            <div className="container max-w-7xl mx-auto px-6">
-              <div className="flex flex-col md:flex-row justify-between items-center">
-                {/* Text Content */}
-                <div className="mb-6 md:mb-0 text-center md:text-left">
-                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
-                    Ready to work with us ?
-                  </h2>
-                  <p className="text-lg md:text-xl text-gray-600">
-                    Reach out and we can create magic together
-                  </p>
-                </div>
-                {/* Button */}
-              <div>
-      <Link
-        href="https://trudencecapital.com/sprout/"
-        className="inline-flex items-center bg-white text-gray-700 px-6 py-3 rounded-full border border-gray-300 font-semibold text-lg hover:bg-gray-100 transition-all duration-300 hover:-translate-y-2 transition-transform"
-      >
-        Subscribe 
-      
-      </Link>
+    <section id="ready-to-work" className="bg-white py-8 mb-16">
+  <div className="container max-w-7xl mx-auto px-10">
+    <div className="flex flex-col md:flex-row justify-center items-center">
+      {/* Button */}
+      <div>
+        <Link
+          href="https://trudencecapital.com/sprout/"
+          className="inline-flex flex-col rounded-2xl items-center bg-blue-50 text-gray-700 px-10 py-6 border border-gray-300 font-semibold hover:bg-gray-100 transition-all duration-300 hover:-translate-y-2 transition-transform"
+        >
+          <span className="text-2xl font-bold">Subscribe</span>
+        </Link>
+      </div>
     </div>
-
-              </div>
-            </div>
+  </div>
     </section>
+
 
     <Footer/>
 

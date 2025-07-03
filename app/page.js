@@ -33,7 +33,7 @@ export default function Home() {
   <div className="absolute inset-0 flex flex-col justify-center items-center text-black text-center px-4 sm:px-8 lg:px-20">
     
     {/* Heading  */}
-    <h1 className="text-3xl sm:text-3xl md:text-5xl lg:text-6xl font-sans mb-6 lg:mb-8 lg:whitespace-nowrap">
+    <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-5xl font-sans mb-6 lg:mb-8 lg:whitespace-nowrap">
       Independent Stock Research You Can Trust
     </h1>
 
@@ -72,13 +72,15 @@ export default function Home() {
                 <div className="bg-[#D4E6F0] rounded-3xl p-8 lg:p-12 ">
                   
                   <div className="flex flex-row items-center">
-                    {/* Mission Icon */}
+                  {/* Mission Icon */}
                   <div className="mb-2 mr-4">
-                    <div className="w-10 h-10 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center ">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
-                      </svg>
-                    </div>
+                     <Image 
+                      src="/images/LEAVESONLY.png" 
+                      alt="Mission Icon" 
+                      width={32}
+                      height={32}
+                      className="object-contain"
+                    />
                   </div>
                   
                   {/* Mission Content */}
@@ -100,11 +102,13 @@ export default function Home() {
                   <div className="flex flex-row items-center">
                     {/* Philosophy Icon */}
                   <div className="mb-2 mr-4">
-                    <div className="w-10 h-10 bg-gradient-to-r from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center transition-transform duration-500">
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
-                      </svg>
-                    </div>
+                    <Image 
+                      src="/images/LEAVESONLY.png" 
+                      alt="Mission Icon" 
+                      width={32}
+                      height={32}
+                      className="object-contain"
+                    />
                   </div>
                   
                   {/* Philosophy Content */}
@@ -186,7 +190,7 @@ export default function Home() {
                 </svg>
               </div>
             </div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">EXTENSIVE MARKET EXPERIENCE</h3>
+            <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">EXPERIENCE</h3>
             <p className="text-gray-600 text-center leading-relaxed">
               With over two decades of experience navigating the stock market’s highs and lows, we bring unparalleled expertise and dedication to every stock idea
             </p>
@@ -203,7 +207,7 @@ export default function Home() {
       </div>
       <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">IN-DEPTH FUNDAMENTAL ANALYSIS</h3>
       <p className="text-gray-600 text-center leading-relaxed">
-      We conduct thorough fundamental analysis to evaluate a company’s intrinsic value, ensuring our clients make informed investment decisions based on solid financial data.
+      We conduct thorough fundamental analysis to evaluate a company’s intrinsic value, ensuring our clients make informed investment decisions based on solid financial data
       </p>
     </div>
           {/* Feature 3 */}
@@ -218,7 +222,7 @@ export default function Home() {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">FORENSIC AUDIT EXPERTISE</h3>
             <p className="text-gray-600 text-center leading-relaxed">
-              Our forensic analysis uncovers hidden risks and irregularities, helping you avoid costly mistakes by providing a clear picture of a company’s true financial health.
+              Our forensic analysis uncovers hidden risks and irregularities, helping you avoid costly mistakes by providing a clear picture of a company’s true financial health
             </p>
           </div>
     {/* Feature 4 */}
@@ -233,7 +237,7 @@ export default function Home() {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">DIRECT CLIENT ENGAGEMENT</h3>
             <p className="text-gray-600 text-center leading-relaxed">
-              We work directly with you, bypassing intermediaries, to deliver personalized insights and recommendations tailored to your investment goals.
+              We work directly with you, bypassing intermediaries, to deliver personalized insights and recommendations tailored to your investment goals
             </p>
           </div>
     {/* Feature 5 */}
@@ -248,7 +252,7 @@ export default function Home() {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">UNBIASED <br/>RESEARCH</h3>
             <p className="text-gray-600 text-center leading-relaxed">
-              Our reports are free from market hype or external pressures, focusing solely on data-driven insights to guide your portfolio decisions.
+              Our reports are free from market hype or external pressures, focusing solely on data-driven insights to guide your portfolio decisions
             </p>
           </div>
       {/* Feature 6 */}
@@ -263,7 +267,7 @@ export default function Home() {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">TRANSPARENT METHODOLOGY</h3>
             <p className="text-gray-600 text-center leading-relaxed">
-              We provide clear, detailed explanations of our analysis process, ensuring you understand the reasoning behind every recommendation.
+              We provide clear, detailed explanations of our analysis process, ensuring you understand the reasoning behind every recommendation
             </p>
           </div>
         </div>
@@ -279,10 +283,10 @@ export default function Home() {
           {/* Section Title */}
           <div className="text-center mb-10">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
-              Our Process: From Seed to Success
+              Our Process
             </h2>
             <p className="text-lg md:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-              Let us guide you through every stage of your journey, from seed to success
+              Let us guide you through every stage of your journey.
             </p>
           </div>
 
@@ -304,9 +308,9 @@ export default function Home() {
                     </svg>
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">Planting the Seed</h3>
+                    <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">Idea Generation </h3>
                     <p className="text-gray-600 leading-relaxed">
-                      We begin by understanding your business needs, challenges and aspirations to lay a strong foundation for success.
+                      Our advanced quantitative model combs through extensive data, pinpointing promising prospects. By integrating global market trends, sector-specific knowledge, and individual stock analysis, we uncover unique investment opportunities.
                     </p>
                   </div>
                 </div>
@@ -460,7 +464,7 @@ export default function Home() {
                   <div className="flex justify-center mb-8">
                     <button
                       onClick={handleToggle}
-                      className="relative flex items-center bg-blue-100 rounded-full p-1 shadow-inner cursor-pointer transition-all duration-300 ease-in-out w-70 h-12"
+                      className="relative flex items-center bg-blue-100 rounded-full p-1 shadow-inner cursor-pointer transition-all duration-300 ease-in-out w-90 h-12"
                     >
                       {/* Background for the active toggle */}
                       <div
@@ -481,7 +485,7 @@ export default function Home() {
                         className={`relative flex-1 text-center text-lg font-semibold py-2 px-4 rounded-full transition-colors duration-300 ease-in-out
                           ${activeSection === 'institutional' ? 'text-white' : 'text-blue-700'}`}
                       >
-                        Institutional
+                        Private Client
                       </span>
                     </button>
                   </div>
@@ -495,21 +499,22 @@ export default function Home() {
                           Retail
                         </h2>
                         <p className="text-gray-600 leading-relaxed mb-4">
-                          Built to bridge the gap between complex financial research and the needs of retail investors, our research targets high-growth potential across various market capitalizations, from small-cap gems to established large-cap stocks.
+                          Our research is designed to bridge the gap between complex financial analysis and the needs of retail investors. We focus on high-growth opportunities across various market capitalizations, from small-cap gems to established large-cap stocks
                         </p>
                         <ul className="list-disc list-inside text-gray-600 space-y-2">
-                          <li><a className="font-bold">Robust Fundamental and Forensic Analysis</a> enabling informed decision-making</li>
+                          <li><a className="font-bold">Robust Fundamental and Forensic Analysis</a> for informed decision-making</li>
                           <li><a className="font-bold">Independent and Unbiased Research</a> for objective and trustworthy analysis</li>
-                          <li><a className="font-bold">Practical stock ideas for Active investors</a> with Short to Medium-Term Investment Focus</li>
-                          <li>Easy-to-understand Actionable Insights</li>
-                          <li>Affordable subscription pricing-</li>
+                          <li><a className="font-bold">Practical stock ideas for Active investors</a> with Short to short- to medium-term focus</li>
+                          <li><a className="font-bold">Clear, Actionable Insights</a> that are easy to understand</li>
+                          
+                          <li><a className="font-bold">Affordable subscription pricing:</a> </li>
                           <ul className="list-decimal pl-12 list-inside text-gray-600 space-y-2">
-                              <li>Half-yearly subscription: INR 15,000/-</li>
-                              <li>Annual subscription: INR 25,000/-</li>
+                              <li>Half-yearly : INR 15,000/-</li>
+                              <li>Annual : INR 25,000/-</li>
                             </ul>
                         </ul>
                         <p className="text-gray-600 leading-relaxed italic mt-4">
-                          Designed with young and emerging investors in mind, our affordable subscription plans make professional-grade research accessible. This empowers beginners to invest in the stock market without breaking the bank.
+                         Tailored for young, emerging, and cost-conscious investors, our affordable subscription plans deliver professional-grade research, empowering beginners to confidently invest in the stock market without breaking the bank.
                         </p>
                         {/* Button for Retail Section */}
                         <div className="mt-6 text-center">
@@ -517,36 +522,33 @@ export default function Home() {
                             href="/Rservice/Retail" // Placeholder link
                             className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out shadow-md hover:shadow-lg"
                           >
-                            Learn More for Retail Investors
+                            Know More 
                           </a>
                         </div>
                       </div>
                     ) : (
                       // Institutional Content
                       <div className="animate-fade-in">
-                        <h2 className="text-2xl font-semibold text-gray-700 mb-4">
-                          For Organizations and Large Entities (Institutional)
+                        <h2 className="text-2xl font-semibold text-gray-700 mb-8">
+                          Private Client Group (PCG)
                         </h2>
                         <p className="text-gray-600 leading-relaxed mb-4">
-                          This section provides comprehensive details for institutional clients, including corporations, pension funds, endowments, and sovereign wealth funds. Our institutional services are designed for complex financial structures and large-scale investment strategies.
+                          We provide in-depth research services for private clients, including corporations, high-net-worth individuals (HNIs), and family offices. Our offerings include detailed fundamental and forensic analysis tailored for medium- to long-term investments with significant exposure
                         </p>
-                        <ul className="list-disc list-inside text-gray-600 space-y-2">
-                          <li>Customized portfolio management and advisory services.</li>
-                          <li>Access to alternative investments (private equity, hedge funds).</li>
-                          <li>Advanced analytics and reporting.</li>
-                          <li>Dedicated relationship managers.</li>
-                          <li>Solutions for risk management and regulatory compliance.</li>
-                        </ul>
+                        <p className="text-gray-600 leading-relaxed mb-4">
+                          Our curated annual selection of investment ideas is chosen for strong growth potential, supported by comprehensive analysis, quarterly updates, and insights from public documents and channel checks.
+                        </p>
+                        
                         <p className="text-gray-600 leading-relaxed mt-4">
-                          We partner with institutional clients to optimize their investment performance and meet their unique strategic objectives through robust, scalable solutions.
+                          In collaboration with Trudence Capital, a SEBI-registered Research Analyst (SEBI*******), we partner with institutional clients to deliver robust, scalable solutions that optimize investment performance and align with their strategic objectives.
                         </p>
                         {/* Button for Institutional Section */}
-                        <div className="mt-6 text-center">
+                        <div className="mt-10 text-center">
                           <a
                             href="/Rservice/Psg" // Placeholder link
                             className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out shadow-md hover:shadow-lg"
                           >
-                            Explore Institutional Solutions
+                           Know More
                           </a>
                         </div>
                       </div>

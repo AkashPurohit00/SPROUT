@@ -82,23 +82,6 @@ const Header = () => {
                 <div className="py-2">
                   <div className="relative">
                     <Link
-                      href="/Rservice/Psg"
-                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200 flex items-center justify-between"
-                      onMouseEnter={() => setServicesDropdownOpen(true)}
-                      onMouseLeave={() => setServicesDropdownOpen(false)}
-                      onClick={() => {
-                        setAboutDropdownOpen(false);
-                        setServicesDropdownOpen(false);
-                      }}
-                    >
-                     PCG
-                      
-                    </Link>
-                     </div>
-                </div>
-                 <div className="py-2">
-                  <div className="relative">
-                    <Link
                       href="/Rservice/Retail"
                       className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200 flex items-center justify-between"
                       onMouseEnter={() => setServicesDropdownOpen(true)}
@@ -113,6 +96,24 @@ const Header = () => {
                     </Link>
                      </div>
                 </div>
+                <div className="py-2">
+                  <div className="relative">
+                    <Link
+                      href="/Rservice/Psg"
+                      className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200 flex items-center justify-between"
+                      onMouseEnter={() => setServicesDropdownOpen(true)}
+                      onMouseLeave={() => setServicesDropdownOpen(false)}
+                      onClick={() => {
+                        setAboutDropdownOpen(false);
+                        setServicesDropdownOpen(false);
+                      }}
+                    >
+                     Private Clients (PCG)
+                      
+                    </Link>
+                     </div>
+                </div>
+                 
               </div>
             )}
           </li>

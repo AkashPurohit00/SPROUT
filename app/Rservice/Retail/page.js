@@ -53,7 +53,7 @@ const page = () => {
       <div className="absolute inset-0 flex flex-col justify-center items-center text-black text-center px-4 sm:px-8 lg:px-20 z-10">
         <div className="w-72 h-44 sm:w-96 sm:h-44 rounded-lg overflow-hidden  mb-4 lg:mb-6">
         <Image
-          src="/images/pic2.jpg" 
+          src="/images/HD.png" 
           alt="Logo"
           width={400}
           height={200}
@@ -242,12 +242,12 @@ const page = () => {
     {/* Section 6 with Research Reports */}
     <div className="bg-white w-full max-h-screen py-16 px-6 sm:px-12 lg:px-24">
       <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-4">
-      Why It Fits Retail Investors
+      Why It Fits Retail Investors?
       </h1>
 
       <div className="flex flex-col ">
         {/* Report 1 */}
-        <div className="bg-white p-6 rounded-lg border border-black shadow transition flex-col flex items-start space-x-6 min-h-[200px]  ">
+        <div className="bg-white p-6 rounded-lg border border-black shadow transition flex-col flex items-start space-x-6 min-h-[100px]  ">
           
             <div>
             <p className="list-decimal list-inside text-gray-800 space-y-4 text-base md:text-2xl ">
@@ -259,32 +259,24 @@ const page = () => {
         </div>
     </div>
 
+    
 
-    <section id="ready-to-work" className="bg-blue-50 py-16">
-            <div className="container max-w-7xl mx-auto px-6">
-              <div className="flex flex-col md:flex-row justify-between items-center">
-                {/* Text Content */}
-                <div className="mb-6 md:mb-0 text-center md:text-left">
-                  <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
-                    Ready to work with us ?
-                  </h2>
-                  <p className="text-lg md:text-xl text-gray-600">
-                    Reach out and we can create magic together
-                  </p>
-                </div>
-                {/* Button */}
-              <div>
-      <Link
-        href="/Soon"
-        className="inline-flex items-center bg-white text-gray-700 px-6 py-3 rounded-full border border-gray-300 font-semibold text-lg hover:bg-gray-100 transition-all duration-300 hover:-translate-y-2 transition-transform"
-      >
-        Subscribe 
-      
-      </Link>
+
+    <section id="ready-to-work" className="bg-white py-8 mb-16">
+  <div className="container max-w-7xl mx-auto px-10">
+    <div className="flex flex-col md:flex-row justify-center items-center">
+      {/* Button */}
+      <div>
+        <Link
+          href="/Soon"
+          className="inline-flex flex-col rounded-2xl items-center bg-blue-50 text-gray-700 px-10 py-6 border border-gray-300 font-semibold hover:bg-gray-100 transition-all duration-300 hover:-translate-y-2 transition-transform"
+        >
+          <span className="text-2xl font-bold">Subscribe</span>
+          <span className="text-sm italic mt-1">Coming Soon</span>
+        </Link>
+      </div>
     </div>
-
-              </div>
-            </div>
+  </div>
     </section>
 
     <Footer/>

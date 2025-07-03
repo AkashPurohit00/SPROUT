@@ -102,7 +102,7 @@ const InsightCard = ({ insight, onReadMore }) => {
               {/* Brand/Logo */}
               <div className="flex items-center">
                 <div className="text-xs text-gray-600 font-bold tracking-wider uppercase">
-                  SPROUT<br />PARTNERS
+                  SPROUT<br />RESEARCH
                 </div>
               </div>
             
@@ -292,7 +292,7 @@ export default function InsightsPage() {
                   {/* Brand/Logo */}
                   <div className="flex items-center mb-4">
                     <div className="text-sm text-gray-600 font-medium tracking-wide">
-                      SPROUT<br />PARTNERS
+                      SPROUT<br />RESEARCH
                     </div>
                   </div>
                   

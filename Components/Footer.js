@@ -385,8 +385,7 @@ const Footer = () => {
                   />
                 </svg>
                 <span className="text-gray-600">
-                  2nd Floor, Indure House, Savitri Cinema Complex, Greater
-                  Kailash-II, New Delhi-110048
+                  A 35 FIRST FLOOR, Chittaranjan Park, NEW DELHI, NATIONAL CAPITAL TERRITORY OF DELHI, 110019
                 </span>
               </li>
             </ul>
