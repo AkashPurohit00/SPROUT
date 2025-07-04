@@ -561,41 +561,7 @@ export default function Home() {
       </section>
 
       {/* Section 6 - Ready to work with us? */}
-      <section id="ready-to-work" className="bg-blue-50 py-16">
-        <div className="container max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            {/* Text Content */}
-            <div className="mb-6 md:mb-0 text-center md:text-left">
-              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
-                Ready to work with us ?
-              </h2>
-              <p className="text-lg md:text-xl text-gray-600">
-                Reach out and we can create magic together
-              </p>
-            </div>
-            {/* Button */}
-           <div>
-  <Link
-    href="/Rservice/Retail"
-    className="inline-flex items-center bg-white text-gray-700 px-6 py-3 rounded-full border border-gray-300 font-semibold text-lg hover:bg-gray-100 transition-all duration-300 hover:-translate-y-2 transition-transform"
-  >
-    Get Started
-    <svg 
-      className="w-5 h-5 ml-2"
-      fill="none"
-      stroke="currentColor"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-    </svg>
-  </Link>
-</div>
-
-          </div>
-        </div>
-      </section>
-      {/* Section 7 - Subscribe */}
+     
       
       <Footer />
     </>
