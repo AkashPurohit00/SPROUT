@@ -1,7 +1,6 @@
 // app/api/auth/validate/route.js
 import { NextResponse } from 'next/server';
 import { jwtVerify } from 'jose';
-import { adminDb } from '@/lib/firebaseAdmin';
 
 export async function GET(request) {
   try {
@@ -14,16 +13,27 @@ export async function GET(request) {
       );
     }
 
-    // Verify JWT token
-    const secret = new TextEncoder().encode(process.env.USER_JWT_SECRET || 'your-user-secret-key');
-    
+    const jwtSecret = process.env.USER_JWT_SECRET;
+    if (!jwtSecret) {
+      console.error('USER_JWT_SECRET is not configured');
+      return NextResponse.json(
+        { message: 'Server configuration error' },
+        { status: 500 }
+      );
+    }
+
+    const secret = new TextEncoder().encode(jwtSecret);
+
     try {
       const { payload } = await jwtVerify(token, secret);
-      
-      // You can add additional user data validation here if needed
+
       return NextResponse.json({
         authenticated: true,
+        userId: payload.userId,
+        email: payload.email,
         phone: payload.phone,
+        fullName: payload.fullName,
+        subscriptionEnd: payload.subscriptionEnd,
         loginTime: payload.loginTime
       });
 

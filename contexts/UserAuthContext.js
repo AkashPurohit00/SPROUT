@@ -1,4 +1,3 @@
-// contexts/UserAuthContext.js
 'use client';
 
 import { createContext, useContext, useState, useEffect } from 'react';
@@ -15,12 +14,20 @@ export function UserAuthProvider({ children }) {
     checkAuthStatus();
   }, []);
 
+  // Check auth status from API
   const checkAuthStatus = async () => {
     try {
       const response = await fetch('/api/auth/validate');
-      if (response.ok) {
-        const userData = await response.json();
-        setUser(userData);
+if (response.ok) {
+  const userData = await response.json();
+  setUser({
+    phone: userData.phone,
+    fullName: userData.fullName, // This works now!
+    email: userData.email,
+    subscriptionEnd: userData.subscriptionEnd,
+    authenticated: true
+  });
+
       } else {
         setUser(null);
       }
@@ -32,6 +39,7 @@ export function UserAuthProvider({ children }) {
     }
   };
 
+  // Login API call (no manual JWT handling)
   const login = async (email, password) => {
     try {
       const response = await fetch('/api/user/logincheck', {
@@ -41,29 +49,9 @@ export function UserAuthProvider({ children }) {
       });
 
       const data = await response.json();
-      
-      if (response.ok) {
-        return { success: true, data };
-      } else {
-        return { success: false, message: data.message };
-      }
-    } catch (error) {
-      return { success: false, message: 'Network error occurred' };
-    }
-  };
 
-  const verifyOTP = async (phone, otp) => {
-    try {
-      const response = await fetch('/api/user/verifyotp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ phone, otp })
-      });
-
-      const data = await response.json();
-      
       if (response.ok) {
-        await checkAuthStatus(); // Refresh user data
+        await checkAuthStatus();
         return { success: true };
       } else {
         return { success: false, message: data.message };
@@ -73,23 +61,35 @@ export function UserAuthProvider({ children }) {
     }
   };
 
-  const logout = async () => {
-    try {
-      await fetch('/api/auth/logout', { method: 'POST' });
-      setUser(null);
-      router.push('/login');
-    } catch (error) {
-      console.error('Logout failed:', error);
+  // Update logout function in UserAuthContext
+const logout = async () => {
+  try {
+    await fetch('/api/auth/logout', { method: 'POST' });
+    setUser(null);
+    
+    // Clear browser history and prevent back navigation
+    window.history.replaceState(null, '', '/login');
+    router.replace('/login');
+    
+    // Optional: Clear any cached data
+    if (typeof window !== 'undefined') {
+      window.location.href = '/login';
     }
-  };
+  } catch (error) {
+    console.error('Logout failed:', error);
+  }
+};
+
+  // Add isAuthenticated helper
+  const isAuthenticated = user && user.authenticated;
 
   const value = {
     user,
     loading,
     login,
-    verifyOTP,
     logout,
-    checkAuthStatus
+    checkAuthStatus,
+    isAuthenticated // Add this
   };
 
   return (

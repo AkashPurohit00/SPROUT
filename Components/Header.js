@@ -146,7 +146,7 @@ const Header = () => {
           </li>
 
           {/* Login Link */}
-          {/* <li>
+          <li>
             <Link
               href="/login"
               className={`relative group ${pathname === '/login' ? 'text-black' : 'text-black'}`}
@@ -157,7 +157,7 @@ const Header = () => {
                 ${pathname === '/login' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
               />
             </Link>
-          </li> */}
+          </li>
         </ul>
 
         {/* Mobile Menu Toggle Button */}
@@ -270,7 +270,7 @@ const Header = () => {
             </Link>
           </div>
           {/* Login Link */}
-          {/* <div>
+          <div>
             <Link href="/login" onClick={() => setMenuOpen(false)}>
               <div className="relative group">
                 Log In
@@ -280,7 +280,7 @@ const Header = () => {
                 />
               </div>
             </Link>
-          </div> */}
+          </div>
         </div>
       )}
     </header>

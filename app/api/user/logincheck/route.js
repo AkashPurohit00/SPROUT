@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server';
 import { adminAuth, adminDb } from '@/lib/firebaseAdmin';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/lib/firebaseClient';
+import { SignJWT } from 'jose';
 
 export async function POST(request) {
   try {
@@ -15,12 +16,22 @@ export async function POST(request) {
       );
     }
 
-    // Step 1: Verify email/password with Firebase Auth
+    // Check if JWT secret is configured
+    const jwtSecret = process.env.USER_JWT_SECRET;
+    if (!jwtSecret) {
+      console.error('USER_JWT_SECRET is not configured');
+      return NextResponse.json(
+        { message: 'Server configuration error' },
+        { status: 500 }
+      );
+    }
+
     try {
+      // Firebase authentication
       const userCredential = await signInWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // Step 2: Get user details from Firestore
+      // Get user data from Firestore
       const usersRef = adminDb.collection('portalUsers');
       const querySnapshot = await usersRef.where('email', '==', email).get();
 
@@ -30,9 +41,10 @@ export async function POST(request) {
           { status: 404 }
         );
       }
+      
       const userData = querySnapshot.docs[0].data();
 
-      // Step 3: Check subscription expiry
+      // Check subscription expiry
       const currentDate = new Date();
       const subscriptionExpiry = new Date(userData.subscriptionExp);
       
@@ -43,36 +55,39 @@ export async function POST(request) {
         );
       }
 
-      // Step 4: Send OTP via MSG91
-      const otpResponse = await fetch('https://control.msg91.com/api/v5/otp', {
-        method: 'POST',
-        headers: {
-          'Accept': 'application/json',
-          'Content-Type': 'application/json',
-          'authkey': process.env.MSG91_AUTH_KEY
-        },
-        body: JSON.stringify({
-          template_id: process.env.MSG91_TEMPLATE_ID,
-          mobile: userData.phone,
-          authkey: process.env.MSG91_AUTH_KEY
-        })
+      // Create JWT token
+      const secret = new TextEncoder().encode(jwtSecret);
+      
+      const token = await new SignJWT({
+        userId: user.uid,
+        email: user.email,
+        phone: userData.phone,
+        fullName: userData.fullName,
+        subscriptionEnd: userData.subscriptionEnd,
+        loginTime: new Date().toISOString()
+      })
+        .setProtectedHeader({ alg: 'HS256' })
+        .setIssuedAt()
+        .setExpirationTime('7d') // 7 days
+        .sign(secret);
+
+      // Create response
+      const response = NextResponse.json({
+        message: 'Login successful',
+        userId: user.uid,
+        email: user.email, 
+        phone: userData.phone
       });
 
-      const otpData = await otpResponse.json();
+      // Set JWT token cookie
+      response.cookies.set('auth-token', token, {
+        httpOnly: true,
+        secure: process.env.NODE_ENV === 'production',
+        sameSite: 'lax',
+        maxAge: 60 * 60 * 24 * 7 // 7 days
+      });
 
-      if (otpData.type === 'success') {
-        // Store session data temporarily (you might want to use a more secure method)
-        return NextResponse.json({
-          message: 'OTP sent successfully',
-          phone: userData.phone,
-          userId: user.uid
-        });
-      } else {
-        return NextResponse.json(
-          { message: 'Failed to send OTP. Please try again.' },
-          { status: 500 }
-        );
-      }
+      return response;
 
     } catch (authError) {
       console.error('Firebase Auth Error:', authError);
