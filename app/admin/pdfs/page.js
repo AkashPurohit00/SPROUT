@@ -5,6 +5,7 @@ import { collection, getDocs, query, orderBy } from 'firebase/firestore';
 import { db } from '@/lib/firebase';
 import { useAuth } from '@/contexts/AuthContext';
 import Login from '../Insights/LoginForm';
+import UploadForm from '@/Components/uploadform'; // Add this import
 
 export default function AdminPDFPage() {
   const { isAuthenticated, loading: authLoading } = useAuth();
