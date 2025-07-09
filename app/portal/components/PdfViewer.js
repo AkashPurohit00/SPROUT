@@ -8,7 +8,10 @@ import {
   preventKeyboardShortcuts,
 } from '../../../lib/portalUtils';
 
-pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+// Configure PDF.js worker for production
+if (typeof window !== 'undefined') {
+  pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+}
 
 export default function PdfViewer({ pdf, user }) {
   const containerRef = useRef(null);
@@ -17,8 +20,9 @@ export default function PdfViewer({ pdf, user }) {
   const [scale, setScale] = useState(1.2); // default zoom
 
   const options = useMemo(() => ({
-    cMapUrl: 'cmaps/',
+    cMapUrl: 'https://unpkg.com/pdfjs-dist@2.14.305/cmaps/',
     cMapPacked: true,
+    standardFontDataUrl: 'https://unpkg.com/pdfjs-dist@2.14.305/standard_fonts/',
   }), []);
 
   useEffect(() => {
@@ -136,6 +140,7 @@ export default function PdfViewer({ pdf, user }) {
             onLoadSuccess={onDocumentLoadSuccess}
             options={options}
             loading={<div>Loading PDF...</div>}
+            error={<div>Error loading PDF</div>}
           >
             <Page
               pageNumber={pageNumber}
