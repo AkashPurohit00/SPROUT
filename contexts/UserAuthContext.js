@@ -25,6 +25,8 @@ if (response.ok) {
     fullName: userData.fullName, // This works now!
     email: userData.email,
     subscriptionEnd: userData.subscriptionEnd,
+    panCardNumber: userData.panCardNumber,
+    kycVerifiedOn: userData.kycVerifiedOn,
     authenticated: true
   });
 

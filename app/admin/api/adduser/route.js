@@ -2,7 +2,7 @@ import { adminDb, adminAuth } from '@/lib/firebaseAdmin';
 
 export async function POST(req) {
   try {
-    const { fullName, phone, email, password, subscriptionStart, subscriptionEnd } = await req.json();
+    const { fullName, phone, email, password, subscriptionStart, subscriptionEnd, panCardNumber, kycVerifiedOn  } = await req.json();
 
     // Validate required fields
     if (!fullName || !phone || !email || !password || !subscriptionStart || !subscriptionEnd) {
@@ -26,6 +26,8 @@ export async function POST(req) {
       email,
       subscriptionStart,
       subscriptionEnd,
+      panCardNumber,
+      kycVerifiedOn,
       createdAt: new Date()
     });
 

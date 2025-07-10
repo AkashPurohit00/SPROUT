@@ -33,6 +33,8 @@ export default function AdminInsights() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState('');
   const [userAddSuccess, setUserAddSuccess] = useState('');
+  const [panCardNumber, setPanCardNumber] = useState('');
+  const [kycVerifiedOn, setKycVerifiedOn] = useState('');
 
   const handleLogout = () => logout();
 
@@ -105,7 +107,9 @@ export default function AdminInsights() {
           email,
           password,
           subscriptionStart,
-          subscriptionEnd
+          subscriptionEnd,
+          panCardNumber,
+          kycVerifiedOn
         })
       });
 
@@ -116,6 +120,8 @@ export default function AdminInsights() {
         setPassword('');
         setSubscriptionStart('');
         setSubscriptionEnd('');
+        setPanCardNumber('');
+        setKycVerifiedOn('');
         setUserAddSuccess('User added successfully!');
       } else {
         setUserAddSuccess('Error adding user.');
@@ -195,22 +201,58 @@ export default function AdminInsights() {
 
         {/* Add User Form */}
         <div className="bg-white p-6 rounded-lg shadow-xl space-y-4">
-          <h2 className="text-xl font-bold mb-4">Add New User</h2>
-          <form onSubmit={handleAddUser} className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <input type="text" placeholder="Full Name" value={fullName} onChange={(e) => setFullName(e.target.value)} required className="border rounded-xl p-3 w-full" />
-            <input type="text" placeholder="Phone Number" value={phone} onChange={(e) => setPhone(e.target.value)} required className="border rounded-xl p-3 w-full" />
-            <input type="email" placeholder="Email ID" value={email} onChange={(e) => setEmail(e.target.value)} required className="border rounded-xl p-3 w-full" />
-            <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required className="border rounded-xl p-3 w-full" />
-            <input type="date" placeholder="Subscription Start" value={subscriptionStart} onChange={(e) => setSubscriptionStart(e.target.value)} required className="border rounded-xl p-3 w-full" />
-            <input type="date" placeholder="Subscription End" value={subscriptionEnd} onChange={(e) => setSubscriptionEnd(e.target.value)} required className="border rounded-xl p-3 w-full" />
-            <div className="md:col-span-2">
-              <button type="submit" disabled={loading} className="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 w-full transition">
-                {loading ? 'Adding...' : 'Add User'}
-              </button>
-              {userAddSuccess && <p className="mt-4 text-green-600 font-semibold">{userAddSuccess}</p>}
-            </div>
-          </form>
-        </div>
+        <h2 className="text-xl font-bold mb-4">Add New User</h2>
+        <form onSubmit={handleAddUser} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+            <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} required className="border rounded-xl p-3 w-full" />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+            <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} required className="border rounded-xl p-3 w-full" />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Email ID</label>
+            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="border rounded-xl p-3 w-full" />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required className="border rounded-xl p-3 w-full" />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Subscription Start Date</label>
+            <input type="date" value={subscriptionStart} onChange={(e) => setSubscriptionStart(e.target.value)} required className="border rounded-xl p-3 w-full" />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">Subscription End Date</label>
+            <input type="date" value={subscriptionEnd} onChange={(e) => setSubscriptionEnd(e.target.value)} required className="border rounded-xl p-3 w-full" />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">PAN Card Number</label>
+            <input type="text" value={panCardNumber} onChange={(e) => setPanCardNumber(e.target.value)} required className="border rounded-xl p-3 w-full" />
+          </div>
+
+          <div>
+            <label className="block text-sm font-medium text-gray-700 mb-1">KYC Verified On</label>
+            <input type="date" value={kycVerifiedOn} onChange={(e) => setKycVerifiedOn(e.target.value)} required className="border rounded-xl p-3 w-full" />
+          </div>
+
+          <div className="md:col-span-2">
+            <button type="submit" disabled={loading} className="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 w-full transition">
+              {loading ? 'Adding...' : 'Add User'}
+            </button>
+            {userAddSuccess && <p className="mt-4 text-green-600 font-semibold">{userAddSuccess}</p>}
+          </div>
+        </form>
+      </div>
+
       </div>
     </div>
   );

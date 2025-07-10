@@ -64,11 +64,13 @@ export async function POST(request) {
         phone: userData.phone,
         fullName: userData.fullName,
         subscriptionEnd: userData.subscriptionEnd,
+        panCardNumber: userData.panCardNumber,
+        kycVerifiedOn: userData.kycVerifiedOn,
         loginTime: new Date().toISOString()
       })
         .setProtectedHeader({ alg: 'HS256' })
         .setIssuedAt()
-        .setExpirationTime('7d') // 7 days
+        .setExpirationTime('1h') // 1 hr
         .sign(secret);
 
       // Create response
@@ -84,7 +86,7 @@ export async function POST(request) {
         httpOnly: true,
         secure: process.env.NODE_ENV === 'production',
         sameSite: 'lax',
-        maxAge: 60 * 60 * 24 * 7 // 7 days
+        maxAge: 60 * 60  // 1 hr
       });
 
       return response;

@@ -34,7 +34,9 @@ export async function GET(request) {
         phone: payload.phone,
         fullName: payload.fullName,
         subscriptionEnd: payload.subscriptionEnd,
-        loginTime: payload.loginTime
+        loginTime: payload.loginTime,
+        panCardNumber: payload.panCardNumber,
+        kycVerifiedOn: payload.kycVerifiedOn
       });
 
     } catch (jwtError) {

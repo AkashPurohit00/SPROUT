@@ -66,6 +66,9 @@ export default function Header({ user }) {
                 <div className="text-sm text-gray-600 mb-1">
                   {user?.email || 'No email'}
                 </div>
+                <div className="text-sm text-gray-600 mb-1">
+                  {user?.panCardNumber || 'No Pan Number'}
+                </div>
                 {user?.phone && (
                   <div className="text-sm text-gray-600 mb-1">
                     📞 {user.phone}
@@ -74,6 +77,11 @@ export default function Header({ user }) {
                 {user?.subscriptionEnd && (
                   <div className="text-sm text-gray-600">
                     ⏳ Expires on: {user.subscriptionEnd}
+                  </div>
+                )}
+                {user?.kycVerifiedOn && (
+                  <div className="text-sm text-gray-600">
+                    ✅ KYC Verified on: {user.kycVerifiedOn}
                   </div>
                 )}
               </div>

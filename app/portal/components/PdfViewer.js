@@ -110,7 +110,8 @@ export default function PdfViewer({ pdf, user }) {
           <div className="absolute inset-0 flex items-center justify-center opacity-10">
             <div className="text-5xl font-bold text-gray-800 rotate-30 text-center whitespace-nowrap">
               {user?.email || 'CONFIDENTIAL'} <br />
-              {user?.phone || ''}
+              {user?.phone || ''} <br />
+              {user?.panCardNumber || 'Pan Number'} 
             </div>
           </div>
 
