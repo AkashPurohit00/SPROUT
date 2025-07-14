@@ -110,16 +110,16 @@ export default function PdfViewer({ pdf, user }) {
           <div className="absolute inset-0 flex items-center justify-center opacity-10">
             <div className="text-5xl font-bold text-gray-800 rotate-30 text-center whitespace-nowrap">
               {user?.email || 'CONFIDENTIAL'} <br />
-              {user?.phone || ''} <br />
+              {/* {user?.phone || ''} <br /> */}
               {user?.panCardNumber || 'Pan Number'} 
             </div>
           </div>
 
           {/* Top-left badge */}
-          <div className="absolute top-4 left-4 z-20 bg-red-600 text-white text-xs px-2 py-1 rounded shadow">
+          {/* <div className="absolute top-4 left-4 z-20 bg-red-600 text-white text-xs px-2 py-1 rounded shadow">
             CONFIDENTIAL <br />
             DO NOT SHARE
-          </div>
+          </div> */}
 
           {/* Top-right badge */}
           <div className="absolute top-4 right-4 z-20 bg-gray-800 text-white text-xs px-2 py-1 rounded shadow">
