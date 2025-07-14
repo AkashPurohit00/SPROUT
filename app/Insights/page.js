@@ -5,6 +5,7 @@ import Header from '@/Components/Header';
 import Footer from '@/Components/Footer';
 import { getInsights, incrementViewCount } from '@/lib/insightsService';
 import { getThumbnailUrl, getHeroImageUrl } from '@/lib/cloudinary';
+import Newsletter from '@/Components/Newsletter';
 
 const InsightCard = ({ insight, onReadMore }) => {
   return (
@@ -377,6 +378,9 @@ export default function InsightsPage() {
           </div>
         )}
         
+        {/* Newsletter Subscription Section */}
+        <Newsletter />
+
         {/* Other Insights Section */}
         <div className="container mx-auto px-4 py-16">
           {/* Section Header */}

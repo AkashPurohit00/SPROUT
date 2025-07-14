@@ -6,6 +6,7 @@ import Link from "next/link";
 import React from 'react';
 import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
+import Newsletter from "@/Components/Newsletter";
 
 export default function Home() {
    const [activeSection, setActiveSection] = useState('retail');
@@ -279,7 +280,7 @@ export default function Home() {
 
       {/* Section 3 */}
       <section id="research" className="py-10 bg-gray-100">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-2">
           {/* Section Title */}
           <div className="text-center mb-10">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">
@@ -291,7 +292,7 @@ export default function Home() {
           </div>
 
           {/* Grid: Process steps + image */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-10 items-center">
             {/* Process Steps */}
             <div className="space-y-4">
               {/* Step 1 */}
@@ -333,7 +334,7 @@ export default function Home() {
                   <div className="flex-1">
                     <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">In-Depth Analysis</h3>
                     <p className="text-gray-600 leading-relaxed">
-                      Through comprehensive research, financial modeling and industry benchmarking, we identify key opportunities and challenges.
+                     We emphasize the integrity of financial performance, beginning with a thorough assessment of critical financial metrics. This is followed by comprehensive research into each company to ensure dependable insights
                     </p>
                   </div>
                 </div>
@@ -356,7 +357,7 @@ export default function Home() {
                   <div className="flex-1">
                     <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-3">Strategic Roadmap</h3>
                     <p className="text-gray-600 leading-relaxed">
-                      Unlocking valuable insights, we craft a tailored strategy designed to achieve your goals efficiently and effectively.
+                      The result of our approach is a clear, actionable research report crafted to elevate and inform your investment strategy.
                     </p>
                   </div>
                 </div>
@@ -364,12 +365,12 @@ export default function Home() {
             </div>
 
             {/* Process Image */}
-            <div className="w-full h-full">
+            <div className="w-full h-100">
               <Image
                 src="/images/pic4.jpg"
                 alt="Our Process"
-                width={600}
-                height={400}
+                width={300}
+                height={200}
                 className="w-full h-full object-cover rounded-lg shadow-lg"
               />
             </div>
@@ -424,7 +425,7 @@ export default function Home() {
   </div>
 
   {/* Quote with Dotted Border */}
-  <div className="absolute bottom-2 right-3.5 bg-white p-6 rounded-lg shadow-lg border-l-8 border-dotted border-purple-500 max-w-[400px]">
+  <div className="absolute bottom-2 right-3.5 bg-white p-6 rounded-s shadow-lg border-l-8 border-dotted border-purple-500 max-w-[400px]">
     <p className="text-gray-700 italic text-lg">
       "We don't have to be smarter than the rest. We have to be more
       disciplined than the rest"
@@ -560,7 +561,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Section 6 - Ready to work with us? */}
+      <Newsletter/>
      
       
       <Footer />

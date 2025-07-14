@@ -51,10 +51,7 @@ const Footer = () => {
             </div>
             </Link>
             <p className="text-gray-600 text-sm leading-relaxed mt-4">
-              Leverage the unparalleled expertise and strategic guidance of
-              Sprout Partners. Our team excels in financial restructuring,
-              developing business strategies and crafting tailored financial
-              models and strategic insights across a wide range of sectors.
+              Partner with Sprout Research to access high-quality investment opportunities. Our expertise ensures robust risk management, delivering confidence and peace of mind for your financial success.
             </p>
             {/* Social Media Icons */}
             <div className="flex space-x-4">

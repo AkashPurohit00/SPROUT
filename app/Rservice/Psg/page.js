@@ -55,15 +55,14 @@ const page = () => {
     {/* Background Image and Content */}
     <div className="relative w-full h-[70vh] sm:h-[75vh] md:h-[85vh] lg:h-[90vh] xl:h-[100vh]  overflow-hidden">
       <Image
-        src="/images/psgimage.jpg" // make sure this path is correct
+        src="/images/pic5.jpg" // make sure this path is correct
         alt="Background"
-        style={{ filter: 'brightness(40%)' }} // Adjust brightness for better text visibility
         fill
         className="object-cover object-center z-0"
         priority
       />
 
-      <div className="absolute inset-0 flex flex-col justify-center items-center text-gray-300 text-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 z-10">
+      <div className="absolute inset-0 flex flex-col justify-center items-center text-gray-800 text-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 z-10">
         {/* Logo Section */}
         <div className='grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-0 max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto px-2 sm:px-4 mb-4 sm:mb-6 md:mb-8 lg:mb-12 relative z-20'>
           {/* Sprout */}
@@ -71,7 +70,6 @@ const page = () => {
             <Image
               src="/images/HD.png"
               alt="Logo"
-              style={{ filter: 'brightness(150%)' }}
               className="object-contain w-full h-full"
               width={400}
               height={200}
@@ -79,7 +77,7 @@ const page = () => {
           </div>
           
           {/* Divider */}
-          <div className="h-12 xs:h-14 sm:h-16 md:h-20 lg:h-24 xl:h-28 2xl:h-32 text-gray-200 text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extralight rounded-lg overflow-hidden flex items-center justify-center sm:-mx-1 relative z-20">
+          <div className="h-12 xs:h-14 sm:h-16 md:h-20 lg:h-24 xl:h-28 2xl:h-32 text-gray-600 text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extralight rounded-lg overflow-hidden flex items-center justify-center sm:-mx-1 relative z-20">
             <h1 className="leading-none">|</h1>
           </div>
           
@@ -101,18 +99,14 @@ const page = () => {
           {/* First Paragraph */}
           <div className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-normal text-center">
             <p className="leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed">
-              Sprout Research PCG, collaborates with Trudence Capital Advisory Pvt Ltd, a SEBI-registered Corporate 
-              Research Advisor. At Sprout Research, we deliver comprehensive research services rooted in detailed fundamental
-              and forensic analysis. Our mission is to safeguard your investments by employing strategic risk management and 
-              vigilant monitoring, enabling timely adjustments in response to evolving market conditions.
+              Sprout Research PCG, in collaboration with Trudence Capital Advisory Pvt Ltd, a SEBI-registered Research Analyst (SEBI Registration No. INH000015747), delivers specialized research services grounded in rigorous fundamental and forensic analysis. Our mission is to protect and grow your investments through strategic risk management, proactive monitoring, and timely portfolio adjustments in response to dynamic market conditions
             </p>
           </div>
           
           {/* Second Paragraph */}
           <div className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-normal text-center">
             <p className="leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed">
-              We excel in uncovering high-growth investment opportunities ahead of the curve. Through rigorous analysis and a selective approach,
-              we aim to provide you with a decisive edge in the ever-changing landscape of equity investing.
+              We offer tailored research services for private clients, including corporations, high-net-worth individuals (HNIs), and family offices. Our expertise lies in providing in-depth fundamental and forensic analysis for medium- to long-term investments with significant exposure
             </p>
           </div>
         </div>
@@ -137,7 +131,7 @@ const page = () => {
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 text-center">Early Identification</h3>
             <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed flex-grow">
-              Leverage advanced screening tools, market trends, and strategic foresight to pinpoint opportunities before they gain widespread attention.
+              To stay ahead in competitive markets, early identification of opportunities is critical. This involves leveraging advanced screening tools, such as AI-driven data analytics platforms, predictive algorithms, and proprietary databases, to uncover undervalued or emerging prospects before they become mainstream
             </p>
           </div>
 
@@ -153,7 +147,7 @@ const page = () => {
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 text-center">Rigorous Analysis</h3>
             <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed flex-grow">
-              Conduct exhaustive due diligence to validate the investment thesis.
+              Once potential opportunities are identified, conducting exhaustive due diligence is essential to validate the investment thesis. This process involves a comprehensive evaluation of quantitative and qualitative factors
             </p>
           </div>
 
@@ -169,7 +163,7 @@ const page = () => {
             </div>
             <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 text-center">Thematic Overlay</h3>
             <p className="text-sm sm:text-base text-gray-600 text-center leading-relaxed flex-grow">
-              Identify transformative macro trends and align investments with these growth drivers.
+              Aligning investments with transformative macro trends ensures long-term growth potential. This approach requires ongoing monitoring of global trends and the flexibility to adapt as new themes emerge, ensuring alignment with the forces shaping the future economy
             </p>
           </div>
         </div>
@@ -220,7 +214,7 @@ const page = () => {
     </div>
 
     {/* Section 5 with Research Reports */}
-    <div className="bg-white w-full min-h-screen py-16 px-6 sm:px-12 lg:px-24">
+    {/* <div className="bg-white w-full min-h-screen py-16 px-6 sm:px-12 lg:px-24">
       <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-4">
         Why SPROUT Research?
       </h1>
@@ -228,7 +222,6 @@ const page = () => {
       capital remains safeguarded while pursuing growth.</p>
 
       <div className="flex flex-col ">
-        {/* Report 1 */}
         <div className="bg-white p-6 rounded-lg border border-black shadow transition flex-col flex items-start space-x-6 min-h-[200px]  ">
           
           <div>
@@ -247,17 +240,17 @@ const page = () => {
         </div>
 
         </div>
-    </div>
+    </div> */}
 
     {/* Section 6 with Research Reports */}
-    <div className="bg-white w-full min-h-screen py-16 px-6 sm:px-12 lg:px-24 ">
+    {/* <div className="bg-white w-full min-h-screen py-16 px-6 sm:px-12 lg:px-24 ">
       <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-12">
         Our Methodology: From Identification to Realization
       </h1>
       
 
       <div className="flex flex-col ">
-        {/* Report 1 */}
+
         <div className="bg-white p-6 rounded-lg border border-black shadow transition flex-col flex items-start space-x-6 min-h-[200px]  ">
           
           <div>
@@ -276,9 +269,10 @@ const page = () => {
         </div>
 
         </div>
-    </div>
+    </div> */}
 
-    <section id="ready-to-work" className="bg-white py-8 mb-16">
+    {/* Subscribe Button */}
+    <section id="ready-to-work" className="bg-white py-8 mb-1">
   <div className="container max-w-7xl mx-auto px-10">
     <div className="flex flex-col md:flex-row justify-center items-center">
       {/* Button */}
@@ -294,6 +288,166 @@ const page = () => {
   </div>
     </section>
 
+    {/* Section 8 Thematic Research Reports */}
+    <div className="bg-white w-full min-h-screen py-16 px-6 sm:px-12 lg:px-24">
+    <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-12">
+      Sprout Research Reports
+    </h1>
+
+    <div className="flex flex-col ">
+      {/* Report 1 */}
+      <div className="bg-white p-6 rounded-lg border border-black shadow transition flex-col flex items-start space-x-6 min-h-[400px] ">
+        <img src="/images/HD.png" alt="Logo 1" className="h-15" />
+        <div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">KEY MARITIME ANCILLARY PLAYER </h2>
+          <p className="text-gray-600 text-sm">Unearthing the Depths…</p>
+              <div className=" sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+              <p>Executive Summary</p>
+              <p>The company, commanding over 80% of its market, enjoys robust revenue visibility backed by a healthy pipeline of contracts. With a massive market opportunity <br/>
+                  projected over the next decade, and strategic support from Maritime India Vision 2030, the company is poised for sustained growth.</p>
+                  <p>To support this growth…</p>
+                  <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+        </div>
+      </div>
+
+      {/* Report 2 */}
+      <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px]  ">
+        <img src="/images/HD.png" alt="Logo 1" className="h-15" />
+        <div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">A MICROFINANCE PLAYER</h2>
+          <p className="text-gray-600 text-sm">Emerging Stronger from a Period of Stress…</p>
+              <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+              <p>Executive Summary</p>
+              <p>The microfinance (MFI) sector is witnessing early signs of recovery, underpinned by improved collections and reduced borrower stress. Recent rate cuts and <br/>
+                  enhanced liquidity measures by the RBI have played a pivotal role in fostering a more resilient lending environment. These macroeconomic tailwinds have<br/>
+                  alleviated pressure on borrowers, driving stabilization in the sector and setting the stage for a potential rebound in asset quality and profitability…</p>
+                    <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+        </div>
+      </div>
+
+      {/* Report 3 */}
+      <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
+       <img src="/images/HD.png" alt="Logo 1" className="h-15" />
+        <div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">ELECTRIFYING INDIA</h2>
+          <p className="text-gray-600 text-sm">Capitalizing on Transmission & Distribution Growth</p>
+              <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+          <p>Executive Summary</p>
+          <p>Expanding transmission networks and grid interconnectivity is key to stabilizing renewable energy. While electrification is the future, progress is hindered by <br/>
+              technological, economic, and political challenges. Governments and MNCs are investing heavily in greener grids and advanced transmission technologies,<br/>
+              making electricity transmission the biggest beneficiary of the global energy shift.</p>
+              <p>India’s transmission sector has…</p>
+                <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+        </div>
+      </div>
+
+      {/* Report 4 */}
+      <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
+       <img src="/images/HD.png" alt="Logo 1" className="h-15" />
+        <div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">CASH FLOWS AT THE CORE</h2>
+          <p className="text-gray-600 text-sm">Comfortable valuations for stable cashflows</p>
+              <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+              <p>Executive Summary</p>
+              <p>As uncertainty clouds the market, attempts to predict its bottom have left most observers as uncertain as anyone else. Expectations for the Union Budget 2025<br/>
+                  remain subdued, with little clarity on critical issues such as Trump tariffs on India, potential rate cuts, currency stabilization, or the trajectory of foreign money<br/>
+                    flows.</p>
+              <p>Amid this uncertainty, it’s…</p>
+              <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+        </div>
+      </div>
+
+      {/* Report 5 */}
+      <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
+        <img src="/images/HD.png" alt="Logo 1" className="h-15" />
+        <div>
+          <h2 className="ttext-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">FINANCIAL SERVICES PLAYER</h2>
+          <p className="text-gray-600 text-sm">Re-rating candidate post amalgamation</p>
+              <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+              <p>Executive Summary</p>
+              <p>The company is a comprehensive financial services platform offering loans, investments, insurance, and payments through its subsidiaries and joint ventures.<br/>
+                  The company’s NBFC arm ranks among the top private sector NBFCs, while its other key businesses include housing finance, life insurance (JV), and asset<br/>
+                    management.</p>
+                    <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+        </div>
+      </div>
+
+      {/* Report 6 */}
+      <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
+        <img src="/images/HD.png" alt="Logo 1" className="h-15" />
+        <div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">A QUALITY CEMENT COMPANY</h2>
+          <p className="text-gray-600 text-sm">Green in the grey…</p>
+              <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+              <p>Executive Summary</p>
+              <p>The quality cement company, backed by a strong group, has a capacity of 4.40 MTPA. Though constituting less than 1% of India’s total cement capacity, it stands<br/>
+              out as a compelling investment opportunity for the following three key reasons…</p>
+              <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+        </div>
+      </div>
+
+      {/* Report 7 */}
+      <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
+        <img src="/images/HD.png" alt="Logo 1" className="h-15" />
+        <div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">PREMIUM LUBRICANT PLAYER</h2>
+          <p className="text-gray-600 text-sm">Strong and Stable Cash flows …</p>
+              <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+              <p>Executive Summary</p>
+              <p>The company stands as a premier investment opportunity in the lubricants sector, fortified by its strong parentage and an enduring legacy of market leadership.<br/>
+              Over the decade from 2013 to 2023, the company showcased consistent growth, achieving a revenue CAGR of 4.7% and profit CAGR of 5.4%…</p>
+              <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+        </div>
+      </div>
+
+      {/* Report 8 */}
+      <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black  min-h-[400px] ">
+        <img src="/images/HD.png" alt="Logo 1" className="h-15" />
+        <div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">THEMATIC IDEA</h2>
+          <p className="text-gray-600 text-sm">Atomization of Clean Energy…</p>
+              <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+              <p>Executive Summary</p>
+              <p>rillions of dollars are being funnelled into greening global supply chains, marking the most transformative shift since the coal revolution of the 19th century.<br/>
+              While this transition will be complex and gradual, significant progress is underway in renewable energy, electric batteries, and advanced nuclear technologies.<br/>
+              Key milestones include the planned 2028 revival of the Three Mile Island nuclear plant….
+              </p>
+              <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+        </div>
+      </div>
+
+      {/* Report 9 */}
+      <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
+        <img src="/images/HD.png" alt="Logo 1" className="h-15" />
+        <div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">LEADING BITUMEN AND LOGISTICS PLAYER</h2>
+          <p className="text-gray-600 text-sm">Embarking on a Long Voyage…</p>
+              <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+              <p>Executive Summary</p>
+              <p>The company is a leading supplier of bitumen products and provides logistics services for Liquefied Petroleum Gas (LPG) and bituminous products. Through its<br/>
+                  UAE-based 100% subsidiary, the company has also expanded into the ship operating….
+              </p>
+              <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+        </div>
+      </div>
+
+      {/* Report 10 */}
+      <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
+        <img src="/images/HD.png" alt="Logo 1" className="h-15" />
+        <div>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">A REGIONAL HOSPITAL PLAYER</h2>
+          <p className="text-gray-600 text-sm">Compelling Valuations amidst Expansion …</p>
+              <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+          <p>Executive Summary</p>
+          <p>The company, a Coimbatore-based hospital chain, is embarking on significant expansion, combining brownfield and greenfield projects. This expansion will boost <br/>
+              its total bed capacity from….</p>
+              <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+        </div>
+      </div>
+
+      
+      </div>
+    </div>
 
     <Footer/>
 
