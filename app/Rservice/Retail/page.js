@@ -61,51 +61,23 @@ const page = () => {
         className="object-cover object-top z-0"
         priority
       />
-      <div className="absolute inset-0 flex flex-col justify-center items-center text-black text-center  z-10">
-        <div className="w-62 h-40 sm:w-70 sm:h-50 rounded-lg overflow-hidden  mb-4 lg:mb-2">
-        <Image
-          src="/images/HD.png" 
-          alt="Logo"
-          width={200}
-          height={100}
-          className="object-contain w-full h-full"
-        />
-      </div>
+      <div className="absolute inset-0 flex flex-col justify-center items-center text-black text-center z-10">
+        {/* Logo and Retail Text - Centered Together */}
+        <div className="flex flex-col justify-center items-center mb-6 sm:mb-8 md:mb-7 lg:mb-7">
 
-        {/* Heading with animated underline 
-        <style jsx>{`
-          @keyframes slideInUnderline {
-            0% {
-              width: 0%;
-              opacity: 0;
-            }
-            100% {
-              width: 100%;
-              opacity: 1;
-            }
-          }
+          {/* Divider - Seamlessly connected to logo */}
+          <div className="text-2xl sm:text-2xl md:text-3xl lg:text-6xl font-sans mb-2 lg:mb-4 lg:whitespace-nowrap">
+            <h1 className="leading-none">Sprout Research-Retail</h1>
+          </div>
+          <div className="text-sm sm:text-base md:text-lg lg:text-lg max-w-4xl lg:whitespace-nowrap text-center mb-4 lg:mb-4 italic">
+            <p>High-quality research reports' subscription for Retail Investors</p>
+          </div>
           
-          .animate-underline {
-            animation: slideInUnderline 1.5s ease-out 0.8s both;
-          }
-        `}</style>
+        </div>
         
-        <h1 className="text-base sm:text-lg md:text-xl text-gray-700 lg:text-2xl xl:text-3xl 2xl:text-4xl font-medium mb-1 sm:mb-2 text-center leading-tight">
-        Cultivating Superior Investment Opportunities
-        </h1>
-        <h1 className="text-base sm:text-lg md:text-xl text-gray-700 lg:text-2xl xl:text-3xl 2xl:text-4xl font-medium mb-2 sm:mb-3 lg:mb-4 text-center leading-tight">
-        Unearthing High-Potential Investments for{' '}
-        <span className="relative inline-block">
-          Discerning investors
-          <span className="absolute bottom-0 left-0 h-0.5 sm:h-1 bg-gray-700 animate-underline"></span>
-        </span>
         
-        </h1>
-        */}
-
-        {/* Paragraphs  */}
-      
-    <div className="text-xs sm:text-sm md:text-base lg:text-2xl font-normal max-w-7xl text-center space-y-0.5 sm:space-y-1 px-2">
+        {/* Paragraphs - Properly spaced below the logo unit */}
+        <div className="text-sm sm:text-base md:text-lg lg:text-lg max-w-5xl">
           <p className="leading-tight">
             Our research bridges complex financial analysis and retail investor needs, targeting high-growth opportunities across small-cap to large-cap stocks. We provide robust, unbiased analysis, practical stock ideas for short- to medium-term investors, and clear, actionable insights for informed decisions
           </p>
@@ -114,6 +86,45 @@ const page = () => {
             Tailored for young, emerging, and cost-conscious investors, our affordable subscription plans deliver professional-grade research, empowering beginners to confidently invest in the stock market without breaking the bank.
           </p>
         </div>
+      </div>
+    </div>
+
+    <div className="bg-white w-full py-16 px-6 sm:px-12 lg:px-24">      
+      <div className="flex justify-center px-4 py-10">
+  <div className="bg-white rounded-2xl p-5 shadow-xl border border-gray-200 max-w-6xl w-full transition-transform duration-300 group hover:scale-[1.02]">
+    <div className="relative space-y-4">
+      <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 leading-tight">
+        What You Get With a Sprout Research-Retail Subscription?
+      </h2>
+
+      <ul className="space-y-4 max-w-5xl items-center flex flex-col mx-auto">
+        {[
+          "35-40 Research Reports annually with a focus on Fundamental and Forensic analysis",
+          "Ideas varied across Long-term Picks, Tactical Picks, High-Risk High-Reward Picks",
+          "Weekly Insights covering global macro topics, channel checks, and sectors in the news",
+          "Affordable pricing with subscription starting at INR 15,000/-",
+        ].map((item, index) => (
+          <li key={index} className="flex items-start text-gray-700 text-xl sm:text-2xl leading-relaxed">
+            <img
+              src="/images/LEAVESONLY2.png" // Replace with your actual image path
+              alt="bullet point"
+              className="w-6 h-8 mt-1 mr-3"
+            />
+            <span className="flex-1">
+              {index === 3 ? (
+                <>
+                  Affordable pricing with subscription starting at{' '}
+                  <span className="font-semibold text-gray-900">INR 15,000/-</span>
+                </>
+              ) : (
+                item
+              )}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  </div>
       </div>
     </div>
 

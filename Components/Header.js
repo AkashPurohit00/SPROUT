@@ -35,13 +35,13 @@ const Header = () => {
       <nav className="container mx-auto flex justify-between items-center h-16">
         {/* Logo */}
         <Link href="/">
-        <div className="flex items-center ml-16 mb-4 space-x-3">
+        <div className="flex items-center ml-10 mb-1 space-x-3">
           <Image src="/images/HD.png" alt="Logo" width={176} height={96} className="h-16 w-42" />
         </div>
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex space-x-8 mr-56 text-xl font-medium">
+        <ul className="hidden md:flex space-x-8 mr-10 text-xl font-medium">
           <li>
             <Link
               href="/"

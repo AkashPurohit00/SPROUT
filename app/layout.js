@@ -12,6 +12,12 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+export const metadata = {
+  title: "Sprout Reseach",
+  icons: {
+    icon: '/images/favicon.png',
+  },
+};
 
 
 export default function RootLayout({ children }) {

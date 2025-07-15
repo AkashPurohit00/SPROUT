@@ -64,8 +64,8 @@ const page = () => {
 
       <div className="absolute inset-0 flex flex-col justify-center items-center text-gray-800 text-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 z-10">
         {/* Logo Section */}
-        <div className='grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-0 max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto px-2 sm:px-4 mb-4 sm:mb-6 md:mb-8 lg:mb-12 relative z-20'>
-          {/* Sprout */}
+        {/* <div className='grid grid-cols-1 sm:grid-cols-3 gap-2 sm:gap-0 max-w-xs sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl mx-auto px-2 sm:px-4 mb-4 sm:mb-6 md:mb-8 lg:mb-12 relative z-20'>
+          
           <div className="h-12 xs:h-14 sm:h-16 md:h-20 lg:h-24 xl:h-28 2xl:h-32 rounded-lg overflow-hidden flex items-center justify-center sm:-mx-1 relative z-20">
             <Image
               src="/images/HD.png"
@@ -76,35 +76,49 @@ const page = () => {
             />
           </div>
           
-          {/* Divider */}
+          
           <div className="h-12 xs:h-14 sm:h-16 md:h-20 lg:h-24 xl:h-28 2xl:h-32 text-gray-600 text-4xl xs:text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-extralight rounded-lg overflow-hidden flex items-center justify-center sm:-mx-1 relative z-20">
             <h1 className="leading-none">|</h1>
           </div>
           
-          {/* Trudence */}
+          
           <div className="h-12 xs:h-14 sm:h-16 md:h-20 lg:h-24 xl:h-28 2xl:h-32 rounded-lg overflow-hidden flex items-center justify-center sm:-mx-1 relative z-20">
             <Image
               src="/images/Trudence.png"
               alt="Logo"
-              style={{ filter: 'brightness(150%)' }}
+              style={{ filter: 'brightness(100%)' }}
               className="object-contain w-full h-full"
               width={400}
               height={200}
             />
           </div>
+        </div> */}
+
+        <div className="flex flex-col justify-center items-center mb-6 sm:mb-8 md:mb-7 lg:mb-7">
+          
+
+          {/* Divider - Seamlessly connected to logo */}
+          <div className="text-2xl sm:text-2xl md:text-3xl lg:text-6xl font-sans mb-2 lg:mb-4 lg:whitespace-nowrap">
+            <h1 className="leading-none">Sprout Research-PCG</h1>
+          </div>
+          <div className="text-sm sm:text-base md:text-lg lg:text-lg max-w-4xl lg:whitespace-nowrap text-center mb-4 lg:mb-4 italic">
+            <p>Rigorous fundamental and forensic analysis tailored for corporations, HNIs, Family Offices and more</p>
+          </div>
+          
         </div>
+
 
         {/* Content Container */}
         <div className="max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl mx-auto space-y-4 sm:space-y-6 md:space-y-8 px-2 sm:px-4">
           {/* First Paragraph */}
-          <div className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-normal text-center">
+          <div className="text-sm sm:text-base md:text-lg lg:text-lg max-w-7xl">
             <p className="leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed">
               Sprout Research PCG, in collaboration with Trudence Capital Advisory Pvt Ltd, a SEBI-registered Research Analyst (SEBI Registration No. INH000015747), delivers specialized research services grounded in rigorous fundamental and forensic analysis. Our mission is to protect and grow your investments through strategic risk management, proactive monitoring, and timely portfolio adjustments in response to dynamic market conditions
             </p>
           </div>
           
           {/* Second Paragraph */}
-          <div className="text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl font-normal text-center">
+          <div className="text-sm sm:text-base md:text-lg lg:text-lg max-w-7xl">
             <p className="leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed">
               We offer tailored research services for private clients, including corporations, high-net-worth individuals (HNIs), and family offices. Our expertise lies in providing in-depth fundamental and forensic analysis for medium- to long-term investments with significant exposure
             </p>
@@ -306,7 +320,7 @@ const page = () => {
               <p>The company, commanding over 80% of its market, enjoys robust revenue visibility backed by a healthy pipeline of contracts. With a massive market opportunity <br/>
                   projected over the next decade, and strategic support from Maritime India Vision 2030, the company is poised for sustained growth.</p>
                   <p>To support this growth…</p>
-                  <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+                  <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
       </div>
 
@@ -321,7 +335,7 @@ const page = () => {
               <p>The microfinance (MFI) sector is witnessing early signs of recovery, underpinned by improved collections and reduced borrower stress. Recent rate cuts and <br/>
                   enhanced liquidity measures by the RBI have played a pivotal role in fostering a more resilient lending environment. These macroeconomic tailwinds have<br/>
                   alleviated pressure on borrowers, driving stabilization in the sector and setting the stage for a potential rebound in asset quality and profitability…</p>
-                    <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+                  <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
       </div>
 
@@ -337,7 +351,7 @@ const page = () => {
               technological, economic, and political challenges. Governments and MNCs are investing heavily in greener grids and advanced transmission technologies,<br/>
               making electricity transmission the biggest beneficiary of the global energy shift.</p>
               <p>India’s transmission sector has…</p>
-                <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+                  <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
       </div>
 
@@ -353,7 +367,7 @@ const page = () => {
                   remain subdued, with little clarity on critical issues such as Trump tariffs on India, potential rate cuts, currency stabilization, or the trajectory of foreign money<br/>
                     flows.</p>
               <p>Amid this uncertainty, it’s…</p>
-              <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+                  <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
       </div>
 
@@ -368,7 +382,7 @@ const page = () => {
               <p>The company is a comprehensive financial services platform offering loans, investments, insurance, and payments through its subsidiaries and joint ventures.<br/>
                   The company’s NBFC arm ranks among the top private sector NBFCs, while its other key businesses include housing finance, life insurance (JV), and asset<br/>
                     management.</p>
-                    <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+                    <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
       </div>
 
@@ -382,7 +396,7 @@ const page = () => {
               <p>Executive Summary</p>
               <p>The quality cement company, backed by a strong group, has a capacity of 4.40 MTPA. Though constituting less than 1% of India’s total cement capacity, it stands<br/>
               out as a compelling investment opportunity for the following three key reasons…</p>
-              <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+              <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
       </div>
 
@@ -396,7 +410,7 @@ const page = () => {
               <p>Executive Summary</p>
               <p>The company stands as a premier investment opportunity in the lubricants sector, fortified by its strong parentage and an enduring legacy of market leadership.<br/>
               Over the decade from 2013 to 2023, the company showcased consistent growth, achieving a revenue CAGR of 4.7% and profit CAGR of 5.4%…</p>
-              <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+              <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
       </div>
 
@@ -412,7 +426,7 @@ const page = () => {
               While this transition will be complex and gradual, significant progress is underway in renewable energy, electric batteries, and advanced nuclear technologies.<br/>
               Key milestones include the planned 2028 revival of the Three Mile Island nuclear plant….
               </p>
-              <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+              <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
       </div>
 
@@ -427,7 +441,7 @@ const page = () => {
               <p>The company is a leading supplier of bitumen products and provides logistics services for Liquefied Petroleum Gas (LPG) and bituminous products. Through its<br/>
                   UAE-based 100% subsidiary, the company has also expanded into the ship operating….
               </p>
-              <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+              <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
       </div>
 
@@ -435,15 +449,44 @@ const page = () => {
       <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
         <img src="/images/HD.png" alt="Logo 1" className="h-15" />
         <div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">A REGIONAL HOSPITAL PLAYER</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">Regional Hospital - Kovai Medical Center & Hospital Ltd</h2>
           <p className="text-gray-600 text-sm">Compelling Valuations amidst Expansion …</p>
               <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
           <p>Executive Summary</p>
           <p>The company, a Coimbatore-based hospital chain, is embarking on significant expansion, combining brownfield and greenfield projects. This expansion will boost <br/>
               its total bed capacity from….</p>
-              <Link href='/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+              <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
       </div>
+
+      {/* Report 11 */}
+    <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
+      <img src="/images/HD.png" alt="Logo 11" className="h-15" />
+      <div>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">Likely Turnaround - Valor Estate Ltd</h2>
+        <p className="text-gray-600 text-sm">Land aggregator coming out of woods…</p>
+        <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+        <p>Executive Summary</p>
+        <p>The company faced significant challenges during the last decade but has since made considerable progress in overcoming this difficult phase. For the last 2<br/>
+             years, the company has been actively cleansing its balance sheet and improving corporate governance and disclosure practices.  Further, successful one-time….</p>
+              <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+
+      </div>
+    </div>
+
+    {/* Report 12 */}
+    <div className="bg-white p-6 rounded-lg shadow transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
+      <img src="/images/HD.png" alt="Logo 12" className="h-15" />
+      <div>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">Chemical Player - India Glycols Ltd</h2>
+        <p className="text-gray-600 text-lg">Turns around with visibility in greenshoots…</p>
+            <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
+        <p>Executive Summary</p>
+        <p>The company has faced significant challenges in the past, including difficulties recovering from the NSEL commodity financing crisis, high leverage, and issues
+             with capital misallocation. However, we believe these challenges are now largely behind them…</p>
+             <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+      </div>
+    </div>
 
       
       </div>

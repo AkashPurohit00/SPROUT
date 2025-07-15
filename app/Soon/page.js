@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Header from '@/Components/Header'
 import Footer from '@/Components/Footer'
 import Image from 'next/image';
+import Subscribe from '@/Components/Subscribe'
 
 const page = () => {
   return (
@@ -11,6 +12,7 @@ const page = () => {
     
     <>
         <Header />
+
         <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
           <Image
             src="/images/pic5.jpg" // make sure this path is correct
@@ -25,9 +27,12 @@ const page = () => {
             {/* Heading with animated underline */}
             
             
-            <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl font-medium mb-1 sm:mb-2 text-center leading-tight">
-             Coming Soon
-            </h1>
+            <h1 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-5xl 2xl:text-4xl font-medium mb-1 sm:mb-2 text-center leading-tight">
+              We’ll be back shortly
+            </h1> 
+            <p className="text-sm sm:text-base md:text-lg flex items-center lg:text-lg max-w-4xl lg:whitespace-nowrap text-center mb-4 lg:mb-4 italic">
+              We have currently paused new purchases of our Sprout Research-Retail subscription.Interested?<br/> Please share your e-mail ID in the form below and we would notify you when we resume taking further subscriptions.
+            </p>
            
         
             {/* Paragraphs  */}
@@ -51,6 +56,9 @@ const page = () => {
             </div>*/}
           </div>
         </div>
+
+        <Subscribe/>
+
         <Footer/>
     </>
   )

@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
 
-const Newsletter = () => {
+const Subscribe = () => {
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState('idle'); // idle, loading, success, error
   const [message, setMessage] = useState('');
@@ -75,10 +75,9 @@ const Newsletter = () => {
    <section className="bg-blue-50 rounded-2xl py-10 px-6 sm:px-12 lg:px-24 mt-8 shadow-md">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4">
-          Sign up for our Insights
+          Show Your Interest in Sprout Research-Retail
         </h2>
         <p className="text-sm sm:text-base italic text-gray-600 mb-6">
-          Weekly Insights delivered straight to your inbox.
         </p>
 
         {status === 'success' && (
@@ -117,4 +116,4 @@ const Newsletter = () => {
   );
 };
 
-export default Newsletter;
+export default Subscribe;
