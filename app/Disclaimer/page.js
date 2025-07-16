@@ -7,33 +7,40 @@ const Page = () => {
   return (
     <>
     <Header/>
-    <div className="px-4 sm:px-8 lg:px-12">
-                    <div className="relative w-full h-[50vh] bg-white mt-3 rounded-3xl overflow-hidden">
-                      <Image
-                        src="/images/cone.jpg"
-                        alt="Background"
-                        fill
-                        className="object-fill object-center"
-                      />
-            
-                      <div className="absolute inset-0 flex flex-col justify-center items-center text-black text-center px-4 sm:px-8 lg:px-20 mb-14">
-                        
-                        {/* Heading  */}
-                        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-6 lg:mb-8 lg:whitespace-nowrap">
-                         Disclaimer
-                        </h1>
-                        
-                      </div>
-                    </div>
-                    <p className='mt-10 text-lg text-left
-                    '>
-                       Shikha Kapur (Proprietor of Sprout Research) is a SEBI registered Research Analyst (INH000019169) provides research services to various investors. No content on this website
-                        should be construed to be investment advice. You should consult a qualified financial advisor prior to making any actual investment or trading decisions. All information is a point of 
-                        view, and is for educational and informational use only. The author accepts no liability for any interpretation of articles or comments on this website being used for actual investments.
-                         While we may talk about strategies or positions in the market, our intent is solely to showcase effective risk-management in dealing with financial instruments. This is purely an
-                          information service and any trading done on the basis of this information is at your own, sole risk.
+    <div className="relative w-full h-[70vh] sm:h-[75vh] md:h-[85vh] lg:h-[90vh] xl:h-[70vh]  overflow-hidden">
+              <Image
+                src="/images/pic5.jpg" // make sure this path is correct
+                alt="Background"
+                fill
+                className="object-cover object-center z-0"
+                priority
+              />
+        
+              <div className="absolute inset-0 flex flex-col justify-center items-center text-gray-800 text-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 z-10">
+        
+                <div className="flex flex-col justify-center items-center mb-6 sm:mb-8 md:mb-7 lg:mb-7">
+                  
+        
+                  {/* Divider - Seamlessly connected to logo */}
+                  <div className="text-2xl sm:text-2xl md:text-3xl lg:text-6xl font-sans lg:whitespace-nowrap">
+                    <h1 className="leading-none">Disclaimer</h1>
+                  </div>
+                  
+                </div>
+        
+        
+                {/* Content Container */}
+                <div className="max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl mx-auto space-y-4 sm:space-y-6 md:space-y-8 px-2 sm:px-4">
+                  {/* First Paragraph */}
+                  <div className="text-sm sm:text-base md:text-lg lg:text-lg max-w-7xl">
+                    <p className="leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed">
+                      Shikha Kapur (Proprietor of Sprout Research) is a SEBI registered Research Analyst (INH000019169) provides research services to various investors. No content on this website should be construed to be investment advice. You should consult a qualified financial advisor prior to making any actual investment or trading decisions. All information is a point of view, and is for educational and informational use only. The author accepts no liability for any interpretation of articles or comments on this website being used for actual investments. While we may talk about strategies or positions in the market, our intent is solely to showcase effective risk-management in dealing with financial instruments. This is purely an information service and any trading done on the basis of this information is at your own, sole risk.
                     </p>
                   </div>
+                  
+                </div>
+              </div>
+        </div>
 
 
                          {/* Two-column responsive details */}

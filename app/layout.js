@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   title: "Sprout Reseach",
   icons: {
-    icon: '/images/favicon.png',
+    icon: '/favicon.png',
   },
 };
 

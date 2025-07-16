@@ -24,7 +24,7 @@ const page = () => {
       id: 3,
       image: "/images/rmage3.png",
       title: "Affordable Plans",
-      description: "RDesigned with young and emerging investors in mind, our affordable subscription plans make professional-grade research accessible. We empower beginners to learn about and invest in the stock market without breaking the bank"
+      description: "Designed with young and emerging investors in mind, our affordable subscription plans make professional-grade research accessible. We empower beginners to learn about and invest in the stock market without breaking the bank"
     },
     {
       id: 4,
@@ -70,7 +70,7 @@ const page = () => {
             <h1 className="leading-none">Sprout Research-Retail</h1>
           </div>
           <div className="text-sm sm:text-base md:text-lg lg:text-lg max-w-4xl lg:whitespace-nowrap text-center mb-4 lg:mb-4 italic">
-            <p>High-quality research reports' subscription for Retail Investors</p>
+            <p>Research Reports Subscription for Retail Investors</p>
           </div>
           
         </div>
@@ -79,11 +79,7 @@ const page = () => {
         {/* Paragraphs - Properly spaced below the logo unit */}
         <div className="text-sm sm:text-base md:text-lg lg:text-lg max-w-5xl">
           <p className="leading-tight">
-            Our research bridges complex financial analysis and retail investor needs, targeting high-growth opportunities across small-cap to large-cap stocks. We provide robust, unbiased analysis, practical stock ideas for short- to medium-term investors, and clear, actionable insights for informed decisions
-          </p>
-          <br/>
-          <p className="leading-tight">
-            Tailored for young, emerging, and cost-conscious investors, our affordable subscription plans deliver professional-grade research, empowering beginners to confidently invest in the stock market without breaking the bank.
+           Our research empowers retail investors by delivering professional-grade, unbiased financial analysis tailored to young, emerging, and cost-conscious individuals. We simplify complex market insights, offering actionable stock ideas across small-cap to large-cap opportunities for short- to medium-term investing. With affordable subscription plans, we provide clear, high-growth-focused reports to help beginners confidently navigate the stock market without financial strain
           </p>
         </div>
       </div>
@@ -94,15 +90,15 @@ const page = () => {
   <div className="bg-white rounded-2xl p-5 shadow-xl border border-gray-200 max-w-6xl w-full transition-transform duration-300 group hover:scale-[1.02]">
     <div className="relative space-y-4">
       <h2 className="text-center text-2xl sm:text-3xl md:text-4xl font-semibold text-gray-900 leading-tight">
-        What You Get With a Sprout Research-Retail Subscription?
+        What You Get with a Sprout Research-Retail Subscription?
       </h2>
 
-      <ul className="space-y-4 max-w-5xl items-center flex flex-col mx-auto">
+      <ul className="space-y-4 max-w-5xl items-center text-center flex flex-col mx-auto">
         {[
-          "35-40 Research Reports annually with a focus on Fundamental and Forensic analysis",
-          "Ideas varied across Long-term Picks, Tactical Picks, High-Risk High-Reward Picks",
-          "Weekly Insights covering global macro topics, channel checks, and sectors in the news",
-          "Affordable pricing with subscription starting at INR 15,000/-",
+          "Research service focused on fundamental and forensic analysis, suitable for active investors",
+          "35-40 stocks annually with detailed research notes",
+          "Offers long-term, tactical, and high-risk/high-reward picks, plus weekend insights on macro topics and sectors",
+          "Subscription pricing: INR 25,000/year or INR 15,000/half-year",
         ].map((item, index) => (
           <li key={index} className="flex items-start text-gray-700 text-xl sm:text-2xl leading-relaxed">
             <img
@@ -113,8 +109,10 @@ const page = () => {
             <span className="flex-1">
               {index === 3 ? (
                 <>
-                  Affordable pricing with subscription starting at{' '}
-                  <span className="font-semibold text-gray-900">INR 15,000/-</span>
+                  Subscription pricing: {' '}
+                  <span className="font-semibold text-gray-900">INR 25,000/year</span>
+                  <span className=""> or </span>
+                  <span className="font-semibold text-gray-900">INR 15,000/half-year</span>
                 </>
               ) : (
                 item

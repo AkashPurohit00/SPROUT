@@ -31,34 +31,48 @@ const Page = () => {
   }
   return (
     <>
-        <Header />
-         <div className="px-4 sm:px-8 lg:px-12">
-                <div className="relative w-full h-[50vh] bg-white mt-3 rounded-3xl overflow-hidden">
-                  <Image
-                    src="/images/black.avif"
-                    alt="Background"
-                    fill
-                    className="object-fill object-center"
-                  />
-        
-                  <div className="absolute inset-0 flex flex-col justify-center items-center text-black text-center px-4 sm:px-8 lg:px-20 mb-14">
+    <Header />
+
+    <div className="relative w-full h-[70vh] sm:h-[75vh] md:h-[85vh] lg:h-[90vh] xl:h-[60vh]  overflow-hidden">
+                <Image
+                  src="/images/pic5.jpg" // make sure this path is correct
+                  alt="Background"
+                  fill
+                  className="object-cover object-center z-0"
+                  priority
+                />
+          
+                <div className="absolute inset-0 flex flex-col justify-center items-center text-gray-800 text-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 z-10">
+          
+                  <div className="flex flex-col justify-center items-center mb-6 sm:mb-8 md:mb-7 lg:mb-7">
                     
-                    {/* Heading  */}
-                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-6 lg:mb-8 lg:whitespace-nowrap">
-                     Investor Grievance
-                    </h1>
+          
+                    {/* Divider - Seamlessly connected to logo */}
+                    <div className="text-2xl sm:text-2xl md:text-3xl lg:text-6xl font-sans mb-2 lg:mb-4 lg:whitespace-nowrap">
+                      <h1 className="leading-none">Investor Grievance</h1>
+                    </div>
+                    
+                  </div>
+          
+          
+                  {/* Content Container */}
+                  <div className="max-w-xs sm:max-w-lg md:max-w-2xl lg:max-w-4xl xl:max-w-6xl 2xl:max-w-7xl mx-auto space-y-4 sm:space-y-6 md:space-y-8 px-2 sm:px-4">
+                    {/* First Paragraph */}
+                    <div className="text-sm sm:text-base md:text-lg lg:text-lg max-w-7xl">
+                      <p className="leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed">
+                        Client’s queries / complaints may arise due to lack of understanding or a deficiency of service experienced by clients. Deficiency of service may include lack of explanation,
+                    clarifications, understanding which escalates into shortfalls in the expected delivery standards, either due to inadequacy of facilities available or through the attitude of staff 
+                    towards client.
+                      </p>
+                    </div>
                     
                   </div>
                 </div>
-                <p className='mt-10 text-lg text-left
-                '>
-                   Client’s queries / complaints may arise due to lack of understanding or a deficiency of service experienced by clients. Deficiency of service may include lack of explanation,
-                    clarifications, understanding which escalates into shortfalls in the expected delivery standards, either due to inadequacy of facilities available or through the attitude of staff 
-                    towards client.
-                </p>
-              </div>
-              {/*Table*/}
-              <div className="space-y-8 px-4 sm:px-8 lg:px-12 mt-16">
+    </div>  
+
+
+    {/*Table*/}
+    <div className="space-y-8 px-4 sm:px-8 lg:px-12 mt-16">
       
       
       {/* Desktop View */}
@@ -313,10 +327,10 @@ const Page = () => {
       </div>
     </div>
 
- {/*Info*/}
-      <div className="space-y-4 px-4 sm:px-8 lg:px-12 mt-28 mb-20">
+    {/*Info*/}
+    <div className="text-sm text-gray-700 sm:text-base md:text-lg ml-12 lg:text-lg max-w-7xl">
        
-        <ol className="list-decimal list-inside text-base sm:text-2xl text-gray-700 space-y-4 leading-relaxed">
+        <ol className="list-decimal list-inside text-xl space-y-3 leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed">
           <li>
             Clients can seek clarification to their query and are further entitled to make a complaint in writing, orally or telephonically. An email may be sent to the Client Servicing Team at <span className="font-medium">shikhaa.kapur@gmail.com</span>. Alternatively, the Investor may call on <span className="font-medium">9811744587</span>.
           </li>
@@ -330,9 +344,11 @@ const Page = () => {
             In case you are not satisfied with our response you can lodge your grievance with SEBI at https://scores.sebi.gov.in/ or you may also write to any of the offices of SEBI. SCORES may be accessed thorough SCORES mobile application as well, same can be downloaded from below link: <a href=''>https://play.google.com/store/apps/details?id=com.ionicframework.sebi236330</a>  ODR Portal could be accessed, if unsatisfied with the response. Your attention is drawn to the SEBI circular no. SEBI/HO/OIAE/OIAE_IAD-1/P/CIR/2023/131 dated July 31, 2023, on “Online Resolution of Disputes in the Indian Securities Market”. A common Online Dispute Resolution Portal (“ODR Portal”) which harnesses conciliation and online arbitration for resolution of disputes arising in the Indian Securities Market has been established. ODR Portal can be accessed via the following link <a className='text-bold' href='https://smartodr.in/'>https://smartodr.in/</a>
           </li>
         </ol>
-      </div>
-      {/*Form*/}
-     <div className="max-w-7xl mx-auto px-4 py-2 mb-8"> 
+    </div>
+
+
+    {/*Form*/}
+    <div className="max-w-7xl mx-auto px-4 pt-10 py-2 mb-8"> 
   <h2 className="text-5xl font-semibold mb-8 text-left">Contact Us</h2>
 
   <form
@@ -414,12 +430,12 @@ const Page = () => {
       </button>
     </div>
   </form>
-</div>
+    </div>
 
 
   
   
-              <Footer/>
+    <Footer/>
     </>
   )
 }

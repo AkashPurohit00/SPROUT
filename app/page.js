@@ -7,6 +7,7 @@ import React from 'react';
 import Header from "@/Components/Header";
 import Footer from "@/Components/Footer";
 import Newsletter from "@/Components/Newsletter";
+import RecentInsights from "@/Components/RecentInsights";
 
 export default function Home() {
    const [activeSection, setActiveSection] = useState('retail');
@@ -560,6 +561,9 @@ export default function Home() {
                 
         </div>
       </section>
+
+      {/* Recent Insights Section */}
+      <RecentInsights />
 
       <Newsletter/>
      

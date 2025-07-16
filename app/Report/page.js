@@ -5,35 +5,41 @@ import Footer from '@/Components/Footer'
 
 const Page = () => {
   const months = [
-    'April 2024', 'May 2024', 'June 2024', 'July 2024', 'August 2024', 'September 2024', 'October 2024', 'November 2024', 'December 2024', 'January 2025', 'February 2025', 'March 2025', 'April 2025', 'May 2025'
+    'April 2024', 'May 2024', 'June 2024', 'July 2024', 'August 2024', 'September 2024', 'October 2024', 'November 2024', 'December 2024', 'January 2025', 'February 2025', 'March 2025', 'April 2025', 'May 2025', 'June 2025'
   ];
 
   return (
     
     <>
     <Header/>
-      <div className="px-4 sm:px-8 lg:px-12">
-                     <div className="relative w-full h-[50vh] bg-white mt-3 rounded-3xl overflow-hidden">
-                       <Image
-                         src="/images/data.jpg"
-                         alt="Background"
-                         fill
-                         className="object-fill object-center"
-                       />
-             
-                       <div className="absolute inset-0 flex flex-col justify-center items-center text-black text-center px-4 sm:px-8 lg:px-20 mb-14">
-                         
-                         {/* Heading  */}
-                         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-medium mb-6 lg:mb-8 lg:whitespace-nowrap">
-                          Investor Grievance
-                         </h1>
-                         
-                       </div>
-                     </div>
-                     
-                   </div>
-                   {/*Table*/}
-             
+
+    {/* Background Image and Content */}
+      <div className="relative w-full h-[70vh] sm:h-[75vh] md:h-[85vh] lg:h-[90vh] xl:h-[60vh]  overflow-hidden">
+          <Image
+            src="/images/pic5.jpg" // make sure this path is correct
+            alt="Background"
+            fill
+            className="object-cover object-center z-0"
+            priority
+          />
+    
+          <div className="absolute inset-0 flex flex-col justify-center items-center text-gray-800 text-center px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20 z-10">
+    
+            <div className="flex flex-col justify-center items-center mb-6 sm:mb-8 md:mb-7 lg:mb-7">
+              
+    
+              {/* Divider - Seamlessly connected to logo */}
+              <div className="text-2xl sm:text-2xl md:text-3xl lg:text-6xl font-sans mb-2 lg:mb-4 lg:whitespace-nowrap">
+                <h1 className="leading-none">Investor Grievance Report</h1>
+              </div>
+              
+              
+            </div>
+          </div>
+      </div>
+
+
+      {/*Table*/}       
     <div className="space-y-8 px-4 sm:px-8 lg:px-12 mt-16">
       
       {/* Heading */}
@@ -402,7 +408,7 @@ const Page = () => {
                 Sr No
               </div>
               <div className="flex-1 pt-4">
-                {Array.from({ length: 14 }, (_, i) => (
+                {Array.from({ length: 15 }, (_, i) => (
                   <div key={i} className="text-center py-3 text-gray-700 font-medium px-4 h-16 flex items-center justify-center">
                     {i + 1}
                   </div>
@@ -430,7 +436,7 @@ const Page = () => {
                 Carried forward from previous month
               </div>
               <div className="flex-1 pt-4">
-                {Array.from({ length: 14 }, (_, i) => (
+                {Array.from({ length: 15 }, (_, i) => (
                   <div key={i} className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center break-words">
                     0
                   </div>
@@ -444,7 +450,7 @@ const Page = () => {
                 Received
               </div>
               <div className="flex-1 pt-4">
-                {Array.from({ length: 14 }, (_, i) => (
+                {Array.from({ length: 15 }, (_, i) => (
                   <div key={i} className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
                     0
                   </div>
@@ -458,7 +464,7 @@ const Page = () => {
                 Resolved
               </div>
               <div className="flex-1 pt-4">
-                {Array.from({ length: 14 }, (_, i) => (
+                {Array.from({ length: 15 }, (_, i) => (
                   <div key={i} className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center break-all">
                     0
                   </div>
@@ -472,7 +478,7 @@ const Page = () => {
                 Pending
               </div>
               <div className="flex-1 pt-4">
-                {Array.from({ length: 14 }, (_, i) => (
+                {Array.from({ length: 15 }, (_, i) => (
                   <div key={i} className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
                     0
                   </div>
@@ -574,6 +580,7 @@ const Page = () => {
         </div>
       </div>
     </div>
+
     {/*Third Table*/}
     <div className="space-y-8 px-4 sm:px-8 lg:px-12 mt-5 mb-8 md:mb-20">
       

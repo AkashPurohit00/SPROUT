@@ -219,7 +219,7 @@ const Footer = () => {
                   href="/Contact"
                   className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
                 >
-                  Contact
+                  Contact Us
                 </Link>
               </li>
 
@@ -310,7 +310,7 @@ const Footer = () => {
           <div>
             {/* Desktop Header */}
             <h3 className="hidden md:block text-lg font-semibold text-gray-900 mb-4">
-              Contact
+              Contact Us
             </h3>
             
             {/* Mobile Dropdown Header */}
@@ -321,7 +321,7 @@ const Footer = () => {
               }}
               className="md:hidden flex items-center justify-between w-full text-lg font-semibold text-gray-900 mb-4 py-2 px-1 hover:bg-gray-100 rounded transition-colors duration-200"
             >
-              Contact
+              Contact Us
               <svg
                 className={`w-5 h-5 transition-transform duration-200 ${mobileContactOpen ? 'rotate-180' : ''}`}
                 fill="none"

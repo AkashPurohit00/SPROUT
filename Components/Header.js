@@ -137,7 +137,7 @@ const Header = () => {
               href="/Contact"
               className={`relative group ${pathname === '/Contact' ? 'text-black' : 'text-black'}`}
             >
-              Contact
+              Contact Us
               <span
                 className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
                 ${pathname === '/Contact' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
@@ -261,7 +261,7 @@ const Header = () => {
           <div>
             <Link href="/Contact" onClick={() => setMenuOpen(false)}>
               <div className="relative group">
-                Contact
+                Contact Us
                 <span
                   className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
                   ${pathname === '/Contact' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}

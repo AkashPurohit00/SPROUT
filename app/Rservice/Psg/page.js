@@ -317,9 +317,8 @@ const page = () => {
           <p className="text-gray-600 text-sm">Unearthing the Depths…</p>
               <div className=" sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
               <p>Executive Summary</p>
-              <p>The company, commanding over 80% of its market, enjoys robust revenue visibility backed by a healthy pipeline of contracts. With a massive market opportunity <br/>
-                  projected over the next decade, and strategic support from Maritime India Vision 2030, the company is poised for sustained growth.</p>
-                  <p>To support this growth…</p>
+              <p>The company, commanding over 80% of its market, enjoys robust revenue visibility backed by a healthy pipeline of contracts. With a massive market opportunity
+                  projected over the next decade, and strategic support from Maritime India Vision 2030, the company is poised for sustained growth. To support this growth…</p>
                   <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
       </div>
@@ -332,8 +331,8 @@ const page = () => {
           <p className="text-gray-600 text-sm">Emerging Stronger from a Period of Stress…</p>
               <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
               <p>Executive Summary</p>
-              <p>The microfinance (MFI) sector is witnessing early signs of recovery, underpinned by improved collections and reduced borrower stress. Recent rate cuts and <br/>
-                  enhanced liquidity measures by the RBI have played a pivotal role in fostering a more resilient lending environment. These macroeconomic tailwinds have<br/>
+              <p>The microfinance (MFI) sector is witnessing early signs of recovery, underpinned by improved collections and reduced borrower stress. Recent rate cuts and 
+                  enhanced liquidity measures by the RBI have played a pivotal role in fostering a more resilient lending environment. These macroeconomic tailwinds have
                   alleviated pressure on borrowers, driving stabilization in the sector and setting the stage for a potential rebound in asset quality and profitability…</p>
                   <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
@@ -347,10 +346,10 @@ const page = () => {
           <p className="text-gray-600 text-sm">Capitalizing on Transmission & Distribution Growth</p>
               <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
           <p>Executive Summary</p>
-          <p>Expanding transmission networks and grid interconnectivity is key to stabilizing renewable energy. While electrification is the future, progress is hindered by <br/>
-              technological, economic, and political challenges. Governments and MNCs are investing heavily in greener grids and advanced transmission technologies,<br/>
-              making electricity transmission the biggest beneficiary of the global energy shift.</p>
-              <p>India’s transmission sector has…</p>
+          <p>Expanding transmission networks and grid interconnectivity is key to stabilizing renewable energy. While electrification is the future, progress is hindered by
+              technological, economic, and political challenges. Governments and MNCs are investing heavily in greener grids and advanced transmission technologies,
+              making electricity transmission the biggest beneficiary of the global energy shift. India’s transmission sector has…</p>
+              
                   <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
       </div>
@@ -363,10 +362,10 @@ const page = () => {
           <p className="text-gray-600 text-sm">Comfortable valuations for stable cashflows</p>
               <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
               <p>Executive Summary</p>
-              <p>As uncertainty clouds the market, attempts to predict its bottom have left most observers as uncertain as anyone else. Expectations for the Union Budget 2025<br/>
-                  remain subdued, with little clarity on critical issues such as Trump tariffs on India, potential rate cuts, currency stabilization, or the trajectory of foreign money<br/>
-                    flows.</p>
-              <p>Amid this uncertainty, it’s…</p>
+              <p>As uncertainty clouds the market, attempts to predict its bottom have left most observers as uncertain as anyone else. Expectations for the Union Budget 2025
+                  remain subdued, with little clarity on critical issues such as Trump tariffs on India, potential rate cuts, currency stabilization, or the trajectory of foreign money
+                    flows. Amid this uncertainty, it’s…</p>
+              
                   <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
       </div>
@@ -379,8 +378,8 @@ const page = () => {
           <p className="text-gray-600 text-sm">Re-rating candidate post amalgamation</p>
               <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
               <p>Executive Summary</p>
-              <p>The company is a comprehensive financial services platform offering loans, investments, insurance, and payments through its subsidiaries and joint ventures.<br/>
-                  The company’s NBFC arm ranks among the top private sector NBFCs, while its other key businesses include housing finance, life insurance (JV), and asset<br/>
+              <p>The company is a comprehensive financial services platform offering loans, investments, insurance, and payments through its subsidiaries and joint ventures.
+                  The company’s NBFC arm ranks among the top private sector NBFCs, while its other key businesses include housing finance, life insurance (JV), and asset
                     management.</p>
                     <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
@@ -394,7 +393,7 @@ const page = () => {
           <p className="text-gray-600 text-sm">Green in the grey…</p>
               <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
               <p>Executive Summary</p>
-              <p>The quality cement company, backed by a strong group, has a capacity of 4.40 MTPA. Though constituting less than 1% of India’s total cement capacity, it stands<br/>
+              <p>The quality cement company, backed by a strong group, has a capacity of 4.40 MTPA. Though constituting less than 1% of India’s total cement capacity, it stands
               out as a compelling investment opportunity for the following three key reasons…</p>
               <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
@@ -408,7 +407,7 @@ const page = () => {
           <p className="text-gray-600 text-sm">Strong and Stable Cash flows …</p>
               <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
               <p>Executive Summary</p>
-              <p>The company stands as a premier investment opportunity in the lubricants sector, fortified by its strong parentage and an enduring legacy of market leadership.<br/>
+              <p>The company stands as a premier investment opportunity in the lubricants sector, fortified by its strong parentage and an enduring legacy of market leadership.
               Over the decade from 2013 to 2023, the company showcased consistent growth, achieving a revenue CAGR of 4.7% and profit CAGR of 5.4%…</p>
               <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
@@ -422,8 +421,8 @@ const page = () => {
           <p className="text-gray-600 text-sm">Atomization of Clean Energy…</p>
               <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
               <p>Executive Summary</p>
-              <p>rillions of dollars are being funnelled into greening global supply chains, marking the most transformative shift since the coal revolution of the 19th century.<br/>
-              While this transition will be complex and gradual, significant progress is underway in renewable energy, electric batteries, and advanced nuclear technologies.<br/>
+              <p>rillions of dollars are being funnelled into greening global supply chains, marking the most transformative shift since the coal revolution of the 19th century.
+              While this transition will be complex and gradual, significant progress is underway in renewable energy, electric batteries, and advanced nuclear technologies.
               Key milestones include the planned 2028 revival of the Three Mile Island nuclear plant….
               </p>
               <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
@@ -438,7 +437,7 @@ const page = () => {
           <p className="text-gray-600 text-sm">Embarking on a Long Voyage…</p>
               <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
               <p>Executive Summary</p>
-              <p>The company is a leading supplier of bitumen products and provides logistics services for Liquefied Petroleum Gas (LPG) and bituminous products. Through its<br/>
+              <p>The company is a leading supplier of bitumen products and provides logistics services for Liquefied Petroleum Gas (LPG) and bituminous products. Through its
                   UAE-based 100% subsidiary, the company has also expanded into the ship operating….
               </p>
               <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
@@ -449,12 +448,11 @@ const page = () => {
       <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
         <img src="/images/HD.png" alt="Logo 1" className="h-15" />
         <div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">Regional Hospital - Kovai Medical Center & Hospital Ltd</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">KOVAI MEDICAL CENTER & HOSPITAL LTD</h2>
           <p className="text-gray-600 text-sm">Compelling Valuations amidst Expansion …</p>
               <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
           <p>Executive Summary</p>
-          <p>The company, a Coimbatore-based hospital chain, is embarking on significant expansion, combining brownfield and greenfield projects. This expansion will boost <br/>
-              its total bed capacity from….</p>
+          <p>The company, a Coimbatore-based hospital chain, is embarking on significant expansion, combining brownfield and greenfield projects. This expansion will boost its total bed capacity from….</p>
               <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
       </div>
@@ -463,11 +461,11 @@ const page = () => {
     <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
       <img src="/images/HD.png" alt="Logo 11" className="h-15" />
       <div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">Likely Turnaround - Valor Estate Ltd</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">VALOR ESTATE LTD</h2>
         <p className="text-gray-600 text-sm">Land aggregator coming out of woods…</p>
         <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
         <p>Executive Summary</p>
-        <p>The company faced significant challenges during the last decade but has since made considerable progress in overcoming this difficult phase. For the last 2<br/>
+        <p>The company faced significant challenges during the last decade but has since made considerable progress in overcoming this difficult phase. For the last 2
              years, the company has been actively cleansing its balance sheet and improving corporate governance and disclosure practices.  Further, successful one-time….</p>
               <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
 
@@ -478,7 +476,7 @@ const page = () => {
     <div className="bg-white p-6 rounded-lg shadow transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
       <img src="/images/HD.png" alt="Logo 12" className="h-15" />
       <div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">Chemical Player - India Glycols Ltd</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">INDIA GLYCOLS LTD</h2>
         <p className="text-gray-600 text-lg">Turns around with visibility in greenshoots…</p>
             <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
         <p>Executive Summary</p>

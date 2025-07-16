@@ -6,6 +6,7 @@ import Footer from '@/Components/Footer';
 import { getInsights, incrementViewCount } from '@/lib/insightsService';
 import { getThumbnailUrl, getHeroImageUrl } from '@/lib/cloudinary';
 import Newsletter from '@/Components/Newsletter';
+import Image from 'next/image';
 
 const InsightCard = ({ insight, onReadMore }) => {
   return (
@@ -30,11 +31,19 @@ const InsightCard = ({ insight, onReadMore }) => {
           {/* Top Section */}
           <div className="flex items-center justify-between mb-4">
             {/* Brand/Logo */}
-            <div className="flex items-center">
-              <div className="text-xs text-gray-600 font-bold tracking-wider uppercase">
-                SPROUT<br />PARTNERS
-              </div>
-            </div>
+            <div className="flex items-center mb-4">
+                    <div className="text-sm text-gray-600 font-medium tracking-wide">
+                      <Image
+                        src="/images/HD.png"
+                        alt="Sprout Research Logo"
+                        width={110}
+                        height={62}
+                        priority
+                        className="object-contain"
+                      />
+
+                    </div>
+                  </div>
           
             {/* Date */}
             <div className="text-sm text-gray-500 font-medium">
@@ -101,11 +110,19 @@ const InsightCard = ({ insight, onReadMore }) => {
             {/* Top Section */}
             <div className="flex items-center justify-between mb-6">
               {/* Brand/Logo */}
-              <div className="flex items-center">
-                <div className="text-xs text-gray-600 font-bold tracking-wider uppercase">
-                  SPROUT<br />RESEARCH
+              <div className="flex items-center mb-4">
+                    <div className="text-sm text-gray-600 font-medium tracking-wide">
+                      <Image
+                        src="/images/HD.png"
+                        alt="Sprout Research Logo"
+                        width={110}
+                        height={62}
+                        priority
+                        className="object-contain"
+                      />
+
+                    </div>
                 </div>
-              </div>
             
               {/* Date */}
               <div className="text-sm text-gray-500 font-medium">
@@ -293,7 +310,15 @@ export default function InsightsPage() {
                   {/* Brand/Logo */}
                   <div className="flex items-center mb-4">
                     <div className="text-sm text-gray-600 font-medium tracking-wide">
-                      SPROUT<br />RESEARCH
+                      <Image
+                        src="/images/HD.png"
+                        alt="Sprout Research Logo"
+                        width={110}
+                        height={62}
+                        priority
+                        className="object-contain"
+                      />
+
                     </div>
                   </div>
                   
