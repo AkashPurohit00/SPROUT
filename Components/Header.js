@@ -61,7 +61,7 @@ const Header = () => {
               onClick={() => setAboutDropdownOpen(!aboutDropdownOpen)}
               className={`relative group flex items-center ${isAboutActive ? 'text-black' : 'text-black'}`}
             >
-              Research Services
+              Services
               <svg
                 className={`ml-1 w-4 h-4 transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180' : ''}`}
                 fill="none"
@@ -131,6 +131,21 @@ const Header = () => {
               />
             </Link>
           </li>
+
+          <li>
+            <Link
+              href="/pricing"
+              className={`relative group ${pathname === '/Insights' ? 'text-black' : 'text-black'}`}
+            >
+              Prodcut Pricing
+              <span
+                className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
+                ${pathname === '/pricing' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+              />
+            </Link>
+          </li>
+          
+
           {/* Contact Link */}
           <li>
             <Link
@@ -199,7 +214,7 @@ const Header = () => {
               className="w-full text-left flex items-center  gap-2"
             >
               <div className="relative group ">
-                Research Services
+                Services
                 <span
                   className={`absolute bottom-0 left-0  w-full h-[2px] bg-black origin-right transition-transform duration-300 
                   ${pathname.startsWith('/about') ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
@@ -257,6 +272,20 @@ const Header = () => {
               </div>
             </Link>
           </div>
+
+          {/* Product Pricing Link */}
+          <div>
+            <Link href="/pricing" onClick={() => setMenuOpen(false)}>
+              <div className="relative group">
+                Procut Pricing
+                <span
+                  className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
+                  ${pathname === '/pricing' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
+                />
+              </div>
+            </Link>
+          </div>
+
           {/* Contact Link */}
           <div>
             <Link href="/Contact" onClick={() => setMenuOpen(false)}>

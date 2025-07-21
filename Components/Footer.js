@@ -122,7 +122,7 @@ const Footer = () => {
                   onClick={() => setAboutDropdownOpen(!aboutDropdownOpen)}
                   className="hidden md:flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-300"
                 >
-                  Research Services
+                  Services
                   <svg
                     className={`ml-1 w-4 h-4 transition-transform duration-200 ${aboutDropdownOpen ? 'rotate-180' : ''}`}
                     fill="none"
@@ -138,7 +138,7 @@ const Footer = () => {
                   onClick={() => setMobileAboutOpen(!mobileAboutOpen)}
                   className="md:hidden flex items-center text-gray-600 hover:text-gray-900 transition-colors duration-300 w-full text-left"
                 >
-                  Research Services
+                  Services
                   <svg
                     className={`ml-1 w-4 h-4 transition-transform duration-200 ${mobileAboutOpen ? 'rotate-180' : ''}`}
                     fill="none"
@@ -206,14 +206,24 @@ const Footer = () => {
                   Insights
                 </Link>
               </li>
+
               <li>
+                <Link
+                  href="/pricing"
+                  className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
+                >
+                  Product Pricing 
+                </Link>
+              </li>
+
+              {/* <li>
                 <Link
                   href="/Research"
                   className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
                 >
                   Research
                 </Link>
-              </li>
+              </li> */}
               <li>
                 <Link
                   href="/Contact"
@@ -395,7 +405,7 @@ const Footer = () => {
               href="/Terms"
               className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
             >
-              Terms of Service
+              Terms & Conditions
             </a>
             <span className="text-gray-600">|</span>
             

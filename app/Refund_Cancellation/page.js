@@ -26,18 +26,18 @@ export default function Refund_canci() {
         </div>
 
         {/* Content Section */}
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-4">
             <div className="prose prose-lg max-w-none">
             
             <div className="text-gray-700 leading-relaxed space-y-6">
-              <p>We value our customers and are committed to providing best services. Our clients need to realize that we do not offer a 100% guarantee on our Reports and hence cannot offer any refund on subscriptions regardless of the individual client’s performance. Once a service has been subscribed to and a payment has been made for the same, it can’t be canceled or refunded in any case. If for some unforeseen reason, the client is not satisfied with our services, they may write us to seek direction. We will give our best effort to increase the satisfaction levels in such cases. However, any request by the client to cancel a service or get a refund will NOT be accepted in any case.</p>
+              <p>We value our customers and are committed to providing best services. Our clients need to realize that we do not offer a 100% guarantee on our Reports and hence cannot offer any refund on subscriptions regardless of the individual client’s performance. Once a service has been subscribed to and a payment has been made for the same, it can’t be cancelled or refunded in any case. If for some unforeseen reason, the client is not satisfied with our services, they may write us to seek direction. We will give our best effort to increase the satisfaction levels in such cases.</p>
                 <ul className='list-disc pl-6'>
-                    <li>Read all information about our services and support given to our clients.</li>
-                    <li>Read our Terms and Conditions.</li>
-                    <li>Read our Privacy Policy and Refund Policy</li>
-                    <li>There is no refund possible in any case whatsoever.</li>
+                    <li>No refunds will be offered on any subscription.</li>
+                    <li>If the different subscription access is wrongfully delivered (different subscription instead of the subscription mentioned in the order confirmation) then we are open to extending full refund. If the client intimates this within 30 days of date of subscription, we will process the refund within 15 days of such intimation</li>
+                    <li>No refunds would be given if the customer has provided wrong or incomplete email address</li>
+                    <li>Kindly make the payment after reading all terms and conditions, disclaimers and refund policy.</li>
                 </ul>
-                <p>Kindly make the payment after reading all terms and conditions, disclaimers and refund policy.</p>
+                <p>Sprout Research owns and have full right to www.sproutresearch.in </p>
             </div>
             </div>
         </div>
