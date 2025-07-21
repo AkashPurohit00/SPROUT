@@ -111,7 +111,7 @@ const Footer = () => {
                   href="/"
                   className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
                 >
-                  Home
+                  About Us
                 </Link>
               </li>
 

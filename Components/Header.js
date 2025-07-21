@@ -47,7 +47,7 @@ const Header = () => {
               href="/"
               className={`relative group ${pathname === '/' ? 'text-black' : 'text-black'}`}
             >
-              Home
+              About Us
               <span
                 className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
                 ${pathname === '/' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
@@ -137,7 +137,7 @@ const Header = () => {
               href="/pricing"
               className={`relative group ${pathname === '/Insights' ? 'text-black' : 'text-black'}`}
             >
-              Prodcut Pricing
+              Pricing
               <span
                 className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
                 ${pathname === '/pricing' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
@@ -198,7 +198,7 @@ const Header = () => {
           <div>
             <Link href="/" onClick={() => setMenuOpen(false)}>
               <div className="relative group">
-                Home
+                About Us
                 <span
                   className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
                   ${pathname === '/' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}
@@ -277,7 +277,7 @@ const Header = () => {
           <div>
             <Link href="/pricing" onClick={() => setMenuOpen(false)}>
               <div className="relative group">
-                Procut Pricing
+                Pricing
                 <span
                   className={`absolute bottom-0 left-0 w-full h-[2px] bg-black origin-right transition-transform duration-300 
                   ${pathname === '/pricing' ? 'scale-x-100' : 'scale-x-0 group-hover:scale-x-100'}`}

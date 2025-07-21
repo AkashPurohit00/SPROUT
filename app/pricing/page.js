@@ -20,7 +20,7 @@ export default function ProcutPricing() {
                 <div className="absolute inset-0 flex flex-col justify-center items-center text-black text-center px-4 sm:px-8 lg:px-20 z-10">
                     {/* Heading with animated underline */}
                     <h1 className="text-2xl md:text-3xl font-bold text-gray-900">
-                     Prodcut Pricing
+                     Product Pricing
                     </h1>
                 </div>
         </div>
