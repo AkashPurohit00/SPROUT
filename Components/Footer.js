@@ -378,6 +378,20 @@ const Footer = () => {
               </li>
               
             </ul>
+
+            <p className="items-center justify-center flex text-gray-600 mt-20 text-sm">
+              <span className="font">
+                An associate of Sprout Partners Pvt Ltd
+              </span>
+            </p>
+            <p className="items-center justify-center flex text-gray-600 mt-1 text-sm">
+              <span className="font">
+                <a href="https://sproutpartners.in" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors duration-300">
+                  sproutpartners.in
+                </a>
+              </span>
+            </p>
+
           </div>
 
           {/* Placeholder for spacing */}
