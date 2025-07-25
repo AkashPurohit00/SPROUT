@@ -27,6 +27,7 @@ export default function Page() {
               <ul className="space-y-6 sm:space-y-8 text-base sm:text-lg">
                 <li>📞 +91-9811744587 / +91-7838135315</li>
                 <li>📧 sproutresearch.equity@gmail.com</li>
+                <li>📌 A 35 FIRST FLOOR, Chittaranjan Park, NEW DELHI, NATIONAL CAPITAL TERRITORY OF DELHI, 110019</li>
                
               </ul>
             </div>
