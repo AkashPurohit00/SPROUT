@@ -44,7 +44,7 @@ const Page = () => {
       
       {/* Heading */}
       <h2 className="text-xl md:text-5xl font-bold text-left text-gray-800 mb-8">
-        Data for the month ending <br/>June 2025
+        Data for the month ending <br/>July 2025
       </h2>
       
       {/* Desktop View */}
