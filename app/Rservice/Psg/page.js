@@ -448,7 +448,7 @@ const page = () => {
       <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
         <img src="/images/HD.png" alt="Logo 1" className="h-15" />
         <div>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">KOVAI MEDICAL CENTER & HOSPITAL LTD</h2>
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">A Regional Hospital Player</h2>
           <p className="text-gray-600 text-sm">Compelling Valuations amidst Expansion …</p>
               <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
           <p>Executive Summary</p>
@@ -461,7 +461,7 @@ const page = () => {
     <div className="bg-white p-6 rounded-lg shadow  transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
       <img src="/images/HD.png" alt="Logo 11" className="h-15" />
       <div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">VALOR ESTATE LTD</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">Likely Turnaround in Real Estate and Hospitality</h2>
         <p className="text-gray-600 text-sm">Land aggregator coming out of woods…</p>
         <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
         <p>Executive Summary</p>
@@ -476,7 +476,7 @@ const page = () => {
     <div className="bg-white p-6 rounded-lg shadow transition flex flex-col items-start space-x-6 border border-black min-h-[400px] ">
       <img src="/images/HD.png" alt="Logo 12" className="h-15" />
       <div>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">INDIA GLYCOLS LTD</h2>
+        <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-4xl font-bold mb-2">Chemical Player with visibility and turnaround</h2>
         <p className="text-gray-600 text-lg">Turns around with visibility in greenshoots…</p>
             <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
         <p>Executive Summary</p>
