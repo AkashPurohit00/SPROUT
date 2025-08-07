@@ -291,6 +291,15 @@ const Footer = () => {
               </li>
               <li>
                 <a
+                  href="https://firebasestorage.googleapis.com/v0/b/sprout-insights.firebasestorage.app/o/files%2FCode%20of%20Conduct.docx.pdf?alt=media&token=161137f4-4d93-4728-9524-d2692c3f141c"
+                  className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
+                  target="_blank"
+                >
+                 Code of Conduct
+                </a>
+              </li>
+              <li>
+                <a
                   href="/Grievance"
                   className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
                 >
@@ -379,7 +388,7 @@ const Footer = () => {
               
             </ul>
 
-            <p className="items-center justify-center flex text-gray-600 mt-20 text-sm">
+            {/* <p className="items-center justify-center flex text-gray-600 mt-20 text-sm">
               <span className="font">
                 An associate of Sprout Partners Pvt Ltd
               </span>
@@ -390,7 +399,7 @@ const Footer = () => {
                   sproutpartners.in
                 </a>
               </span>
-            </p>
+            </p> */}
 
           </div>
 

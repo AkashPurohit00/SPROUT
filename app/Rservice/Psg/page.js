@@ -113,7 +113,7 @@ const page = () => {
           {/* First Paragraph */}
           <div className="text-sm sm:text-base md:text-lg lg:text-lg max-w-7xl">
             <p className="leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed">
-              Sprout Research PCG, in collaboration with Trudence Capital Advisory Pvt Ltd, a SEBI-registered Research Analyst (SEBI Registration No. INH000015747), delivers specialized research services grounded in rigorous fundamental and forensic analysis. Our mission is to protect and grow your investments through strategic risk management, proactive monitoring, and timely portfolio adjustments in response to dynamic market conditions
+              Sprout Research PCG delivers specialized research services grounded in rigorous fundamental and forensic analysis. Our mission is to protect and grow your investments through strategic risk management, proactive monitoring, and timely portfolio adjustments in response to dynamic market conditions
             </p>
           </div>
           

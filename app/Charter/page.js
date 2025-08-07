@@ -665,7 +665,7 @@ const Page = () => {
           </li>
           <li className="flex items-start gap-3">
             <div className="w-2 h-2 bg-gray-400 rounded-full mt-2.5 flex-shrink-0"></div>
-            <span>Right against Unfair, Unlawful, and anti-societal clauses in financial agreements</span>
+            <span>Right against coercive, unfair, and one-sided clauses in financial agreements</span>
           </li>
         </ul>
         
