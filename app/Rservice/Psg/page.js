@@ -292,10 +292,10 @@ const page = () => {
       {/* Button */}
       <div>
         <Link
-          href="https://trudencecapital.com/sprout/"
+          href="/Contact"
           className="inline-flex flex-col rounded-2xl items-center bg-blue-50 text-gray-700 px-10 py-6 border border-gray-300 font-semibold hover:bg-gray-100 transition-all duration-300 hover:-translate-y-2 transition-transform"
         >
-          <span className="text-2xl font-bold">Subscribe</span>
+          <span className="text-2xl font-bold">Get in touch to subscribe</span>
         </Link>
       </div>
     </div>

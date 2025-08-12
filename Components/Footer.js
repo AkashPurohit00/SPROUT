@@ -51,12 +51,12 @@ const Footer = () => {
             </div>
             </Link>
             <p className="text-gray-600 text-sm leading-relaxed mt-4">
-              Partner with Sprout Research to access high-quality investment opportunities. Our expertise ensures robust risk management, delivering confidence and peace of mind for your financial success.
+              Partner with Sprout Research to access quality research opportunities. Our expertise ensures robust risk management, delivering confidence and peace of mind for your financial future.
             </p>
             {/* Social Media Icons */}
             <div className="flex space-x-4">
               <a
-                href="https://twitter.com"
+                href="https://x.com/sproutresearch1?s=11"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
@@ -66,7 +66,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/shikha-kapur-8214167?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-900 transition-colors duration-300"

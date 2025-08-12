@@ -78,7 +78,7 @@ const page = () => {
         
         {/* Paragraphs - Properly spaced below the logo unit */}
         <div className="text-sm sm:text-base md:text-lg lg:text-lg max-w-5xl">
-          <p className="leading-tight">
+          <p className="leading-tight ml-4 mr-4 mb-4">
            Our research empowers retail investors by delivering professional-grade, unbiased financial analysis tailored to young, emerging, and cost-conscious individuals. We simplify complex market insights, offering actionable stock ideas across small-cap to large-cap opportunities for short- to medium-term investing. With affordable subscription plans, we provide clear, high-growth-focused reports to help beginners confidently navigate the stock market without financial strain
           </p>
         </div>

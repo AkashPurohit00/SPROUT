@@ -194,7 +194,7 @@ export default function Home() {
             </div>
             <h3 className="text-2xl font-bold text-gray-900 mb-4 text-center">EXPERIENCE</h3>
             <p className="text-gray-600 text-center leading-relaxed">
-              With over two decades of experience navigating the stock market’s highs and lows, we bring unparalleled expertise and dedication to every stock idea
+              With over two decades of experience navigating the stock market’s highs and lows, we bring our expertise and dedication to every stock idea
             </p>
           </div>
         {/* Feature 2 */}

@@ -7,7 +7,6 @@ export default function Page() {
   return (
     <>
       <Header />
-      {/* Contact Page Content */}
       <div className="relative min-h-screen bg-amber-950">
         {/* Background Image */}
         <Image
@@ -17,7 +16,7 @@ export default function Page() {
           className="w-full h-full object-cover absolute inset-0 z-0"
         />
 
-        {/* Overlay Section with transparent blue container */}
+        {/* Overlay Section */}
         <div className="relative z-10 flex items-center justify-center min-h-[120vh] px-4 py-12 sm:py-16">
           <div className="bg-blue-200/50 backdrop-blur-md rounded-xl p-6 sm:p-8 md:flex md:flex-row flex-col w-full max-w-5xl shadow-2xl min-h-[100vh]">
 
@@ -28,82 +27,81 @@ export default function Page() {
                 <li>📞 +91-9811744587 / +91-7838135315</li>
                 <li>📧 sproutresearch.equity@gmail.com</li>
                 <li>📌 A 35 FIRST FLOOR, Chittaranjan Park, NEW DELHI, NATIONAL CAPITAL TERRITORY OF DELHI, 110019</li>
-               
               </ul>
             </div>
 
-            {/* Right Form with white bg, rounded corners, margin inside blue container */}
-            <form className="md:w-1/2 w-full bg-white rounded-xl p-6 sm:p-8 mx-0 sm:mx-4 md:mx-0 shadow-lg space-y-10">
-  <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-gray-800 mb-6">Say Hello!</h2>
+            {/* Right Form */}
+            <form className="md:w-1/2 w-full bg-white rounded-xl p-6 sm:p-8 mx-0 sm:mx-4 md:mx-0 shadow-lg space-y-6">
+              <h2 className="text-3xl sm:text-4xl md:text-4xl font-bold text-gray-800 mb-6">Say Hello!</h2>
 
-  <div className="flex flex-col space-y-10 sm:flex-row sm:space-x-4 sm:space-y-0">
-    <input
-      type="text"
-      placeholder="First Name"
-      className="w-full sm:w-1/2 p-3 border rounded"
-      required
-      name="firstName"
-    />
-    <input
-      type="text"
-      placeholder="Last Name"
-      className="w-full sm:w-1/2 p-3 border rounded"
-      required
-      name="lastName"
-    />
-  </div>
+              {/* First Name */}
+              <input
+                type="text"
+                placeholder="First Name"
+                className="w-full p-3 border rounded"
+                required
+                name="firstName"
+              />
 
-  <input
-    type="email"
-    placeholder="Email Address"
-    className="w-full p-3 border rounded"
-    required
-    name="email"
-  />
+              {/* Email */}
+              <input
+                type="email"
+                placeholder="Email Address"
+                className="w-full p-3 border rounded"
+                required
+                name="email"
+              />
 
-  <input
-    type="tel"
-    placeholder="Contact Number"
-    className="w-full p-3 border rounded"
-    required
-    name="contact"
-  />
+              {/* Phone */}
+              <input
+                type="tel"
+                placeholder="Contact Number"
+                className="w-full p-3 border rounded"
+                required
+                name="contact"
+              />
 
-  <textarea
-    placeholder="Your Message"
-    rows={5}
-    className="w-full p-3 border rounded"
-    required
-    name="message"
-  ></textarea>
+              {/* Checkboxes */}
+              <div className="space-y-2">
+                <p className="font-semibold text-gray-700">Select Your Queries:</p>
+                <label className="flex items-center space-x-2">
+                  <input type="checkbox" name="query1" className="h-4 w-4" />
+                  <span>Get in touch to subscribe to our PCG research</span>
+                </label>
+                <label className="flex items-center space-x-2">
+                  <input type="checkbox" name="query2" className="h-5 w-6" />
+                  <span>Register interest as a Corporate Entity / NRI for Sprout Research-Retail Subscription</span>
+                </label>
+                <label className="flex items-center space-x-2">
+                  <input type="checkbox" name="query2" className="h-4 w-4" />
+                  <span>Subscribe to our weekly insights</span>
+                </label>
+                <label className="flex items-center space-x-2">
+                  <input type="checkbox" name="query3" className="h-4 w-4" />
+                  <span>Other Queries</span>
+                </label>
+              </div>
 
-  <button
-    type="submit"
-    className="w-full bg-blue-400 text-white py-3 rounded font-semibold hover:bg-blue-500 transition"
-  >
-    Submit 
-  </button>
-</form>
+              {/* Optional Message */}
+              <textarea
+                placeholder="Your Message (Optional)"
+                rows={4}
+                className="w-full p-3 border rounded"
+                name="message"
+              ></textarea>
 
+              {/* Submit Button */}
+              <button
+                type="submit"
+                className="w-full bg-blue-400 text-white py-3 rounded font-semibold hover:bg-blue-500 transition"
+              >
+                Submit
+              </button>
+            </form>
           </div>
         </div>
       </div>
-      
-      {/*location of the comapny*/}
-    {/* <div className='pt-16 min-h-screen flex flex-col items-center mb-10  sm:mb-10 lg:mb-[-80px]'>
-  <h1 className='text-3xl pt-40px sm:text-3xl md:text-4xl lg:text-5xl text-center font-bold'>Our Location</h1>
-  <div className="pt-10 w-full h-[700px] max-w-[1000px] px-4 sm:px-6 lg:px-0">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3504.927846691444!2d77.2378744751996!3d28.541888388191754!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390ce3d53fffffff%3A0xda321c128846ffae!2sIndure%20House%20(savex%20technologies%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1750328431513!5m2!1sen!2sin"
-      className="w-full h-[700px] sm:h-[700px] lg:h-[500px]"
-      style={{ border: 0, borderRadius: '10px' }}
-      allowFullScreen
-      loading="lazy"
-      referrerPolicy="no-referrer-when-downgrade"
-    ></iframe>
-  </div>
-    </div> */}
-        <Footer />
+      <Footer />
     </>
   );
 }
