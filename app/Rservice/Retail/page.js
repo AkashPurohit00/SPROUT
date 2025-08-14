@@ -3,7 +3,8 @@ import React from 'react'
 import Link from 'next/link'
 import Header from '@/Components/Header'
 import Footer from '@/Components/Footer'
-import Image from 'next/image';
+import Image from 'next/image'
+import SampleReportSection from '@/Components/Samplereport'
 import Newsletter from '@/Components/Newsletter'
 
 const page = () => {
@@ -250,6 +251,9 @@ const page = () => {
         </div>
       </div>
     </div>
+
+      {/* ADD YOUR SAMPLE REPORT SECTION HERE */}
+    <SampleReportSection />
 
     
 
