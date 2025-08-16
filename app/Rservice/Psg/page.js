@@ -305,7 +305,7 @@ const page = () => {
     {/* Section 8 Thematic Research Reports */}
     <div className="bg-white w-full min-h-screen py-16 px-6 sm:px-12 lg:px-24">
     <h1 className="text-center text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-medium mb-12">
-      Sprout Research Reports
+      Below are some sample illustrations of the Research
     </h1>
 
     <div className="flex flex-col ">
@@ -319,7 +319,6 @@ const page = () => {
               <p>Executive Summary</p>
               <p>The company, commanding over 80% of its market, enjoys robust revenue visibility backed by a healthy pipeline of contracts. With a massive market opportunity
                   projected over the next decade, and strategic support from Maritime India Vision 2030, the company is poised for sustained growth. To support this growth…</p>
-                  <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
         </div>
       </div>
 
@@ -334,7 +333,7 @@ const page = () => {
               <p>The microfinance (MFI) sector is witnessing early signs of recovery, underpinned by improved collections and reduced borrower stress. Recent rate cuts and 
                   enhanced liquidity measures by the RBI have played a pivotal role in fostering a more resilient lending environment. These macroeconomic tailwinds have
                   alleviated pressure on borrowers, driving stabilization in the sector and setting the stage for a potential rebound in asset quality and profitability…</p>
-                  <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+
         </div>
       </div>
 
@@ -350,7 +349,7 @@ const page = () => {
               technological, economic, and political challenges. Governments and MNCs are investing heavily in greener grids and advanced transmission technologies,
               making electricity transmission the biggest beneficiary of the global energy shift. India’s transmission sector has…</p>
               
-                  <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+                
         </div>
       </div>
 
@@ -366,8 +365,7 @@ const page = () => {
                   remain subdued, with little clarity on critical issues such as Trump tariffs on India, potential rate cuts, currency stabilization, or the trajectory of foreign money
                     flows. Amid this uncertainty, it’s…</p>
               
-                  <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
-        </div>
+                </div>
       </div>
 
       {/* Report 5 */}
@@ -381,8 +379,7 @@ const page = () => {
               <p>The company is a comprehensive financial services platform offering loans, investments, insurance, and payments through its subsidiaries and joint ventures.
                   The company’s NBFC arm ranks among the top private sector NBFCs, while its other key businesses include housing finance, life insurance (JV), and asset
                     management.</p>
-                    <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
-        </div>
+                  </div>
       </div>
 
       {/* Report 6 */}
@@ -395,8 +392,7 @@ const page = () => {
               <p>Executive Summary</p>
               <p>The quality cement company, backed by a strong group, has a capacity of 4.40 MTPA. Though constituting less than 1% of India’s total cement capacity, it stands
               out as a compelling investment opportunity for the following three key reasons…</p>
-              <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
-        </div>
+             </div>
       </div>
 
       {/* Report 7 */}
@@ -409,8 +405,7 @@ const page = () => {
               <p>Executive Summary</p>
               <p>The company stands as a premier investment opportunity in the lubricants sector, fortified by its strong parentage and an enduring legacy of market leadership.
               Over the decade from 2013 to 2023, the company showcased consistent growth, achieving a revenue CAGR of 4.7% and profit CAGR of 5.4%…</p>
-              <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
-        </div>
+              </div>
       </div>
 
       {/* Report 8 */}
@@ -425,8 +420,7 @@ const page = () => {
               While this transition will be complex and gradual, significant progress is underway in renewable energy, electric batteries, and advanced nuclear technologies.
               Key milestones include the planned 2028 revival of the Three Mile Island nuclear plant….
               </p>
-              <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
-        </div>
+             </div>
       </div>
 
       {/* Report 9 */}
@@ -440,8 +434,7 @@ const page = () => {
               <p>The company is a leading supplier of bitumen products and provides logistics services for Liquefied Petroleum Gas (LPG) and bituminous products. Through its
                   UAE-based 100% subsidiary, the company has also expanded into the ship operating….
               </p>
-              <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
-        </div>
+              </div>
       </div>
 
       {/* Report 10 */}
@@ -453,8 +446,7 @@ const page = () => {
               <div className="sm:w-[100px] md:w-[200px] lg:w-[700px] h-1 bg-blue-900 mt-7"></div>
           <p>Executive Summary</p>
           <p>The company, a Coimbatore-based hospital chain, is embarking on significant expansion, combining brownfield and greenfield projects. This expansion will boost its total bed capacity from….</p>
-              <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
-        </div>
+             </div>
       </div>
 
       {/* Report 11 */}
@@ -467,8 +459,7 @@ const page = () => {
         <p>Executive Summary</p>
         <p>The company faced significant challenges during the last decade but has since made considerable progress in overcoming this difficult phase. For the last 2
              years, the company has been actively cleansing its balance sheet and improving corporate governance and disclosure practices.  Further, successful one-time….</p>
-              <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
-
+            
       </div>
     </div>
 
@@ -482,7 +473,7 @@ const page = () => {
         <p>Executive Summary</p>
         <p>The company has faced significant challenges in the past, including difficulties recovering from the NSEL commodity financing crisis, high leverage, and issues
              with capital misallocation. However, we believe these challenges are now largely behind them…</p>
-             <Link href='https://trudencecapital.com/sprout/' className='pt-5 inline-block text-gray-600 font-serif'>Read More...</Link>
+             
       </div>
     </div>
 

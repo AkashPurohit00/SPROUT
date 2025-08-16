@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Sprout Reseach",
+  title: "Sprout Research",
   icons: {
     icon: '/favicon.png',
   },
