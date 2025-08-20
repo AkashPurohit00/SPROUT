@@ -159,14 +159,14 @@ const Footer = () => {
                         onMouseLeave={() => setServicesDropdownOpen(false)}
                       >
                         <Link
-                          href="/Rservice/Psg"
+                          href="/Research/Pcg"
                           className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200"
                         >
                           PCG
                          
                         </Link>
                          <Link
-                          href="/Rservice/Retail"
+                          href="/Research/Retail"
                           className="flex items-center justify-between px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200"
                         >
                           Retail
@@ -181,14 +181,14 @@ const Footer = () => {
                 {mobileAboutOpen && (
                   <div className="md:hidden mt-2 pl-4 space-y-2">
                     <Link 
-                      href="/Rservice/Psg" 
+                      href="/Research/Pcg" 
                       onClick={() => setMobileAboutOpen(false)}
                       className="block text-gray-600 hover:text-gray-900 transition-colors duration-300 font-medium"
                     >
                       PCG
                     </Link>
                     <Link 
-                      href="/Rservice/Retail" 
+                      href="/Research/Retail" 
                       onClick={() => setMobileAboutOpen(false)}
                       className="block text-gray-600 hover:text-gray-900 transition-colors duration-300 font-medium"
                     >

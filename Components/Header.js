@@ -82,7 +82,7 @@ const Header = () => {
                 <div className="py-2">
                   <div className="relative">
                     <Link
-                      href="/Rservice/Retail"
+                      href="/Research/Retail"
                       className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200 flex items-center justify-between"
                       onMouseEnter={() => setServicesDropdownOpen(true)}
                       onMouseLeave={() => setServicesDropdownOpen(false)}
@@ -99,7 +99,7 @@ const Header = () => {
                 <div className="py-2">
                   <div className="relative">
                     <Link
-                      href="/Rservice/Psg"
+                      href="/Research/Pcg"
                       className="w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-black transition-colors duration-200 flex items-center justify-between"
                       onMouseEnter={() => setServicesDropdownOpen(true)}
                       onMouseLeave={() => setServicesDropdownOpen(false)}
@@ -234,7 +234,7 @@ const Header = () => {
             {mobileAboutOpen && (
               <div className="mt-2 pl-4 space-y-2">
                 <Link 
-                  href="/Rservice/Psg" 
+                  href="/Research/Pcg" 
                   onClick={() => {
                     setMenuOpen(false);
                     setMobileAboutOpen(false);
@@ -244,7 +244,7 @@ const Header = () => {
                  PCG
                 </Link>
                 <Link 
-                  href="/Rservice/Retail" 
+                  href="/Research/Retail" 
                   onClick={() => {
                     setMenuOpen(false);
                     setMobileAboutOpen(false);

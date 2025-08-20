@@ -53,7 +53,7 @@ const page = () => {
     <Header/>
 
     {/* Background Image and Content */}
-    <div className="relative w-full h-[70vh] sm:h-[75vh] md:h-[85vh] lg:h-[90vh] xl:h-[100vh]  overflow-hidden">
+    <div className="relative w-full h-[40vh] sm:h-[60vh] md:h-[70vh] lg:h-[70vh] xl:h-[70vh]  overflow-hidden">
       <Image
         src="/images/pic5.jpg" // make sure this path is correct
         alt="Background"
@@ -101,9 +101,9 @@ const page = () => {
           <div className="text-2xl sm:text-2xl md:text-3xl lg:text-6xl font-sans mb-2 lg:mb-4 lg:whitespace-nowrap">
             <h1 className="leading-none">Sprout Research-PCG</h1>
           </div>
-          <div className="text-sm sm:text-base md:text-lg lg:text-lg max-w-4xl lg:whitespace-nowrap text-center mb-4 lg:mb-4 italic">
+          {/* <div className="text-sm sm:text-base md:text-lg lg:text-lg max-w-4xl lg:whitespace-nowrap text-center mb-4 lg:mb-4 italic">
             <p>Rigorous fundamental and forensic analysis tailored for corporations, HNIs, Family Offices and more</p>
-          </div>
+          </div> */}
           
         </div>
 
@@ -113,16 +113,12 @@ const page = () => {
           {/* First Paragraph */}
           <div className="text-sm sm:text-base md:text-lg lg:text-lg max-w-7xl">
             <p className="leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed">
-              Sprout Research PCG delivers specialized research services grounded in rigorous fundamental and forensic analysis. Our mission is to protect and grow your investments through strategic risk management, proactive monitoring, and timely portfolio adjustments in response to dynamic market conditions
+              Sprout Research PCG ("Private Client Group") subscription provides tailored research for corporations, HNIs, and family offices. Through rigorous fundamental and forensic analysis supported by proactive monitoring, our research strives to safeguard and grow your investments over medium to long-term.
             </p>
           </div>
           
           {/* Second Paragraph */}
-          <div className="text-sm sm:text-base md:text-lg lg:text-lg max-w-7xl">
-            <p className="leading-relaxed sm:leading-relaxed md:leading-relaxed lg:leading-relaxed">
-              We offer tailored research services for private clients, including corporations, high-net-worth individuals (HNIs), and family offices. Our expertise lies in providing in-depth fundamental and forensic analysis for medium- to long-term investments with significant exposure
-            </p>
-          </div>
+          
         </div>
       </div>
     </div>

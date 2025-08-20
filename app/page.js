@@ -36,7 +36,7 @@ export default function Home() {
     
     {/* Heading  */}
     <h1 className="text-2xl sm:text-2xl md:text-3xl lg:text-5xl font-sans mb-6 lg:mb-8 lg:whitespace-nowrap">
-      Independent Stock Research You Can Trust
+      Independent Quality Stock Research 
     </h1>
 
     {/* Paragraphs  */}

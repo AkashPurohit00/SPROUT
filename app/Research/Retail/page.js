@@ -5,6 +5,7 @@ import Header from '@/Components/Header'
 import Footer from '@/Components/Footer'
 import Image from 'next/image'
 import SampleReportSection from '@/Components/Samplereport'
+import SubscriptionSection from '@/Components/SubscriptionSection'
 import Newsletter from '@/Components/Newsletter'
 
 const page = () => {
@@ -54,7 +55,7 @@ const page = () => {
     <Header/>
 
     {/* Background Image and Content */}
-    <div className="relative w-full h-[60vh] sm:h-[70vh] md:h-[80vh] lg:h-[90vh] overflow-hidden">
+    <div className="relative w-full h-[40vh] sm:h-[60vh] md:h-[60vh] lg:h-[70vh] overflow-hidden">
       <Image
         src="/images/pic5.jpg" 
         alt="Background"
@@ -70,9 +71,9 @@ const page = () => {
           <div className="text-2xl sm:text-2xl md:text-3xl lg:text-6xl font-sans mb-2 lg:mb-4 lg:whitespace-nowrap">
             <h1 className="leading-none">Sprout Research-Retail</h1>
           </div>
-          <div className="text-sm sm:text-base md:text-lg lg:text-lg max-w-4xl lg:whitespace-nowrap text-center mb-4 lg:mb-4 italic">
+          {/* <div className="text-sm sm:text-base md:text-lg lg:text-lg max-w-4xl lg:whitespace-nowrap text-center mb-4 lg:mb-4 italic">
             <p>Research Reports Subscription for Retail Investors</p>
-          </div>
+          </div> */}
           
         </div>
         
@@ -80,7 +81,7 @@ const page = () => {
         {/* Paragraphs - Properly spaced below the logo unit */}
         <div className="text-sm sm:text-base md:text-lg lg:text-lg max-w-5xl">
           <p className="leading-tight ml-4 mr-4 mb-4">
-           Our research empowers retail investors by delivering professional-grade, unbiased financial analysis tailored to young, emerging, and cost-conscious individuals. We simplify complex market insights, offering actionable stock ideas across small-cap to large-cap opportunities for short- to medium-term investing. With affordable subscription plans, we provide clear, high-growth-focused reports to help beginners confidently navigate the stock market without financial strain
+            Research Reports subscription giving you simplified market insights and actionable stock ideas — from small-cap to large-cap — tailored for young, emerging, and cost-conscious investors
           </p>
         </div>
       </div>
@@ -255,175 +256,10 @@ const page = () => {
       {/* ADD YOUR SAMPLE REPORT SECTION HERE */}
     <SampleReportSection />
 
-    
+   
 
-    <section id="ready-to-work" className="bg-gradient-to-b from-white to-slate-50/30 py-12 mb-16">
-      <div className="container max-w-7xl mx-auto px-4 sm:px-6 lg:px-10">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">
-            Subscribe to Sprout Research - Retail below
-          </h2>
-          {/* <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
-            Select the category that best describes you to access tailored financial solutions
-          </p> */}
-        </div>
-
-        <div className="flex flex-col lg:flex-row justify-center items-stretch gap-8 lg:gap-16 max-w-5xl mx-auto">
-          
-          {/* Individual Button - Left Side */}
-          <div className="flex-1 max-w-sm mx-auto lg:mx-0">
-            <Link
-              href="https://live.meon.co.in/sproutresearch/analyst"
-              className="group relative block w-full h-full"
-            >
-              <div className="relative bg-white rounded-3xl p-8 border border-blue-100 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 h-full flex flex-col justify-between overflow-hidden">
-                {/* Background Pattern */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-blue-50 to-transparent rounded-full -translate-y-16 translate-x-16 opacity-60"></div>
-                
-                {/* Icon Container */}
-                <div className="relative mb-6">
-                  <div className="inline-flex p-4 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
-                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="relative flex-1">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition-colors">
-                    Individual Investors
-                  </h3>
-                  {/* <p className="text-gray-600 mb-6 leading-relaxed">
-                    Personalized investment solutions designed for Indian individuals seeking financial growth
-                  </p> */}
-                  
-                  {/* Features */}
-                  {/* <div className="space-y-2 mb-6">
-                    <div className="flex items-center text-sm text-gray-500">
-                      <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></div>
-                      Tax-efficient planning
-                    </div>
-                    <div className="flex items-center text-sm text-gray-500">
-                      <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></div>
-                      Mutual funds & SIPs
-                    </div>
-                    <div className="flex items-center text-sm text-gray-500">
-                      <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mr-2"></div>
-                      Portfolio management
-                    </div>
-                  </div> */}
-                </div>
-
-                {/* CTA */}
-                <div className="relative">
-                  <div className="flex items-center justify-between p-4 bg-gradient-to-r from-blue-50 to-blue-100/50 rounded-xl border border-blue-100 group-hover:from-blue-100 group-hover:to-blue-200/50 transition-all duration-300">
-                    <span className="font-semibold text-blue-700">Subscribe</span>
-                    <div className="flex items-center space-x-2">
-                      <div className="w-2 h-2 bg-blue-400 rounded-full group-hover:bg-blue-500 transition-colors"></div>
-                      <div className="w-2 h-2 bg-blue-300 rounded-full group-hover:bg-blue-400 transition-colors delay-75"></div>
-                      <div className="w-2 h-2 bg-blue-200 rounded-full group-hover:bg-blue-300 transition-colors delay-150"></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </div>
-
-          {/* Vertical Divider */}
-          <div className="hidden lg:flex flex-col items-center justify-center">
-            <div className="w-px h-16 bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
-            <div className="w-8 h-8 bg-white border-2 border-gray-200 rounded-full flex items-center justify-center my-4 shadow-sm">
-              <span className="text-gray-400 text-xs font-medium">OR</span>
-            </div>
-            <div className="w-px h-16 bg-gradient-to-b from-transparent via-gray-300 to-transparent"></div>
-          </div>
-
-          {/* Horizontal Divider for Mobile */}
-          <div className="lg:hidden flex items-center justify-center">
-            <div className="h-px w-16 bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-            <div className="w-12 h-8 bg-white border-2 border-gray-200 rounded-full flex items-center justify-center mx-4 shadow-sm">
-              <span className="text-gray-400 text-xs font-medium">OR</span>
-            </div>
-            <div className="h-px w-16 bg-gradient-to-r from-transparent via-gray-300 to-transparent"></div>
-          </div>
-
-          {/* Corporate Button - Right Side */}
-          <div className="flex-1 max-w-sm mx-auto lg:mx-0">
-            <Link
-              href="/Soon"
-              className="group relative block w-full h-full"
-            >
-              <div className="relative bg-white rounded-3xl p-8 border border-slate-200 shadow-lg hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 h-full flex flex-col justify-between overflow-hidden">
-                {/* Background Pattern */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-slate-50 to-transparent rounded-full -translate-y-16 translate-x-16 opacity-60"></div>
-                
-                {/* Coming Soon Badge */}
-                <div className="absolute top-4 right-4 bg-gradient-to-r from-amber-400 to-amber-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-md">
-                  SOON
-                </div>
-
-                {/* Icon Container */}
-                <div className="relative mb-6">
-                  <div className="inline-flex p-4 bg-gradient-to-br from-slate-600 to-slate-700 rounded-2xl shadow-lg group-hover:shadow-xl group-hover:scale-110 transition-all duration-300">
-                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 110 2h-3a1 1 0 01-1-1v-6a1 1 0 00-1-1H9a1 1 0 00-1 1v6a1 1 0 01-1 1H4a1 1 0 110-2V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clipRule="evenodd" />
-                    </svg>
-                  </div>
-                </div>
-
-                {/* Content */}
-                <div className="relative flex-1">
-                  <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-slate-600 transition-colors">
-                    NRI & Corporates
-                  </h3>
-                  {/* <p className="text-gray-600 mb-6 leading-relaxed">
-                    Specialized financial services for Non-Resident Indians and Corporate entities
-                  </p> */}
-                  
-                  {/* Features */}
-                  {/* <div className="space-y-2 mb-6">
-                    <div className="flex items-center text-sm text-gray-500">
-                      <div className="w-1.5 h-1.5 bg-slate-400 rounded-full mr-2"></div>
-                      NRI investment solutions
-                    </div>
-                    <div className="flex items-center text-sm text-gray-500">
-                      <div className="w-1.5 h-1.5 bg-slate-400 rounded-full mr-2"></div>
-                      Corporate treasury management
-                    </div>
-                    <div className="flex items-center text-sm text-gray-500">
-                      <div className="w-1.5 h-1.5 bg-slate-400 rounded-full mr-2"></div>
-                      Cross-border transactions
-                    </div>
-                  </div> */}
-                </div>
-
-                {/* CTA */}
-                <div className="relative">
-                  <div className="flex items-center justify-between p-4 bg-gradient-to-r from-slate-50 to-slate-100/50 rounded-xl border border-slate-200 group-hover:from-slate-100 group-hover:to-slate-200/50 transition-all duration-300">
-                    <span className="font-semibold text-slate-600">Coming Soon</span>
-                    <div className="flex items-center space-x-1">
-                      <div className="w-6 h-1 bg-slate-300 rounded-full overflow-hidden">
-                        <div className="w-full h-full bg-gradient-to-r from-slate-400 to-slate-500 rounded-full animate-pulse"></div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </Link>
-          </div>
-          
-        </div>
-
-        {/* Bottom Note */}
-        <div className="text-center mt-12">
-          <p className="text-sm text-gray-500">
-            Need help choosing? <a href="/Contact" className="text-blue-600 hover:text-blue-700 font-medium underline">Contact our experts</a>
-          </p>
-        </div>
-      </div>
-    </section>
+    {/* REPLACE THE OLD SUBSCRIPTION SECTION WITH THE NEW COMPONENT */}
+    <SubscriptionSection />
 
     
 
@@ -433,6 +269,10 @@ const page = () => {
   </>
   
   )
+
+  
 }
+
+
 
 export default page 
