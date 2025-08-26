@@ -541,9 +541,7 @@ export default function Home() {
                           Our curated annual selection of investment ideas is chosen for strong growth potential, supported by comprehensive analysis, quarterly updates, and insights from public documents and channel checks.
                         </p>
                         
-                        <p className="text-gray-600 leading-relaxed mt-4">
-                          In collaboration with Trudence Capital, a SEBI-registered Research Analyst (SEBI Registration No. INH000015747), we partner with institutional clients to deliver robust, scalable solutions that optimize investment performance and align with their strategic objectives.
-                        </p>
+                        
                         {/* Button for Institutional Section */}
                         <div className="mt-10 text-center">
                           <a
