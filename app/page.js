@@ -521,7 +521,7 @@ export default function Home() {
                         {/* Button for Retail Section */}
                         <div className="mt-6 text-center">
                           <a
-                            href="/Rservice/Retail" // Placeholder link
+                            href="/Research/Retail" // Placeholder link
                             className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out shadow-md hover:shadow-lg"
                           >
                             Know More 
@@ -545,7 +545,7 @@ export default function Home() {
                         {/* Button for Institutional Section */}
                         <div className="mt-10 text-center">
                           <a
-                            href="/Rservice/Psg" // Placeholder link
+                            href="/Research/Pcg" // Placeholder link
                             className="inline-block bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300 ease-in-out shadow-md hover:shadow-lg"
                           >
                            Know More
