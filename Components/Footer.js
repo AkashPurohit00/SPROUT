@@ -385,27 +385,34 @@ const Footer = () => {
                   sproutresearch.equity@gmail.com
                 </a>
               </li>
-              
+              {/* Disclaimer Section */}
+            <div className="mt-10">
+              <p className="flex items-center justify-center text-gray-600 ">
+                <span className="font-bold text-m">
+                  DISCLAIMER
+                </span>
+              </p>            
+              <ul className="space-y-2 text-s text-gray-600 max-w-4xl mx-auto px-4 list-disc list-inside md:text-m">
+                <li className="hover:text-gray-900 transition-colors duration-300">
+                  Investments in securities market are subject to market risks. Read all the related documents
+                  carefully before investing
+                </li>
+                <li className="hover:text-gray-900 transition-colors duration-300">
+                  SEBI Registration does not guarantee performance or returns.
+                </li>
+              </ul>
+            </div>
             </ul>
 
-            {/* <p className="items-center justify-center flex text-gray-600 mt-20 text-sm">
-              <span className="font">
-                An associate of Sprout Partners Pvt Ltd
-              </span>
-            </p>
-            <p className="items-center justify-center flex text-gray-600 mt-1 text-sm">
-              <span className="font">
-                <a href="https://sproutpartners.in" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-gray-900 transition-colors duration-300">
-                  sproutpartners.in
-                </a>
-              </span>
-            </p> */}
+            
 
           </div>
 
           {/* Placeholder for spacing */}
           <div className="hidden lg:block"></div>
         </div>
+
+        
 
         {/* Footer Bottom */}
         <div className="mt-8 pt-8 border-t border-gray-300 flex flex-col md:flex-row justify-between items-center">
@@ -440,6 +447,8 @@ const Footer = () => {
                 </a>
 
           </div>
+
+
           <p className="text-gray-600 text-sm">Sprout Research © 2025. All rights reserved.</p>
         </div>
       </div>
