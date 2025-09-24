@@ -34,7 +34,8 @@
     "react-dom": "^18.2.0",
     "react-pdf": "^6.2.2",
     "react-phone-input-2": "^2.15.1",
-    "tailwindcss": "^4.1.10"
+    "tailwindcss": "^4.1.10",
+    "yahoo-finance2": "^2.13.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",

@@ -5,9 +5,11 @@ import { useAuth } from '@/contexts/AuthContext';
 import { addInsight } from '@/lib/insightsService';
 import { uploadPdfAndSaveDetails } from '@/lib/pdfService';
 import Login from '@/app/admin/Insights/LoginForm';
+import StockManagement from '@/app/api/stockmanagement/stock_manage';
 
 export default function AdminInsights() {
   const { isAuthenticated, loading: authLoading, user, logout } = useAuth();
+  const [activeTab, setActiveTab] = useState('insights');
 
   const [formData, setFormData] = useState({
     title: '',
@@ -146,10 +148,17 @@ export default function AdminInsights() {
     return <Login />;
   }
 
+  const tabs = [
+    { id: 'insights', name: 'Insights', icon: '📊' },
+    { id: 'stocks', name: 'Stock Management', icon: '📈' },
+    { id: 'users', name: 'User Management', icon: '👥' }
+  ];
+
   return (
     <div className="min-h-screen bg-gray-50 py-8">
-      <div className="max-w-2xl mx-auto px-4">
+      <div className="max-w-6xl mx-auto px-4">
         
+        {/* Header */}
         <div className="bg-white shadow rounded-lg p-4 mb-6 flex justify-between items-center">
           <div>
             <h1 className="text-xl font-semibold">Admin Panel</h1>
@@ -160,99 +169,135 @@ export default function AdminInsights() {
           </button>
         </div>
 
-        {/* Add Insight Form */}
-        <div className="bg-white p-6 rounded-lg shadow space-y-4 mb-8">
-          <h2 className="text-xl font-bold mb-4">Add New Insight</h2>
-          {message && (
-            <div className={`p-3 rounded ${message.includes('Error') ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
-              {message}
-            </div>
-          )}
-          <form onSubmit={handleSubmit} className="space-y-4">
-            <input type="text" name="title" value={formData.title} onChange={handleInputChange} required placeholder="Title *" className="w-full p-2 border rounded" />
-            <textarea name="subtitle" value={formData.subtitle} onChange={handleInputChange} required rows="3" placeholder="Subtitle/Description *" className="w-full p-2 border rounded" />
-            <input type="text" name="cloudinaryId" value={formData.cloudinaryId} onChange={handleInputChange} placeholder="Cloudinary Public ID" className="w-full p-2 border rounded" />
-            <input type="url" name="thumbnail" value={formData.thumbnail} onChange={handleInputChange} placeholder="Fallback Image URL" className="w-full p-2 border rounded" />
-            <input type="url" name="pdfLink" value={formData.pdfLink} onChange={handleInputChange} required placeholder="Google Drive PDF Link *" className="w-full p-2 border rounded" />
-            <button type="submit" disabled={loading} className={`w-full py-2 rounded text-white ${loading ? 'bg-gray-400' : 'bg-indigo-600 hover:bg-indigo-700'}`}>
-              {loading ? 'Adding...' : 'Add Insight'}
-            </button>
-          </form>
+        {/* Navigation Tabs */}
+        <div className="bg-white rounded-lg shadow mb-6">
+          <div className="border-b">
+            <nav className="flex space-x-8 px-6">
+              {tabs.map((tab) => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`py-4 px-2 border-b-2 font-medium text-sm whitespace-nowrap ${
+                    activeTab === tab.id
+                      ? 'border-indigo-500 text-indigo-600'
+                      : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
+                  }`}
+                >
+                  <span className="mr-2">{tab.icon}</span>
+                  {tab.name}
+                </button>
+              ))}
+            </nav>
+          </div>
         </div>
 
-        {/* PDF Upload Form */}
-        <div className="bg-white p-6 rounded-lg shadow space-y-4 mb-8">
-          <h2 className="text-xl font-bold mb-4">Upload PDF</h2>
-          {pdfMessage && (
-            <div className={`p-3 rounded ${pdfMessage.includes('Error') ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
-              {pdfMessage}
+        {/* Tab Content */}
+        <div className="space-y-6">
+          {/* Insights Tab */}
+          {activeTab === 'insights' && (
+            <>
+              {/* Add Insight Form */}
+              <div className="bg-white p-6 rounded-lg shadow space-y-4">
+                <h2 className="text-xl font-bold mb-4">Add New Insight</h2>
+                {message && (
+                  <div className={`p-3 rounded ${message.includes('Error') ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
+                    {message}
+                  </div>
+                )}
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  <input type="text" name="title" value={formData.title} onChange={handleInputChange} required placeholder="Title *" className="w-full p-2 border rounded" />
+                  <textarea name="subtitle" value={formData.subtitle} onChange={handleInputChange} required rows="3" placeholder="Subtitle/Description *" className="w-full p-2 border rounded" />
+                  <input type="text" name="cloudinaryId" value={formData.cloudinaryId} onChange={handleInputChange} placeholder="Cloudinary Public ID" className="w-full p-2 border rounded" />
+                  <input type="url" name="thumbnail" value={formData.thumbnail} onChange={handleInputChange} placeholder="Fallback Image URL" className="w-full p-2 border rounded" />
+                  <input type="url" name="pdfLink" value={formData.pdfLink} onChange={handleInputChange} required placeholder="Google Drive PDF Link *" className="w-full p-2 border rounded" />
+                  <button type="submit" disabled={loading} className={`w-full py-2 rounded text-white ${loading ? 'bg-gray-400' : 'bg-indigo-600 hover:bg-indigo-700'}`}>
+                    {loading ? 'Adding...' : 'Add Insight'}
+                  </button>
+                </form>
+              </div>
+
+              {/* PDF Upload Form */}
+              <div className="bg-white p-6 rounded-lg shadow space-y-4">
+                <h2 className="text-xl font-bold mb-4">Upload PDF</h2>
+                {pdfMessage && (
+                  <div className={`p-3 rounded ${pdfMessage.includes('Error') ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
+                    {pdfMessage}
+                  </div>
+                )}
+                <form onSubmit={handlePdfUpload} className="space-y-4">
+                  <input type="file" accept="application/pdf" onChange={(e) => setPdfFile(e.target.files[0])} required className="w-full p-2 border rounded" />
+                  <input type="text" value={pdfHeading} onChange={(e) => setPdfHeading(e.target.value)} required placeholder="Heading *" className="w-full p-2 border rounded" />
+                  <input type="text" value={pdfSubheading} onChange={(e) => setPdfSubheading(e.target.value)} required placeholder="Subheading *" className="w-full p-2 border rounded" />
+                  <input type="date" value={pdfDate} onChange={(e) => setPdfDate(e.target.value)} required className="w-full p-2 border rounded" />
+                  <button type="submit" disabled={pdfLoading} className={`w-full py-2 rounded text-white ${pdfLoading ? 'bg-gray-400' : 'bg-green-600 hover:bg-green-700'}`}>
+                    {pdfLoading ? 'Uploading...' : 'Upload PDF'}
+                  </button>
+                </form>
+              </div>
+            </>
+          )}
+
+          {/* Stocks Tab */}
+          {activeTab === 'stocks' && (
+            <StockManagement />
+          )}
+
+          {/* Users Tab */}
+          {activeTab === 'users' && (
+            <div className="bg-white p-6 rounded-lg shadow-xl space-y-4">
+              <h2 className="text-xl font-bold mb-4">Add New User</h2>
+              <form onSubmit={handleAddUser} className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
+                  <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} required className="border rounded-xl p-3 w-full" />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                  <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} required className="border rounded-xl p-3 w-full" />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Email ID</label>
+                  <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="border rounded-xl p-3 w-full" />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                  <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required className="border rounded-xl p-3 w-full" />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Subscription Start Date</label>
+                  <input type="date" value={subscriptionStart} onChange={(e) => setSubscriptionStart(e.target.value)} required className="border rounded-xl p-3 w-full" />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Subscription End Date</label>
+                  <input type="date" value={subscriptionEnd} onChange={(e) => setSubscriptionEnd(e.target.value)} required className="border rounded-xl p-3 w-full" />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">PAN Card Number</label>
+                  <input type="text" value={panCardNumber} onChange={(e) => setPanCardNumber(e.target.value)} required className="border rounded-xl p-3 w-full" />
+                </div>
+
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">KYC Verified On</label>
+                  <input type="date" value={kycVerifiedOn} onChange={(e) => setKycVerifiedOn(e.target.value)} required className="border rounded-xl p-3 w-full" />
+                </div>
+
+                <div className="md:col-span-2">
+                  <button type="submit" disabled={loading} className="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 w-full transition">
+                    {loading ? 'Adding...' : 'Add User'}
+                  </button>
+                  {userAddSuccess && <p className="mt-4 text-green-600 font-semibold">{userAddSuccess}</p>}
+                </div>
+              </form>
             </div>
           )}
-          <form onSubmit={handlePdfUpload} className="space-y-4">
-            <input type="file" accept="application/pdf" onChange={(e) => setPdfFile(e.target.files[0])} required className="w-full p-2 border rounded" />
-            <input type="text" value={pdfHeading} onChange={(e) => setPdfHeading(e.target.value)} required placeholder="Heading *" className="w-full p-2 border rounded" />
-            <input type="text" value={pdfSubheading} onChange={(e) => setPdfSubheading(e.target.value)} required placeholder="Subheading *" className="w-full p-2 border rounded" />
-            <input type="date" value={pdfDate} onChange={(e) => setPdfDate(e.target.value)} required className="w-full p-2 border rounded" />
-            <button type="submit" disabled={pdfLoading} className={`w-full py-2 rounded text-white ${pdfLoading ? 'bg-gray-400' : 'bg-green-600 hover:bg-green-700'}`}>
-              {pdfLoading ? 'Uploading...' : 'Upload PDF'}
-            </button>
-          </form>
         </div>
-
-        {/* Add User Form */}
-        <div className="bg-white p-6 rounded-lg shadow-xl space-y-4">
-        <h2 className="text-xl font-bold mb-4">Add New User</h2>
-        <form onSubmit={handleAddUser} className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Full Name</label>
-            <input type="text" value={fullName} onChange={(e) => setFullName(e.target.value)} required className="border rounded-xl p-3 w-full" />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-            <input type="text" value={phone} onChange={(e) => setPhone(e.target.value)} required className="border rounded-xl p-3 w-full" />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email ID</label>
-            <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} required className="border rounded-xl p-3 w-full" />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
-            <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required className="border rounded-xl p-3 w-full" />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Subscription Start Date</label>
-            <input type="date" value={subscriptionStart} onChange={(e) => setSubscriptionStart(e.target.value)} required className="border rounded-xl p-3 w-full" />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Subscription End Date</label>
-            <input type="date" value={subscriptionEnd} onChange={(e) => setSubscriptionEnd(e.target.value)} required className="border rounded-xl p-3 w-full" />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">PAN Card Number</label>
-            <input type="text" value={panCardNumber} onChange={(e) => setPanCardNumber(e.target.value)} required className="border rounded-xl p-3 w-full" />
-          </div>
-
-          <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">KYC Verified On</label>
-            <input type="date" value={kycVerifiedOn} onChange={(e) => setKycVerifiedOn(e.target.value)} required className="border rounded-xl p-3 w-full" />
-          </div>
-
-          <div className="md:col-span-2">
-            <button type="submit" disabled={loading} className="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-700 w-full transition">
-              {loading ? 'Adding...' : 'Add User'}
-            </button>
-            {userAddSuccess && <p className="mt-4 text-green-600 font-semibold">{userAddSuccess}</p>}
-          </div>
-        </form>
-      </div>
-
       </div>
     </div>
   );
