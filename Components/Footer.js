@@ -335,6 +335,14 @@ const Footer = () => {
                   Investor Grievance Report 
                   </a>
                 </li>
+                <li>
+                  <a
+                    href="https://firebasestorage.googleapis.com/v0/b/sprout-insights.firebasestorage.app/o/files%2FAudit%20Report%20RA%20Shikha%20Kaput%202024-25%20Signed.pdf?alt=media&token=6c3f0a2f-8ea9-4917-8a77-18664ca6dc25"
+                    className="text-gray-600 hover:text-gray-900 transition-colors duration-300"
+                  >
+                  Annual Compliance Audit Report 
+                  </a>
+                </li>
               </ul>
             </div>
 

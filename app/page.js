@@ -564,8 +564,153 @@ export default function Home() {
       <RecentInsights />
 
       <Newsletter/>
-     
-      
+
+      {/* Regulatory Information Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Section Title */}
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Regulatory Information
+            </h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Our commitment to transparency and regulatory compliance
+            </p>
+          </div>
+
+          {/* Main Content Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            {/* Research Analyst Information Card */}
+            <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center mb-6">
+                <div className="bg-blue-100 rounded-full p-3 mr-4">
+                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Research Analyst</h3>
+              </div>
+              
+              <div className="space-y-3 text-sm">
+                <div>
+                  <span className="font-semibold text-gray-700">Name:</span>
+                  <span className="text-gray-600 ml-2">Shikha Kapur</span>
+                </div>
+                <div>
+                  <span className="font-semibold text-gray-700">Proprietor:</span>
+                  <span className="text-gray-600 ml-2">Sprout Research</span>
+                </div>
+                <div>
+                  <span className="font-semibold text-gray-700">Type:</span>
+                  <span className="text-gray-600 ml-2">Proprietorship</span>
+                </div>
+                <div>
+                  <span className="font-semibold text-gray-700">Registration Number:</span>
+                  <span className="text-gray-600 ml-2 font-mono">INH000019169</span>
+                </div>
+                <div>
+                  <span className="font-semibold text-gray-700">BSE Enlistment:</span>
+                  <span className="text-gray-600 ml-2 font-mono">6441</span>
+                </div>
+                <div>
+                  <span className="font-semibold text-gray-700">Registration Date:</span>
+                  <span className="text-gray-600 ml-2">23 December 2024</span>
+                </div>
+                <div>
+                  <span className="font-semibold text-gray-700">Validity:</span>
+                  <span className="text-green-600 ml-2 font-semibold">Perpetual</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Contact Information Card */}
+            <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center mb-6">
+                <div className="bg-green-100 rounded-full p-3 mr-4">
+                  <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">Contact Details</h3>
+              </div>
+              
+              <div className="space-y-4 text-sm">
+                <div>
+                  <span className="font-semibold text-gray-700 block mb-1">Principal/Grievance/Compliance Officer:</span>
+                  <span className="text-gray-600">Shikha Kapur</span>
+                </div>
+                <div>
+                  <span className="font-semibold text-gray-700 block mb-1">Email:</span>
+                  <a href="mailto:shikha.kapur@gmail.com" className="text-blue-600 hover:text-blue-800 transition-colors">
+                    shikha.kapur@gmail.com
+                  </a>
+                </div>
+                <div>
+                  <span className="font-semibold text-gray-700 block mb-1">Mobile:</span>
+                  <a href="tel:9811744587" className="text-blue-600 hover:text-blue-800 transition-colors">
+                    +91 98117 44587
+                  </a>
+                </div>
+                <div>
+                  <span className="font-semibold text-gray-700 block mb-1">Registered Office:</span>
+                  <span className="text-gray-600">
+                    A 35 First Floor, Chittaranjan Park,<br />
+                    New Delhi, NCT of Delhi - 110019
+                  </span>
+                </div>
+              </div>
+            </div>
+
+            {/* SEBI Information Card */}
+            <div className="bg-white rounded-2xl border-2 border-gray-200 p-8 hover:shadow-lg transition-all duration-300">
+              <div className="flex items-center mb-6">
+                <div className="bg-purple-100 rounded-full p-3 mr-4">
+                  <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.031 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                  </svg>
+                </div>
+                <h3 className="text-xl font-bold text-gray-900">SEBI Information</h3>
+              </div>
+              
+              <div className="space-y-4 text-sm">
+                <div>
+                  <span className="font-semibold text-gray-700 block mb-2">SEBI Office Address:</span>
+                  <span className="text-gray-600">
+                    SEBI Bhavan RKC,<br />
+                    Bandra-Kurla Complex,<br />
+                    Mumbai - 400051, Maharashtra
+                  </span>
+                </div>
+                <div className="pt-4 border-t border-gray-200">
+                  <span className="font-semibold text-gray-700 block mb-2">Important Links:</span>
+                  <div className="space-y-2">
+                    <a 
+                      href="https://scores.sebi.gov.in/scores-home" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block text-blue-600 hover:text-blue-800 transition-colors underline"
+                    >
+                      SEBI SCORES Portal
+                    </a>
+                    <a 
+                      href="https://smartodr.in/login" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block text-blue-600 hover:text-blue-800 transition-colors underline"
+                    >
+                      Smart ODR Platform
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        
+        </div>
+      </section>
+
       <Footer />
     </>
   );

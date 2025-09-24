@@ -228,14 +228,7 @@ export default function Page() {
                 </div>
               </div>
 
-              {/* Disclaimer */}
-              <div className="mb-6">
-                <h3 className="text-xl sm:text-2xl md:text-2xl font-bold mb-4 text-gray-800">Disclaimer</h3>
-                <div className="space-y-2 text-sm sm:text-base">
-                  <p><span className="font-bold">1.</span> Investment in securities market are subject to market risks. Read all the related documents carefully before investing.</p>
-                  <p><span className="font-bold">2.</span> SEBI registration does not guarantee performance or returns.</p>
-                </div>
-              </div>
+             
             </div>
 
             {/* Right Form */}
