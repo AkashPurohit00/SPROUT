@@ -16,13 +16,13 @@ export async function GET(request) {
 
     // Search for stocks
     const searchResults = await yahooFinance.search(query, {
-      quotesCount: 10,
+      quotesCount: 15,
       newsCount: 0,
     });
 
     // Filter for Indian stocks (NSE/BSE) and format results
     const indianStocks = searchResults.quotes
-      .filter(stock => {
+      ?.filter(stock => {
         const symbol = stock.symbol || '';
         const exchange = stock.exchange || '';
         
@@ -32,7 +32,9 @@ export async function GET(request) {
                symbol.includes('.NS') || 
                symbol.includes('.BO') ||
                exchange === 'NSE' ||
-               exchange === 'BSE';
+               exchange === 'BSE' ||
+               exchange.includes('National Stock Exchange') ||
+               exchange.includes('Bombay Stock Exchange');
       })
       .map(stock => ({
         symbol: stock.symbol,
@@ -40,8 +42,11 @@ export async function GET(request) {
         longName: stock.longname,
         exchange: stock.exchange,
         regularMarketPrice: stock.regularMarketPrice,
-        currency: stock.currency || 'INR'
-      }));
+        currency: stock.currency || 'INR',
+        marketCap: stock.marketCap,
+        sector: stock.sector,
+        industry: stock.industry
+      })) || [];
 
     // If no Indian stocks found, try to get basic info for the search term
     if (indianStocks.length === 0) {
@@ -60,7 +65,10 @@ export async function GET(request) {
             longName: quote.longName,
             exchange: quote.fullExchangeName || 'NSE',
             regularMarketPrice: quote.regularMarketPrice,
-            currency: quote.currency || 'INR'
+            currency: quote.currency || 'INR',
+            marketCap: quote.marketCap,
+            sector: quote.sector,
+            industry: quote.industry
           });
         }
       } catch (error) {
@@ -79,7 +87,10 @@ export async function GET(request) {
               longName: quoteBSE.longName,
               exchange: quoteBSE.fullExchangeName || 'BSE',
               regularMarketPrice: quoteBSE.regularMarketPrice,
-              currency: quoteBSE.currency || 'INR'
+              currency: quoteBSE.currency || 'INR',
+              marketCap: quoteBSE.marketCap,
+              sector: quoteBSE.sector,
+              industry: quoteBSE.industry
             });
           }
         } catch (bseError) {
@@ -88,16 +99,41 @@ export async function GET(request) {
       }
     }
 
+    // Sort results by relevance (exact matches first, then by market cap if available)
+    indianStocks.sort((a, b) => {
+      const queryUpper = query.toUpperCase();
+      
+      // Exact symbol matches first
+      if (a.symbol.toUpperCase().includes(queryUpper) && !b.symbol.toUpperCase().includes(queryUpper)) {
+        return -1;
+      }
+      if (!a.symbol.toUpperCase().includes(queryUpper) && b.symbol.toUpperCase().includes(queryUpper)) {
+        return 1;
+      }
+      
+      // Then by market cap (higher first)
+      if (a.marketCap && b.marketCap) {
+        return b.marketCap - a.marketCap;
+      }
+      
+      return 0;
+    });
+
     return NextResponse.json({
       success: true,
-      results: indianStocks,
-      total: indianStocks.length
+      results: indianStocks.slice(0, 10), // Limit to top 10 results
+      total: indianStocks.length,
+      query: query
     });
 
   } catch (error) {
     console.error('Stock search error:', error);
     return NextResponse.json(
-      { success: false, error: 'Failed to search stocks' },
+      { 
+        success: false, 
+        error: 'Failed to search stocks',
+        message: error.message 
+      },
       { status: 500 }
     );
   }

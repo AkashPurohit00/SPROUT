@@ -5,6 +5,7 @@ import { useRouter } from 'next/navigation';
 import { useUserAuth } from '@/contexts/UserAuthContext';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
+import CustomerStockTable from './components/CustomerStockTable';
 import dynamic from 'next/dynamic';
 import { getAllPdfs } from '../../lib/pdfService';
 import { groupPdfsByYearAndMonth, setupAutoLogout, setupTabCloseLogout } from '../../lib/portalUtils';
@@ -18,6 +19,7 @@ export default function PortalPage() {
   const [pdfs, setPdfs] = useState([]);
   const [groupedPdfs, setGroupedPdfs] = useState({});
   const [selectedPdf, setSelectedPdf] = useState(null);
+  const [selectedView, setSelectedView] = useState('pdf'); // 'pdf' or 'stocks'
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
@@ -147,6 +149,17 @@ export default function PortalPage() {
   // Handle PDF selection
   const handlePdfSelect = (pdf) => {
     setSelectedPdf(pdf);
+    setSelectedView('pdf');
+    // Close sidebar on mobile after selection
+    if (window.innerWidth < 1024) {
+      setIsSidebarOpen(false);
+    }
+  };
+
+  // Handle Stock view selection
+  const handleStockSelect = () => {
+    setSelectedPdf(null);
+    setSelectedView('stocks');
     // Close sidebar on mobile after selection
     if (window.innerWidth < 1024) {
       setIsSidebarOpen(false);
@@ -203,16 +216,22 @@ export default function PortalPage() {
           groupedPdfs={groupedPdfs}
           onPdfSelect={handlePdfSelect}
           selectedPdf={selectedPdf}
+          selectedView={selectedView}
+          onStockSelect={handleStockSelect}
           isOpen={isSidebarOpen}
           onClose={closeSidebar}
         />
         
-        {/* PDF Viewer - Takes remaining space */}
+        {/* Main Viewer - Takes remaining space */}
         <div className="flex-1 lg:ml-0">
-          <PdfViewer
-            pdf={selectedPdf}
-            user={user}
-          />
+          {selectedView === 'stocks' ? (
+            <CustomerStockTable user={user} />
+          ) : (
+            <PdfViewer
+              pdf={selectedPdf}
+              user={user}
+            />
+          )}
         </div>
       </div>
       
