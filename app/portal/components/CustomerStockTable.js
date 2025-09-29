@@ -153,7 +153,7 @@ export default function CustomerStockTable({ user }) {
               <span>Stock Recommendations</span>
             </h2>
             <p className="text-xs sm:text-sm text-gray-600">
-              Expert curated suggestions • {filteredStocks.length} showing • {filteredStocks.filter(s => s.recommendedExitPrice).length} with exit targets
+              Expert curated suggestions • {filteredStocks.length} showing 
             </p>
           </div>
 
@@ -243,7 +243,7 @@ export default function CustomerStockTable({ user }) {
           ) : (
             <div className="bg-white rounded-lg shadow overflow-hidden">
               {/* Summary Stats */}
-              <div className="px-6 py-4 bg-gray-50 border-b">
+              {/* <div className="px-6 py-4 bg-gray-50 border-b">
                 <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
                   <div className="text-center">
                     <div className="text-2xl font-bold text-blue-600">{filteredStocks.length}</div>
@@ -268,7 +268,7 @@ export default function CustomerStockTable({ user }) {
                     <div className="text-sm text-gray-600">Market Open</div>
                   </div>
                 </div>
-              </div>
+              </div> */}
 
               {/* Desktop Table */}
               <div className="hidden lg:block overflow-x-auto">

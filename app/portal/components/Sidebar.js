@@ -122,7 +122,7 @@ export default function Sidebar({
                 <div className={`text-sm font-medium ${
                   selectedView === 'stocks' ? 'text-green-900' : 'text-gray-900'
                 }`}>
-                  Stock Recommendations
+                  Stock Tracker
                 </div>
                 <div className="text-xs text-gray-500">
                   View expert stock picks
