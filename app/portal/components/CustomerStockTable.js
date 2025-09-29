@@ -250,12 +250,6 @@ export default function CustomerStockTable({ user }) {
                     <div className="text-sm text-gray-600">{showInactive ? 'Total' : 'Active'}</div>
                   </div>
                   <div className="text-center">
-                    <div className="text-2xl font-bold text-purple-600">
-                      {filteredStocks.filter(s => s.recommendedExitPrice).length}
-                    </div>
-                    <div className="text-sm text-gray-600">Exit Targets</div>
-                  </div>
-                  <div className="text-center">
                     <div className="text-2xl font-bold text-green-600">
                       {filteredStocks.filter(s => calculatePercentage(s.currentPrice, s.suggestedPrice) > 0).length}
                     </div>
@@ -281,14 +275,12 @@ export default function CustomerStockTable({ user }) {
                 <table className="min-w-full divide-y divide-gray-200">
                   <thead className="bg-gray-50">
                     <tr>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Stock</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Suggested Price</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Current Price</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Exit Target</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Current P&L</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Target P&L</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
-                      <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Date Posted</th>
+                      <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Date Posted</th>
+                      <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Stock</th>
+                      <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Price on Recommendation</th>
+                      <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Current Market Price</th>
+                      <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Gain/Loss</th>
+                      <th className="px-6 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
@@ -302,8 +294,11 @@ export default function CustomerStockTable({ user }) {
 
                       return (
                         <tr key={stock.id} className="hover:bg-gray-50">
-                          <td className="px-6 py-4 whitespace-nowrap">
-                            <div>
+                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900 text-center">
+                            {datePosted}
+                          </td>
+                          <td className="px-6 py-4 whitespace-nowrap text-center">
+                            <div className="flex flex-col items-center">
                               <div className="text-sm font-medium text-gray-900 flex items-center gap-2">
                                 {stock.ticker}
                                 {stock.recommendedExitPrice && (
@@ -313,25 +308,17 @@ export default function CustomerStockTable({ user }) {
                               <div className="text-sm text-gray-500 truncate max-w-40">{stock.companyName}</div>
                             </div>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
+                          <td className="px-6 py-4 whitespace-nowrap text-center">
                             <div className="text-sm font-medium text-blue-600">
                               ₹{stock.suggestedPrice?.toFixed(2)}
                             </div>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
+                          <td className="px-6 py-4 whitespace-nowrap text-center">
                             <div className="text-sm font-medium text-gray-900">
                               ₹{stock.currentPrice?.toFixed(2) || 'N/A'}
                             </div>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
-                            <div className="text-sm font-medium text-purple-600">
-                              {stock.recommendedExitPrice ? 
-                                `₹${stock.recommendedExitPrice.toFixed(2)}` : 
-                                <span className="text-gray-400">Not set</span>
-                              }
-                            </div>
-                          </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
+                          <td className="px-6 py-4 whitespace-nowrap text-center">
                             <div className={`text-sm font-medium ${isCurrentProfit ? 'text-green-600' : 'text-red-600'}`}>
                               {isCurrentProfit ? '+' : ''}{currentPercentage.toFixed(2)}%
                             </div>
@@ -339,21 +326,7 @@ export default function CustomerStockTable({ user }) {
                               ₹{((stock.currentPrice || 0) - stock.suggestedPrice).toFixed(2)}
                             </div>
                           </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
-                            {potentialPercentage ? (
-                              <>
-                                <div className={`text-sm font-medium ${isPotentialProfit ? 'text-blue-600' : 'text-red-600'}`}>
-                                  {isPotentialProfit ? '+' : ''}{potentialPercentage.toFixed(2)}%
-                                </div>
-                                <div className={`text-xs ${isPotentialProfit ? 'text-blue-500' : 'text-red-500'}`}>
-                                  ₹{(stock.recommendedExitPrice - stock.suggestedPrice).toFixed(2)}
-                                </div>
-                              </>
-                            ) : (
-                              <span className="text-xs text-gray-400">No target</span>
-                            )}
-                          </td>
-                          <td className="px-6 py-4 whitespace-nowrap">
+                          <td className="px-6 py-4 whitespace-nowrap text-center">
                             <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
                               stock.isActive
                                 ? 'bg-green-100 text-green-800'
@@ -361,9 +334,6 @@ export default function CustomerStockTable({ user }) {
                             }`}>
                               {stock.isActive ? 'Active' : 'Inactive'}
                             </span>
-                          </td>
-                          <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-900">
-                            {datePosted}
                           </td>
                         </tr>
                       );
@@ -377,12 +347,12 @@ export default function CustomerStockTable({ user }) {
                 <table className="min-w-full divide-y divide-gray-200">
                   <thead className="bg-gray-50">
                     <tr>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Stock</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Suggested</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Current</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Exit</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">P&L</th>
-                      <th className="px-4 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
+                      <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Stock</th>
+                      <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Suggested</th>
+                      <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Current</th>
+                      <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Exit</th>
+                      <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">P&L</th>
+                      <th className="px-4 py-3 text-center text-xs font-medium text-gray-500 uppercase tracking-wider">Status</th>
                     </tr>
                   </thead>
                   <tbody className="bg-white divide-y divide-gray-200">
@@ -392,8 +362,8 @@ export default function CustomerStockTable({ user }) {
 
                       return (
                         <tr key={stock.id} className="hover:bg-gray-50">
-                          <td className="px-4 py-4 whitespace-nowrap">
-                            <div>
+                          <td className="px-4 py-4 whitespace-nowrap text-center">
+                            <div className="flex flex-col items-center">
                               <div className="text-sm font-medium text-gray-900 flex items-center gap-1">
                                 {stock.ticker}
                                 {stock.recommendedExitPrice && (
@@ -403,24 +373,24 @@ export default function CustomerStockTable({ user }) {
                               <div className="text-xs text-gray-500 truncate max-w-32">{stock.companyName}</div>
                             </div>
                           </td>
-                          <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-blue-600">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-blue-600 text-center">
                             ₹{stock.suggestedPrice?.toFixed(2)}
                           </td>
-                          <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-gray-900 text-center">
                             ₹{stock.currentPrice?.toFixed(2) || 'N/A'}
                           </td>
-                          <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-purple-600">
+                          <td className="px-4 py-4 whitespace-nowrap text-sm font-medium text-purple-600 text-center">
                             {stock.recommendedExitPrice ? 
                               `₹${stock.recommendedExitPrice.toFixed(2)}` : 
                               <span className="text-gray-400 text-xs">Not set</span>
                             }
                           </td>
-                          <td className="px-4 py-4 whitespace-nowrap">
+                          <td className="px-4 py-4 whitespace-nowrap text-center">
                             <div className={`text-sm font-medium ${isCurrentProfit ? 'text-green-600' : 'text-red-600'}`}>
                               {isCurrentProfit ? '+' : ''}{currentPercentage.toFixed(2)}%
                             </div>
                           </td>
-                          <td className="px-4 py-4 whitespace-nowrap">
+                          <td className="px-4 py-4 whitespace-nowrap text-center">
                             <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${
                               stock.isActive
                                 ? 'bg-green-100 text-green-800'
@@ -475,15 +445,6 @@ export default function CustomerStockTable({ user }) {
                         <div className="bg-gray-50 p-2 rounded">
                           <div className="text-gray-700 text-xs font-medium">Current</div>
                           <div className="font-bold text-gray-900">₹{stock.currentPrice?.toFixed(2) || 'N/A'}</div>
-                        </div>
-                        <div className="bg-purple-50 p-2 rounded">
-                          <div className="text-purple-700 text-xs font-medium">Exit Target</div>
-                          <div className="font-bold text-purple-900">
-                            {stock.recommendedExitPrice ? 
-                              `₹${stock.recommendedExitPrice.toFixed(2)}` : 
-                              <span className="text-gray-400 text-xs">Not set</span>
-                            }
-                          </div>
                         </div>
                       </div>
 

@@ -1,9 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useAuth } from '@/contexts/AuthContext';
 import { addInsight } from '@/lib/insightsService';
 import { uploadPdfAndSaveDetails } from '@/lib/pdfService';
+import { generateSlug } from '@/lib/slugUtils';
 import Login from '@/app/admin/Insights/LoginForm';
 import StockManagement from '@/app/api/stockmanagement/stock_manage';
 
@@ -19,12 +20,15 @@ export default function AdminInsights() {
     pdfLink: ''
   });
 
+  const [previewSlug, setPreviewSlug] = useState('');
+
   const [pdfFile, setPdfFile] = useState(null);
   const [pdfHeading, setPdfHeading] = useState('');
   const [pdfSubheading, setPdfSubheading] = useState('');
   const [pdfDate, setPdfDate] = useState('');
   const [pdfMessage, setPdfMessage] = useState('');
   const [pdfLoading, setPdfLoading] = useState(false);
+  const [pdfPreviewSlug, setPdfPreviewSlug] = useState('');
 
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
@@ -46,7 +50,19 @@ export default function AdminInsights() {
       ...prev,
       [name]: value
     }));
+
+    // Generate preview slug when title changes
+    if (name === 'title') {
+      setPreviewSlug(generateSlug(value));
+    }
   };
+
+  // Update PDF preview slug when heading changes
+  useEffect(() => {
+    if (pdfHeading) {
+      setPdfPreviewSlug(generateSlug(pdfHeading));
+    }
+  }, [pdfHeading]);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -60,9 +76,12 @@ export default function AdminInsights() {
       if (!formData.pdfLink.includes('drive.google.com')) {
         throw new Error('Please provide a valid Google Drive link');
       }
-      await addInsight(formData);
-      setMessage('Insight added successfully!');
+      
+      const newInsight = await addInsight(formData);
+      setMessage(`Insight added successfully! 
+      View at: ${window.location.origin}/insights/${newInsight.slug}`);
       setFormData({ title: '', subtitle: '', thumbnail: '', cloudinaryId: '', pdfLink: '' });
+      setPreviewSlug('');
     } catch (error) {
       setMessage(`Error: ${error.message}`);
     } finally {
@@ -80,12 +99,14 @@ export default function AdminInsights() {
     setPdfMessage('');
 
     try {
-      await uploadPdfAndSaveDetails(pdfFile, pdfHeading, pdfSubheading, pdfDate);
-      setPdfMessage('PDF uploaded successfully!');
+      const result = await uploadPdfAndSaveDetails(pdfFile, pdfHeading, pdfSubheading, pdfDate);
+      setPdfMessage(`PDF uploaded successfully! 
+      View at: ${window.location.origin}/insights/${result.slug || generateSlug(pdfHeading)}`);
       setPdfFile(null);
       setPdfHeading('');
       setPdfSubheading('');
       setPdfDate('');
+      setPdfPreviewSlug('');
     } catch (error) {
       console.error(error);
       setPdfMessage('Error uploading PDF.');
@@ -200,37 +221,176 @@ export default function AdminInsights() {
               <div className="bg-white p-6 rounded-lg shadow space-y-4">
                 <h2 className="text-xl font-bold mb-4">Add New Insight</h2>
                 {message && (
-                  <div className={`p-3 rounded ${message.includes('Error') ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
-                    {message}
+                  <div className={`p-3 rounded ${message.includes('Error') ? 'bg-red-100 text-red-700 border border-red-300' : 'bg-green-100 text-green-700 border border-green-300'}`}>
+                    <div className="whitespace-pre-line">{message}</div>
                   </div>
                 )}
+                
+                {/* URL Preview */}
+                {previewSlug && (
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <h3 className="text-sm font-semibold text-blue-800 mb-2">Preview URL:</h3>
+                    <div className="bg-white border rounded px-3 py-2 text-sm font-mono text-blue-600">
+                      {typeof window !== 'undefined' ? window.location.origin : 'https://yoursite.com'}/insights/{previewSlug}
+                    </div>
+                  </div>
+                )}
+
                 <form onSubmit={handleSubmit} className="space-y-4">
-                  <input type="text" name="title" value={formData.title} onChange={handleInputChange} required placeholder="Title *" className="w-full p-2 border rounded" />
-                  <textarea name="subtitle" value={formData.subtitle} onChange={handleInputChange} required rows="3" placeholder="Subtitle/Description *" className="w-full p-2 border rounded" />
-                  <input type="text" name="cloudinaryId" value={formData.cloudinaryId} onChange={handleInputChange} placeholder="Cloudinary Public ID" className="w-full p-2 border rounded" />
-                  <input type="url" name="thumbnail" value={formData.thumbnail} onChange={handleInputChange} placeholder="Fallback Image URL" className="w-full p-2 border rounded" />
-                  <input type="url" name="pdfLink" value={formData.pdfLink} onChange={handleInputChange} required placeholder="Google Drive PDF Link *" className="w-full p-2 border rounded" />
-                  <button type="submit" disabled={loading} className={`w-full py-2 rounded text-white ${loading ? 'bg-gray-400' : 'bg-indigo-600 hover:bg-indigo-700'}`}>
-                    {loading ? 'Adding...' : 'Add Insight'}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Title *</label>
+                    <input 
+                      type="text" 
+                      name="title" 
+                      value={formData.title} 
+                      onChange={handleInputChange} 
+                      required 
+                      placeholder="Enter insight title" 
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Subtitle/Description *</label>
+                    <textarea 
+                      name="subtitle" 
+                      value={formData.subtitle} 
+                      onChange={handleInputChange} 
+                      required 
+                      rows="3" 
+                      placeholder="Enter subtitle or description" 
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Cloudinary Public ID</label>
+                    <input 
+                      type="text" 
+                      name="cloudinaryId" 
+                      value={formData.cloudinaryId} 
+                      onChange={handleInputChange} 
+                      placeholder="Enter Cloudinary public ID" 
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Fallback Image URL</label>
+                    <input 
+                      type="url" 
+                      name="thumbnail" 
+                      value={formData.thumbnail} 
+                      onChange={handleInputChange} 
+                      placeholder="Enter fallback image URL" 
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Google Drive PDF Link *</label>
+                    <input 
+                      type="url" 
+                      name="pdfLink" 
+                      value={formData.pdfLink} 
+                      onChange={handleInputChange} 
+                      required 
+                      placeholder="https://drive.google.com/file/d/..." 
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500" 
+                    />
+                    <p className="text-xs text-gray-500 mt-1">Make sure the Google Drive link is set to "Anyone with the link can view"</p>
+                  </div>
+
+                  <button 
+                    type="submit" 
+                    disabled={loading} 
+                    className={`w-full py-3 rounded-lg text-white font-semibold transition-all ${
+                      loading 
+                        ? 'bg-gray-400 cursor-not-allowed' 
+                        : 'bg-indigo-600 hover:bg-indigo-700 focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2'
+                    }`}
+                  >
+                    {loading ? 'Adding Insight...' : 'Add Insight'}
                   </button>
                 </form>
               </div>
 
               {/* PDF Upload Form */}
               <div className="bg-white p-6 rounded-lg shadow space-y-4">
-                <h2 className="text-xl font-bold mb-4">Upload PDF</h2>
+                <h2 className="text-xl font-bold mb-4">Upload PDF Directly</h2>
                 {pdfMessage && (
-                  <div className={`p-3 rounded ${pdfMessage.includes('Error') ? 'bg-red-100 text-red-700' : 'bg-green-100 text-green-700'}`}>
-                    {pdfMessage}
+                  <div className={`p-3 rounded ${pdfMessage.includes('Error') ? 'bg-red-100 text-red-700 border border-red-300' : 'bg-green-100 text-green-700 border border-green-300'}`}>
+                    <div className="whitespace-pre-line">{pdfMessage}</div>
                   </div>
                 )}
+
+                {/* PDF URL Preview */}
+                {pdfPreviewSlug && (
+                  <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+                    <h3 className="text-sm font-semibold text-blue-800 mb-2">Preview URL:</h3>
+                    <div className="bg-white border rounded px-3 py-2 text-sm font-mono text-blue-600">
+                      {typeof window !== 'undefined' ? window.location.origin : 'https://yoursite.com'}/insights/{pdfPreviewSlug}
+                    </div>
+                  </div>
+                )}
+
                 <form onSubmit={handlePdfUpload} className="space-y-4">
-                  <input type="file" accept="application/pdf" onChange={(e) => setPdfFile(e.target.files[0])} required className="w-full p-2 border rounded" />
-                  <input type="text" value={pdfHeading} onChange={(e) => setPdfHeading(e.target.value)} required placeholder="Heading *" className="w-full p-2 border rounded" />
-                  <input type="text" value={pdfSubheading} onChange={(e) => setPdfSubheading(e.target.value)} required placeholder="Subheading *" className="w-full p-2 border rounded" />
-                  <input type="date" value={pdfDate} onChange={(e) => setPdfDate(e.target.value)} required className="w-full p-2 border rounded" />
-                  <button type="submit" disabled={pdfLoading} className={`w-full py-2 rounded text-white ${pdfLoading ? 'bg-gray-400' : 'bg-green-600 hover:bg-green-700'}`}>
-                    {pdfLoading ? 'Uploading...' : 'Upload PDF'}
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Select PDF File *</label>
+                    <input 
+                      type="file" 
+                      accept="application/pdf" 
+                      onChange={(e) => setPdfFile(e.target.files[0])} 
+                      required 
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500" 
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Heading *</label>
+                    <input 
+                      type="text" 
+                      value={pdfHeading} 
+                      onChange={(e) => setPdfHeading(e.target.value)} 
+                      required 
+                      placeholder="Enter insight heading" 
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500" 
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Subheading *</label>
+                    <input 
+                      type="text" 
+                      value={pdfSubheading} 
+                      onChange={(e) => setPdfSubheading(e.target.value)} 
+                      required 
+                      placeholder="Enter insight subheading" 
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500" 
+                    />
+                  </div>
+
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Date *</label>
+                    <input 
+                      type="date" 
+                      value={pdfDate} 
+                      onChange={(e) => setPdfDate(e.target.value)} 
+                      required 
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-green-500" 
+                    />
+                  </div>
+
+                  <button 
+                    type="submit" 
+                    disabled={pdfLoading} 
+                    className={`w-full py-3 rounded-lg text-white font-semibold transition-all ${
+                      pdfLoading 
+                        ? 'bg-gray-400 cursor-not-allowed' 
+                        : 'bg-green-600 hover:bg-green-700 focus:ring-2 focus:ring-green-500 focus:ring-offset-2'
+                    }`}
+                  >
+                    {pdfLoading ? 'Uploading PDF...' : 'Upload PDF'}
                   </button>
                 </form>
               </div>

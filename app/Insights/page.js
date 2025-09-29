@@ -1,14 +1,24 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useRouter } from 'next/navigation'; // Changed from 'next/router' to 'next/navigation'
 import Header from '@/Components/Header';
 import Footer from '@/Components/Footer';
 import { getInsights, incrementViewCount } from '@/lib/insightsService';
 import { getThumbnailUrl, getHeroImageUrl } from '@/lib/cloudinary';
 import Newsletter from '@/Components/Newsletter';
 import Image from 'next/image';
+import Link from 'next/link';
 
 const InsightCard = ({ insight, onReadMore }) => {
+  const router = useRouter();
+
+  const handleReadMore = (e) => {
+    e.preventDefault();
+    // Navigate to individual insight page instead of opening PDF
+    router.push(`/Insights/${insight.slug}`); // uppercase I
+  };
+
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-6 md:mb-8 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
       {/* Mobile Layout - Stacked */}
@@ -65,7 +75,7 @@ const InsightCard = ({ insight, onReadMore }) => {
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pt-4 border-t border-gray-100">
             {/* Read More Button */}
             <button
-              onClick={() => onReadMore(insight)}
+              onClick={handleReadMore}
               className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 py-2.5 rounded-lg font-semibold transition-all duration-200 shadow-md hover:shadow-lg text-sm w-full sm:w-auto"
             >
               Read More
@@ -145,7 +155,7 @@ const InsightCard = ({ insight, onReadMore }) => {
           <div className="flex items-center justify-between pt-6 border-t border-gray-100 mt-auto">
             {/* Read More Button */}
             <button
-              onClick={() => onReadMore(insight)}
+              onClick={handleReadMore}
               className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-6 lg:px-8 py-2.5 lg:py-3 rounded-lg font-semibold transition-all duration-200 shadow-md hover:shadow-lg transform hover:scale-105 text-sm lg:text-base"
             >
               Read More
@@ -201,7 +211,7 @@ const LoadingCard = () => (
           <div className="h-4 bg-gray-300 rounded mb-2"></div>
           <div className="h-4 bg-gray-300 rounded mb-6 w-3/4"></div>
         </div>
-        <div className="flex justify-between items-center pt-6 border-t bor der-gray-100">
+        <div className="flex justify-between items-center pt-6 border-t border-gray-100">
           <div className="h-10 bg-gray-300 rounded-lg w-32"></div>
           <div className="h-4 bg-gray-300 rounded w-20"></div>
         </div>
@@ -214,8 +224,9 @@ export default function InsightsPage() {
   const [insights, setInsights] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [displayedInsights, setDisplayedInsights] = useState(5); // Show 5 insights initially
+  const [displayedInsights, setDisplayedInsights] = useState(5);
   const [loadingMore, setLoadingMore] = useState(false);
+  const router = useRouter();
 
   // Fetch insights on component mount
   useEffect(() => {
@@ -261,12 +272,35 @@ export default function InsightsPage() {
         )
       );
 
-      // Open PDF link in new tab
-      window.open(insight.pdfLink, '_blank', 'noopener,noreferrer');
+      // Navigate to individual insight page
+      router.push(`/Insights/${insight.slug}`);
     } catch (error) {
       console.error('Error handling read more:', error);
-      // Still open the link even if view count update fails
-      window.open(insight.pdfLink, '_blank', 'noopener,noreferrer');
+      // Still navigate even if view count update fails
+      router.push(`/Insights/${insight.slug}`);
+    }
+  };
+
+  const handleFeaturedReadMore = async (insight) => {
+    try {
+      // Increment view count in database
+      await incrementViewCount(insight.id);
+      
+      // Update local state
+      setInsights(prevInsights =>
+        prevInsights.map(item =>
+          item.id === insight.id
+            ? { ...item, viewCount: item.viewCount + 1 }
+            : item
+        )
+      );
+
+      // Navigate to individual insight page
+      router.push(`/Insights/${insight.slug}`);
+    } catch (error) {
+      console.error('Error handling read more:', error);
+      // Still navigate even if view count update fails
+      router.push(`/Insights/${insight.slug}`);
     }
   };
 
@@ -341,7 +375,7 @@ export default function InsightsPage() {
                   <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
                     {/* Read More Button */}
                     <button
-                      onClick={() => handleReadMore(insights[0])}
+                      onClick={() => handleFeaturedReadMore(insights[0])}
                       className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-md font-medium transition-all duration-200 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5 w-fit"
                     >
                       Read More

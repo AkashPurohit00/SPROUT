@@ -1,16 +1,24 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { getInsights, incrementViewCount } from '@/lib/insightsService';
+import { getInsights } from '@/lib/insightsService';
 import { getThumbnailUrl } from '@/lib/cloudinary';
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
-const RecentInsightCard = ({ insight, onReadMore }) => {
+const RecentInsightCard = ({ insight }) => {
+  const router = useRouter();
+
+  const handleReadMore = () => {
+    // Navigate to the individual insight page
+    router.push(`/Insights/${insight.slug}`);
+  };
+
   return (
     <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
       {/* Image Section */}
-      <div className="relative w-full aspect-video bg-gray-100">
+      <div className="relative w-full aspect-video bg-gray-100 cursor-pointer" onClick={handleReadMore}>
         <img
           src={insight.thumbnailUrl || insight.thumbnail}
           alt={insight.title}
@@ -20,6 +28,13 @@ const RecentInsightCard = ({ insight, onReadMore }) => {
           }}
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+        
+        {/* Hover Overlay */}
+        <div className="absolute inset-0 bg-blue-600/10 opacity-0 hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+          <div className="bg-white/90 text-blue-600 px-4 py-2 rounded-lg font-medium">
+            Read More
+          </div>
+        </div>
       </div>
       
       {/* Content Section */}
@@ -42,7 +57,10 @@ const RecentInsightCard = ({ insight, onReadMore }) => {
         </div>
         
         {/* Title */}
-        <h3 className="text-lg font-bold text-gray-900 mb-3 leading-tight line-clamp-2">
+        <h3 
+          className="text-lg font-bold text-gray-900 mb-3 leading-tight line-clamp-2 cursor-pointer hover:text-blue-600 transition-colors"
+          onClick={handleReadMore}
+        >
           {insight.title}
         </h3>
         
@@ -55,7 +73,7 @@ const RecentInsightCard = ({ insight, onReadMore }) => {
         <div className="flex items-center justify-between pt-4 border-t border-gray-100">
           {/* Read More Button */}
           <button
-            onClick={() => onReadMore(insight)}
+            onClick={handleReadMore}
             className="bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-5 py-2 rounded-lg font-medium transition-all duration-200 shadow-md hover:shadow-lg text-sm"
           >
             Read More
@@ -67,7 +85,7 @@ const RecentInsightCard = ({ insight, onReadMore }) => {
               <path d="M10 12a2 2 0 100-4 2 2 0 000 4z"/>
               <path fillRule="evenodd" d="M.458 10C1.732 5.943 5.522 3 10 3s8.268 2.943 9.542 7c-1.274 4.057-5.064 7-9.542 7S1.732 14.057.458 10zM14 10a4 4 0 11-8 0 4 4 0 018 0z" clipRule="evenodd"/>
             </svg>
-            {insight.viewCount} Views
+            {insight.views || insight.viewCount || 0} Views
           </div>
         </div>
       </div>
@@ -128,29 +146,6 @@ const RecentInsights = () => {
     fetchInsights();
   }, []);
 
-  const handleReadMore = async (insight) => {
-    try {
-      // Increment view count in database
-      await incrementViewCount(insight.id);
-      
-      // Update local state
-      setInsights(prevInsights =>
-        prevInsights.map(item =>
-          item.id === insight.id
-            ? { ...item, viewCount: item.viewCount + 1 }
-            : item
-        )
-      );
-
-      // Open PDF link in new tab
-      window.open(insight.pdfLink, '_blank', 'noopener,noreferrer');
-    } catch (error) {
-      console.error('Error handling read more:', error);
-      // Still open the link even if view count update fails
-      window.open(insight.pdfLink, '_blank', 'noopener,noreferrer');
-    }
-  };
-
   // Don't render if no insights and not loading
   if (!loading && insights.length === 0 && !error) {
     return null;
@@ -192,7 +187,6 @@ const RecentInsights = () => {
               <RecentInsightCard
                 key={insight.id}
                 insight={insight}
-                onReadMore={handleReadMore}
               />
             ))
           )}

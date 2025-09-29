@@ -34,6 +34,16 @@ export default function Page() {
     }));
   };
 
+  const getQueryText = (queryKey) => {
+    const queryMap = {
+      query1: 'Get in touch to subscribe to our PCG research',
+      query2: 'Register interest as a Corporate Entity / NRI for Sprout Research-Retail Subscription',
+      query3: 'Subscribe to our weekly insights',
+      query4: 'Other Queries'
+    };
+    return queryMap[queryKey] || queryKey;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     
@@ -73,35 +83,33 @@ export default function Page() {
       // Initialize EmailJS
       emailjs.init(process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY);
 
-      // Prepare template parameters
+      // Format queries with bullet points for better readability
+      const formattedQueries = formData.queries
+        .map(query => `• ${getQueryText(query)}`)
+        .join('\n');
+
+      // Prepare template parameters matching the EmailJS template
       const templateParams = {
         from_name: formData.firstName,
         from_email: formData.email,
         contact_number: formData.contact,
-        selected_queries: formData.queries.join(', '),
+        selected_queries: formattedQueries,
         message: formData.message || 'No additional message provided',
-        date: new Date().toLocaleDateString(),
-        time: new Date().toLocaleTimeString(),
-        // You can customize the email content here
-        email_content: `
-          New Contact Form Submission:
-          
-          Name: ${formData.firstName}
-          Email: ${formData.email}
-          Contact: ${formData.contact}
-          
-          Selected Queries:
-          ${formData.queries.map(query => `- ${getQueryText(query)}`).join('\n')}
-          
-          Message: ${formData.message || 'No additional message provided'}
-          
-          Submitted on: ${new Date().toLocaleDateString()} at ${new Date().toLocaleTimeString()}
-        `
+        date: new Date().toLocaleDateString('en-US', { 
+          year: 'numeric', 
+          month: 'long', 
+          day: 'numeric' 
+        }),
+        time: new Date().toLocaleTimeString('en-US', {
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit'
+        })
       };
 
       const result = await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID_CONTACT, // Make sure this is your CONTACT form template ID
         templateParams
       );
 
@@ -129,7 +137,7 @@ export default function Page() {
     } catch (error) {
       console.error('EmailJS error:', error);
       setStatus('error');
-      setStatusMessage('Something went wrong. Please try again.');
+      setStatusMessage('Something went wrong. Please try again later.');
       
       // Reset error after 4 seconds
       setTimeout(() => {
@@ -137,16 +145,6 @@ export default function Page() {
         setStatusMessage('');
       }, 4000);
     }
-  };
-
-  const getQueryText = (queryKey) => {
-    const queryMap = {
-      query1: 'Get in touch to subscribe to our PCG research',
-      query2: 'Register interest as a Corporate Entity / NRI for Sprout Research-Retail Subscription',
-      query3: 'Subscribe to our weekly insights',
-      query4: 'Other Queries'
-    };
-    return queryMap[queryKey] || queryKey;
   };
 
   return (
@@ -227,8 +225,6 @@ export default function Page() {
                   </p>
                 </div>
               </div>
-
-             
             </div>
 
             {/* Right Form */}
