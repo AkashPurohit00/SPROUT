@@ -102,7 +102,7 @@ export default function Sidebar({
         {/* Menu Items */}
         <div className="p-4 space-y-4">
           {/* Stock Recommendations Section */}
-          <div className="mb-6">
+          {/* <div className="mb-6">
             <button
               onClick={handleStockClick}
               className={`w-full flex items-center space-x-3 px-3 py-3 rounded-lg transition-all duration-200 ${
@@ -132,7 +132,7 @@ export default function Sidebar({
                 <div className="w-2 h-2 bg-green-500 rounded-full"></div>
               )}
             </button>
-          </div>
+          </div> */}
 
           {/* Documents Section */}
           <div>
