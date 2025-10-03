@@ -5,7 +5,7 @@ import Footer from '@/Components/Footer'
 
 const Page = () => {
   const months = [
-    'April 2024', 'May 2024', 'June 2024', 'July 2024', 'August 2024', 'September 2024', 'October 2024', 'November 2024', 'December 2024', 'January 2025', 'February 2025', 'March 2025', 'April 2025', 'May 2025', 'June 2025', 'July 2025','Aug 2025'
+    'April 2024', 'May 2024', 'June 2024', 'July 2024', 'August 2024', 'September 2024', 'October 2024', 'November 2024', 'December 2024', 'January 2025', 'February 2025', 'March 2025', 'April 2025', 'May 2025', 'June 2025', 'July 2025','Aug 2025','Sep 2025'
   ];
 
   return (
@@ -44,7 +44,7 @@ const Page = () => {
       
       {/* Heading */}
       <h2 className="text-xl md:text-5xl font-bold text-left text-gray-800 mb-8">
-        Data for the month ending <br/>Aug 2025
+        Data for the month ending <br/>Sep 2025
       </h2>
       
       {/* Desktop View */}
@@ -408,7 +408,7 @@ const Page = () => {
                 Sr No
               </div>
               <div className="flex-1 pt-4">
-                {Array.from({ length: 17 }, (_, i) => (
+                {Array.from({ length: 18 }, (_, i) => (
                   <div key={i} className="text-center py-3 text-gray-700 font-medium px-4 h-16 flex items-center justify-center">
                     {i + 1}
                   </div>
@@ -436,7 +436,7 @@ const Page = () => {
                 Carried forward from previous month
               </div>
               <div className="flex-1 pt-4">
-                {Array.from({ length: 17 }, (_, i) => (
+                {Array.from({ length: 18 }, (_, i) => (
                   <div key={i} className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center break-words">
                     0
                   </div>
@@ -450,7 +450,7 @@ const Page = () => {
                 Received
               </div>
               <div className="flex-1 pt-4">
-                {Array.from({ length: 17 }, (_, i) => (
+                {Array.from({ length: 18 }, (_, i) => (
                   <div key={i} className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
                     0
                   </div>
@@ -464,7 +464,7 @@ const Page = () => {
                 Resolved
               </div>
               <div className="flex-1 pt-4">
-                {Array.from({ length: 17 }, (_, i) => (
+                {Array.from({ length: 18 }, (_, i) => (
                   <div key={i} className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center break-all">
                     0
                   </div>
@@ -478,7 +478,7 @@ const Page = () => {
                 Pending
               </div>
               <div className="flex-1 pt-4">
-                {Array.from({ length: 17 }, (_, i) => (
+                {Array.from({ length: 18 }, (_, i) => (
                   <div key={i} className="text-center py-3 text-gray-700 text-base leading-relaxed px-4 h-16 flex items-center justify-center">
                     0
                   </div>
