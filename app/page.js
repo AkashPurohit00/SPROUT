@@ -643,7 +643,7 @@ export default function Home() {
                 <div>
                   <span className="font-semibold text-gray-700 block mb-1">Email:</span>
                   <a href="mailto:shikha.kapur@gmail.com" className="text-blue-600 hover:text-blue-800 transition-colors">
-                    shikha.kapur@gmail.com
+                    shikhaa.kapur@gmail.com
                   </a>
                 </div>
                 <div>
