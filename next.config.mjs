@@ -1,5 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  turbopack: {},
   transpilePackages: ['react-pdf'],
   webpack(config, { isServer }) {
     // Handle canvas fallback for client-side builds
